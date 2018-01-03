@@ -1,0 +1,367 @@
+/*common.css*/
+
+body {
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size: 12px;
+}
+
+hr {
+    border-style: solid;
+}
+
+
+.x2_hr {
+    color: black;
+    background-color: black;
+    height: 2px;
+}
+
+
+li {
+    list-style-type: none;
+}
+
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+.extension li {
+    list-style-type: disc;
+}
+
+/*layout.css*/
+
+#header .gnb {
+    margin: 1em 0;
+}
+
+#content {
+    margin-bottom: 2em;
+}
+
+#content::after {
+    clear: both;
+    content: "";
+    display: block;
+}
+
+#container::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+
+.extension_wrap::after {
+    clear: both;
+    content: '';
+    display: block;
+}
+
+.extension ul {
+    padding-left: 40px;
+}
+
+
+a {
+    text-decoration-line: none;
+}
+
+
+#wrap {
+    position: relative;
+}
+
+#container {
+    position: relative;
+}
+
+#acontent {
+    position: relative;
+}
+
+
+.footer_lst {
+    margin: 1em 0;
+}
+
+.gnb_lst li,
+.footer_lst li,
+.layout_lst li {
+    float: left;
+}
+
+.layout_lst a {
+    color: #66F;
+}
+
+.gnb_lst::after,
+.footer_lst::after,
+.layout_lst::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.bar {
+    display: inline-block;
+    width: 1px;
+    height: 11px;
+    margin-left: 4px;
+    margin-right: 10px;
+    background: #ccc;
+}
+
+.extension_wrap {
+    display: none;
+}
+
+#content h2 {
+    border-bottom: 1px solid black;
+}
+
+.extension h2 {
+    border-bottom: 1px solid black;
+}
+
+
+
+#container {
+    margin-bottom: 30px;
+}
+
+.preview_img {
+    float: left;
+    margin: 0 1em 1em 0;
+}
+
+/* Layout Width */
+
+.fixed {
+    width: 960px;
+    margin: 0 auto;
+}
+
+.liquid {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.hybrid {
+    width: 80%;
+    margin: 0 auto;
+}
+
+
+/* ----- Fixed c Column Layout ----- */
+
+.fixed .c .e1 section {
+    float: left;
+    width: 300px;
+    margin-right: 30px;
+}
+
+.fixed .c .e1 {
+    display: block;
+    margin-right: -30px;
+}
+
+
+
+/* ----- Liquid c Column Layout ----- */
+
+.liquid .c .e1 section {
+    float: left;
+    width: 30%;
+    margin-right: 3.3%;
+}
+
+.liquid .c .e1 {
+    display: block;
+    margin-right: -3.4%;
+}
+
+/* ----- hybrid c Column Layout ----- */
+
+.hybrid .c .e1 {
+    display: block;
+    margin-right: -30px;
+}
+
+.hybrid .c .e1 section {
+    float: left;
+    width: 240px;
+    margin-right: 30px;
+}
+
+/* ----- fixed ce Column Layout ----- */
+
+.fixed .ce #content {
+    float: left;
+    width: 720px;
+}
+
+.fixed .ce .e1 {
+    display: block;
+    float: right;
+    width: 220px;
+}
+
+/* ----- fixed ec Column Layout ----- 
+*/
+
+.fixed .ec #content {
+    float: right;
+    width: 720px;
+}
+
+.fixed .ec .e1 {
+    display: block;
+    float: left;
+    width: 220px;
+}
+
+/* ----- liquid ce Column Layout ----- 
+*/
+
+.liquid .ce #content {
+    float: left;
+    width: 75%;
+}
+
+.liquid .ce .e1 {
+    display: block;
+    float: right;
+    width: 23%;
+}
+
+/* ----- liquid ec Column Layout ----- 
+*/
+
+.liquid .ec #content {
+    float: right;
+    width: 75%;
+}
+
+.liquid .ec .e1 {
+    display: block;
+    float: left;
+    width: 23%;
+}
+
+/* ----- hybrid ce Column Layout ----- 
+*/
+.hybrid .ce .content_wrap{
+    padding-right: 280px;
+}
+
+.hybrid .ce #content {
+    position: relative;
+    float: left;
+    width: 100%;
+}
+
+.hybrid .ce .e1 {
+    position: relative;
+    display: block;
+    float: right;
+    width: 260px;
+    right: -280px;
+    margin-left: -260px;
+}
+
+/* ----- hybrid ec Column Layout ----- 
+*/
+
+.hybrid .ec .content_wrap{
+    padding-left: 280px;
+}
+
+.hybrid .ec #content {
+    float: right;
+    width: 100%;
+    position: relative;
+}
+
+.hybrid .ec .e1 {
+    position: relative;
+    display: block;
+    float: left;
+    width: 260px;
+    left: -280px;
+    margin-right: -260px;
+}
+
+
+/* ----- fixed cee Column Layout ----- 
+*/
+
+.fixed .cee #content {
+    float: left;
+    width: 520px;
+    margin-right: 20px;
+}
+
+.fixed .cee .e1{
+    display: block;
+    float: left;
+    width: 200px;
+}
+
+.fixed .cee .e2{
+    display: block;
+    float: right;
+    width: 200px;
+}
+
+/* ----- fixed ece Column Layout ----- 
+*/
+
+.fixed .ece #content {
+    float:none;
+    width: 520px;
+    margin-left: 20px;
+}
+
+.fixed .ece .e1{
+    display: block;
+    float: left;
+    width: 200px;
+}
+
+.fixed .ece .e2{
+    display: block;
+    float: right;
+    width: 200px;
+}
+
+/* ----- fixed cee Column Layout ----- 
+*/
+
+.fixed .eec #content {
+    float: left;
+    width: 520px;
+    margin-left: 20px;
+}
+
+.fixed .eec .e1{
+    display: block;
+    float: left;
+    width: 200px;
+}
+
+.fixed .eec .e2{
+    display: block;
+    float: right;
+    width: 200px;
+}
