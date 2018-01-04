@@ -8,6 +8,7 @@
 </head>
 
 <body>
+    <button id = "devColor" onclick="layoutDebug(this)" value="ON">dev color</button>
     <div id="wrap" class="fixed">
         <div id="header">
             <h1>Header</h1>
@@ -36,12 +37,12 @@
                         Tim Berners-Lee and others created W3C as an industry consortium dedicated to building consensus around Web technologies. Mr. Berners-Lee, who invented the World Wide Web in 1989 while working at the European Organization for Nuclear Research (CERN), has served as the W3C Director since W3C was founded, in 1994.
                     </p>
                     <ul class="layout_lst">
-                        <li><a href="#" data-layout ="fixed" data-con="c" onmouseover="changeImg(event)">FIXED C</a></li>
-                        <li><span class="bar"></span><a href="#" data-layout ="liquid" data-con="c" onmouseover="changeImg(event)">LIQUID C</a></li>
+                        <li><a href="#fixed" data-layout ="fixed" data-con="c" onmouseover="changeImg(event)">FIXED C</a></li>
+                        <li><span class="bar"></span><a href="#liquid" data-layout ="liquid" data-con="c" onmouseover="changeImg(event)">LIQUID C</a></li>
                         <li><span class="bar"></span><a href="#" data-layout ="hybird" data-con="c" onmouseover="changeImg(event)">HYBRID C</a></li>
-                        <li><span class="bar"></span><a href="#" data-layout = "fixed" data-con="ce" onmouseover="changeImg(event)">FIXED CE</a></li>
-                        <li><span class="bar"></span><a href="#" data-layout = "fixed" data-con="ec" onmouseover="changeImg(event)">FIXED EC</a></li>
-                        <li><span class="bar"></span><a href="#" data-layout = "liquid" data-con="ce" onmouseover="changeImg(event)">LIQUID CE</a></li>
+                        <li><span class="bar"></span><a href="#" data-layout ="fixed" data-con="ce" onmouseover="changeImg(event)">FIXED CE</a></li>
+                        <li><span class="bar"></span><a href="#" data-layout ="fixed" data-con="ec" onmouseover="changeImg(event)">FIXED EC</a></li>
+                        <li><span class="bar"></span><a href="#" data-layout ="liquid" data-con="ce" onmouseover="changeImg(event)">LIQUID CE</a></li>
                         <li><span class="bar"></span><a href="#" data-layout="liquid" data-con="ec"  onmouseover="changeImg(event)">LIQUID EC</a></li>
                         <li><span class="bar"></span><a href="#" data-layout="hybrid" data-con="ce"   onmouseover="changeImg(event)">HYBRID CE</a></li>
                         <li><span class="bar"></span><a href="#" data-layout="hybrid" data-con="ec"  onmouseover="changeImg(event)">HYBRID EC</a></li>
@@ -136,8 +137,8 @@
             </div>
         </div>
         <hr>
-        <div id="footer ">
-            <ul class="footer_lst ">
+        <div id="footer">
+            <ul class="footer_lst">
                 <li class="item "><a href=" ">About W3C</a></li>
                 <li><span class="bar "></span></li>
                 <li class="item "><a href=" ">About W3C Membership</a></li>

@@ -1,4 +1,14 @@
 /*common.css*/
+
+article,
+aside,
+footer,
+header,
+nav,
+section {
+    display: block;
+}
+
 body {
     font-family: Tahoma, Geneva, sans-serif;
     font-size: 12px;
@@ -17,7 +27,6 @@ hr {
 li {
     list-style-type: none;
 }
-
 
 ul {
     margin: 0;
@@ -39,8 +48,6 @@ img {
 a {
     text-decoration-line: none;
 }
-
-/*layout.css*/
 
 #header .gnb {
     margin: 1em 0;
@@ -155,7 +162,6 @@ a {
     margin: 0 auto;
 }
 
-
 /* ----- Fixed c Column Layout ----- */
 
 .fixed .c .e1 section {
@@ -164,12 +170,16 @@ a {
     margin-right: 30px;
 }
 
-.fixed .c .e1 {
-    display: block;
-    margin-right: -30px;
+/* oppose code minimalize in .e1 array */
+.fixed .c .e1 section:last-child{
+    margin-right: 0;
 }
 
 
+.fixed .c .e1 {
+    display: block;
+    /* margin-right: -30px; */
+}
 
 /* ----- Liquid c Column Layout ----- */
 
@@ -193,11 +203,12 @@ a {
 }
 
 
-.hybird .c .e1 section{
+.hybird .c .e1 section {
     float: left;
     widows: 240px;
     margin-right: 30px;
 }
+
 
 /* ----- fixed ce Column Layout ----- */
 
@@ -256,10 +267,11 @@ a {
 
 /* ----- hybrid ce Column Layout ----- 
 */
-.hybrid .ce .content_wrap{
-/*    padding-right: 280px;*/
+
+.hybrid .ce .content_wrap {
+    /*    padding-right: 280px;*/
     margin-right: 280px;
-/*    마진병합 설명을 위해 고침*/
+    /*    마진병합 설명을 위해 고침*/
 }
 
 .hybrid .ce #content {
@@ -280,7 +292,7 @@ a {
 /* ----- hybrid ec Column Layout ----- 
 */
 
-.hybrid .ec .content_wrap{
+.hybrid .ec .content_wrap {
     margin-left: 280px;
 }
 
@@ -309,13 +321,13 @@ a {
     margin-right: 20px;
 }
 
-.fixed .cee .e1{
+.fixed .cee .e1 {
     display: block;
     float: left;
     width: 200px;
 }
 
-.fixed .cee .e2{
+.fixed .cee .e2 {
     display: block;
     float: right;
     width: 200px;
@@ -325,20 +337,20 @@ a {
 */
 
 .fixed .ece #content {
-    float:left;
+    float: left;
     left: 220px;
     width: 520px;
     margin-right: -100%;
 }
 
-.fixed .ece .e1{
+.fixed .ece .e1 {
     display: block;
     float: left;
     margin-right: 20px;
     width: 200px;
 }
 
-.fixed .ece .e2{
+.fixed .ece .e2 {
     display: block;
     float: right;
     width: 200px;
@@ -353,13 +365,13 @@ a {
     margin-left: 20px;
 }
 
-.fixed .eec .e1{
+.fixed .eec .e1 {
     display: block;
     float: left;
     width: 200px;
 }
 
-.fixed .eec .e2{
+.fixed .eec .e2 {
     display: block;
     float: right;
     width: 200px;
@@ -385,24 +397,25 @@ a {
     float: right;
     width: 20%;
 }
+
 /* ----- liquid ece Column Layout ----- 
 */
 
 .liquid .ece #content {
-    float:left;
+    float: left;
     left: 22%;
     width: 56%;
     margin-right: -100%;
 }
 
-.liquid .ece .e1{
+.liquid .ece .e1 {
     display: block;
     float: left;
     margin-right: 2%;
     width: 20%;
 }
 
-.liquid .ece .e2{
+.liquid .ece .e2 {
     display: block;
     float: right;
     width: 20%;
@@ -431,7 +444,8 @@ a {
 
 /* ----- hybrid cee Column Layout ----- 
 */
-.hybrid .cee .content_wrap{
+
+.hybrid .cee .content_wrap {
     margin-right: 480px;
 }
 
@@ -462,7 +476,7 @@ a {
 /* ----- hybrid ece Column Layout ----- 
 */
 
-.hybrid .ece .content_wrap{
+.hybrid .ece .content_wrap {
     margin: 0 240px;
 }
 
@@ -494,7 +508,7 @@ a {
 /* ----- hybrid eec Column Layout ----- 
 */
 
-.hybrid .eec .content_wrap{
+.hybrid .eec .content_wrap {
     margin-left: 480px;
 }
 
@@ -522,3 +536,10 @@ a {
     margin-right: -220px;
 }
 
+
+#devColor{
+    position: absolute;
+    left: 0;
+    top: 0;
+    position: fixed;
+}
