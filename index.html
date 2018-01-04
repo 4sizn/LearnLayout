@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>Multi Column Layout</title>
-    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="css/common.css">
 </head>
 
 <body>
@@ -25,114 +25,114 @@
         </div>
         <hr class="x2_hr">
         <div id="container" class="c">
-           <div class="content_wrap">
-            <div id="content">
-                <h2>Content</h2>
-                <h3>W3C Develops Web Standards and Guidelines</h3>
-                <p>
-                    <img src="images/c.gif" class="preview_img" alt="Dynamic Layout Preview" width="200" height="150"> W3C primarily pursues its mission through the creation of Web standards and guidelines. Since 1994, W3C has published more than 110 such standards, called W3C Recommendations. W3C also engages in education and outreach, develops software, and serves as an open forum for discussion about the Web. In order for the Web to reach its full potential, the most fundamental Web technologies must be compatible with one another and allow any hardware and software used to access the Web to work together. W3C refers to this goal as “Web interoperability.” By publishing open (non-proprietary) standards for Web languages and protocols, W3C seeks to avoid market fragmentation and thus Web fragmentation.
-                </p>
-                <p>
-                    Tim Berners-Lee and others created W3C as an industry consortium dedicated to building consensus around Web technologies. Mr. Berners-Lee, who invented the World Wide Web in 1989 while working at the European Organization for Nuclear Research (CERN), has served as the W3C Director since W3C was founded, in 1994.
-                </p>
-                <ul class="layout_lst">
-                    <li><a href="#" onclick="fixed(); c()" onmouseover="imgC()">FIXED C</a></li>
-                    <li><span class="bar"></span><a href="#" onclick="liquid(); c()" onmouseover="imgC()">LIQUID C</a></li>
-                    <li><span class="bar"></span><a href="#" onclick="hybrid(); c()" onmouseover="imgC()">HYBRID C</a></li>
-                    <li><span class="bar"></span><a href="#" onclick="fixed(); ce()" onmouseover="imgCE()">FIXED CE</a></li>
-                    <li><span class="bar"></span><a href="#" onclick="fixed(); ec()" onmouseover="imgEC()">FIXED EC</a></li>
-                    <li><span class="bar"></span><a href="#" onclick="liquid(); ce()" onmouseover="imgCE()">LIQUID CE</a></li>
-                    <li><span class="bar"></span><a href="#" onclick="liquid(); ec()" onmouseover="imgCE()">LIQUID EC</a></li>
-                    <li><span class="bar"></span><a href="#" onclick="hybrid(); ce()" onmouseover="imgCE()">HYBRID CE</a></li>
-                    <li><span class="bar"></span><a href="#" onclick="hybrid(); ec()" onmouseover="imgEC()">HYBRID EC</a></li>
-                    <li><span class="bar"></span><a href="#" onclick="fixed(); cee()" onmouseover="imgCEE()">FIXED CEE</a></li>
-                    <li><span class="bar"></span><a href="#" onclick="fixed(); ece()" onmouseover="imgECE()">FIXED ECE</a></li>
-                    <li><span class="bar"></span><a href="#" onclick="fixed(); eec()" onmouseover="imgEEC()">FIXED EEC</a></li>
-                    <li><span class="bar"></span><a href="#" onclick="liquid(); eec()" onmouseover="imgCEE()">LIQUID CEE</a></li>
-                    <li><span class="bar"></span><a href="# " onclick="liquid(); ece()" onmouseover="imgECE() ">LIQUID ECE</a></li>
-                    <li><span class="bar "></span><a href="# " onclick="liquid(); eec()" onmouseover="imgEEC()">LIQUID EEC</a></li>
-                    <li><span class="bar"></span><a href="#" onclick="hybrid(); cee()" onmouseover="imgCEE()">HYBRID CEE</a></li>
-                    <li><span class="bar"></span><a href="#" onclick="hybrid(); ece()" onmouseover="imgECE()">HYBRID ECE</a></li>
-                    <li><span class="bar "></span><a href="# " onclick="hybrid(); eec()" onmouseover="imgEEC() ">HYBRID EEC</a>
-                    </li>
-                </ul>
-            </div>
-            <article class="extension_wrap e1 ">
-                <section class="extension ">
-                    <h2>Extension 1</h2>
-                    <ul>
-                        <li>About W3C</li>
-                        <li>About W3C Membership</li>
-                        <li>About Supporters Program</li>
-                        <li>Introduction to Web Site</li>
-                        <li>Search, Site Index, Keywords</li>
-                        <li>Mail Archive Search</li>
-                        <li>FAQs</li>
+            <div class="content_wrap">
+                <div id="content">
+                    <h2>Content</h2>
+                    <h3>W3C Develops Web Standards and Guidelines</h3>
+                    <p>
+                        <img src="images/c.gif" class="preview_img" alt="Dynamic Layout Preview" width="200" height="150"> W3C primarily pursues its mission through the creation of Web standards and guidelines. Since 1994, W3C has published more than 110 such standards, called W3C Recommendations. W3C also engages in education and outreach, develops software, and serves as an open forum for discussion about the Web. In order for the Web to reach its full potential, the most fundamental Web technologies must be compatible with one another and allow any hardware and software used to access the Web to work together. W3C refers to this goal as “Web interoperability.” By publishing open (non-proprietary) standards for Web languages and protocols, W3C seeks to avoid market fragmentation and thus Web fragmentation.
+                    </p>
+                    <p>
+                        Tim Berners-Lee and others created W3C as an industry consortium dedicated to building consensus around Web technologies. Mr. Berners-Lee, who invented the World Wide Web in 1989 while working at the European Organization for Nuclear Research (CERN), has served as the W3C Director since W3C was founded, in 1994.
+                    </p>
+                    <ul class="layout_lst">
+                        <li><a href="#" data-layout ="fixed" data-con="c" onmouseover="changeImg(event)">FIXED C</a></li>
+                        <li><span class="bar"></span><a href="#" data-layout ="liquid" data-con="c" onmouseover="changeImg(event)">LIQUID C</a></li>
+                        <li><span class="bar"></span><a href="#" data-layout ="hybird" data-con="c" onmouseover="changeImg(event)">HYBRID C</a></li>
+                        <li><span class="bar"></span><a href="#" data-layout = "fixed" data-con="ce" onmouseover="changeImg(event)">FIXED CE</a></li>
+                        <li><span class="bar"></span><a href="#" data-layout = "fixed" data-con="ec" onmouseover="changeImg(event)">FIXED EC</a></li>
+                        <li><span class="bar"></span><a href="#" data-layout = "liquid" data-con="ce" onmouseover="changeImg(event)">LIQUID CE</a></li>
+                        <li><span class="bar"></span><a href="#" data-layout="liquid" data-con="ec"  onmouseover="changeImg(event)">LIQUID EC</a></li>
+                        <li><span class="bar"></span><a href="#" data-layout="hybrid" data-con="ce"   onmouseover="changeImg(event)">HYBRID CE</a></li>
+                        <li><span class="bar"></span><a href="#" data-layout="hybrid" data-con="ec"  onmouseover="changeImg(event)">HYBRID EC</a></li>
+                        <li><span class="bar"></span><a href="#" data-layout="fixed" data-con="cee"  onmouseover="changeImg(event)">FIXED CEE</a></li>
+                        <li><span class="bar"></span><a href="#" data-layout="fixed" data-con="ece"  onmouseover="changeImg(event)">FIXED ECE</a></li>
+                        <li><span class="bar"></span><a href="#" data-layout="fixed" data-con="eec"  onmouseover="changeImg(event)">FIXED EEC</a></li>
+                        <li><span class="bar"></span><a href="#" data-layout="liquid" data-con="cee"  onmouseover="changeImg(event)">LIQUID CEE</a></li>
+                        <li><span class="bar"></span><a href="#" data-layout="liquid" data-con="ece"  onmouseover="changeImg(event)">LIQUID ECE</a></li>
+                        <li><span class="bar "></span><a href="#" data-layout="liquid" data-con="eec"  onmouseover="changeImg(event)">LIQUID EEC</a></li>
+                        <li><span class="bar"></span><a href="#" data-layout="hybrid" data-con="cee"  onmouseover="changeImg(event)">HYBRID CEE</a></li>
+                        <li><span class="bar"></span><a href="#" data-layout="hybrid" data-con="ece"  onmouseover="changeImg(event)">HYBRID ECE</a></li>
+                        <li><span class="bar "></span><a href="#" data-layout="hybrid" data-con="eec"  onmouseover="changeImg(event)">HYBRID EEC</a>
+                        </li>
                     </ul>
-                </section>
-                <section class="extension ">
-                    <h2>Extension 1</h2>
-                    <ul>
-                        <li>About W3C</li>
-                        <li>About W3C Membership</li>
-                        <li>About Supporters Program</li>
-                        <li>Introduction to Web Site</li>
-                        <li>Search, Site Index, Keywords</li>
-                        <li>Mail Archive Search</li>
-                        <li>FAQs</li>
-                    </ul>
-                </section>
-                <section class="extension ">
-                    <h2>Extension 1</h2>
-                    <ul>
-                        <li>About W3C</li>
-                        <li>About W3C Membership</li>
-                        <li>About Supporters Program</li>
-                        <li>Introduction to Web Site</li>
-                        <li>Search, Site Index, Keywords</li>
-                        <li>Mail Archive Search</li>
-                        <li>FAQs</li>
-                    </ul>
-                </section>
-            </article>
-            <article class="extension_wrap e2 ">
-                <section class="extension ">
-                    <h2>Extension 1</h2>
-                    <ul>
-                        <li>About W3C</li>
-                        <li>About W3C Membership</li>
-                        <li>About Supporters Program</li>
-                        <li>Introduction to Web Site</li>
-                        <li>Search, Site Index, Keywords</li>
-                        <li>Mail Archive Search</li>
-                        <li>FAQs</li>
-                    </ul>
-                </section>
-                <section class="extension ">
-                    <h2>Extension 1</h2>
-                    <ul>
-                        <li>About W3C</li>
-                        <li>About W3C Membership</li>
-                        <li>About Supporters Program</li>
-                        <li>Introduction to Web Site</li>
-                        <li>Search, Site Index, Keywords</li>
-                        <li>Mail Archive Search</li>
-                        <li>FAQs</li>
-                    </ul>
-                </section>
-                <section class="extension ">
-                    <h2>Extension 1</h2>
-                    <ul>
-                        <li>About W3C</li>
-                        <li>About W3C Membership</li>
-                        <li>About Supporters Program</li>
-                        <li>Introduction to Web Site</li>
-                        <li>Search, Site Index, Keywords</li>
-                        <li>Mail Archive Search</li>
-                        <li>FAQs</li>
-                    </ul>
-                </section>
-            </article>
+                </div>
+                <article class="extension_wrap e1">
+                    <section class="extension ">
+                        <h2>Extension 1</h2>
+                        <ul>
+                            <li>About W3C</li>
+                            <li>About W3C Membership</li>
+                            <li>About Supporters Program</li>
+                            <li>Introduction to Web Site</li>
+                            <li>Search, Site Index, Keywords</li>
+                            <li>Mail Archive Search</li>
+                            <li>FAQs</li>
+                        </ul>
+                    </section>
+                    <section class="extension">
+                        <h2>Extension 1</h2>
+                        <ul>
+                            <li>About W3C</li>
+                            <li>About W3C Membership</li>
+                            <li>About Supporters Program</li>
+                            <li>Introduction to Web Site</li>
+                            <li>Search, Site Index, Keywords</li>
+                            <li>Mail Archive Search</li>
+                            <li>FAQs</li>
+                        </ul>
+                    </section>
+                    <section class="extension">
+                        <h2>Extension 1</h2>
+                        <ul>
+                            <li>About W3C</li>
+                            <li>About W3C Membership</li>
+                            <li>About Supporters Program</li>
+                            <li>Introduction to Web Site</li>
+                            <li>Search, Site Index, Keywords</li>
+                            <li>Mail Archive Search</li>
+                            <li>FAQs</li>
+                        </ul>
+                    </section>
+                </article>
+                <article class="extension_wrap e2">
+                    <section class="extension ">
+                        <h2>Extension 2</h2>
+                        <ul>
+                            <li>About W3C</li>
+                            <li>About W3C Membership</li>
+                            <li>About Supporters Program</li>
+                            <li>Introduction to Web Site</li>
+                            <li>Search, Site Index, Keywords</li>
+                            <li>Mail Archive Search</li>
+                            <li>FAQs</li>
+                        </ul>
+                    </section>
+                    <section class="extension">
+                        <h2>Extension 2</h2>
+                        <ul>
+                            <li>About W3C</li>
+                            <li>About W3C Membership</li>
+                            <li>About Supporters Program</li>
+                            <li>Introduction to Web Site</li>
+                            <li>Search, Site Index, Keywords</li>
+                            <li>Mail Archive Search</li>
+                            <li>FAQs</li>
+                        </ul>
+                    </section>
+                    <section class="extension">
+                        <h2>Extension 2</h2>
+                        <ul>
+                            <li>About W3C</li>
+                            <li>About W3C Membership</li>
+                            <li>About Supporters Program</li>
+                            <li>Introduction to Web Site</li>
+                            <li>Search, Site Index, Keywords</li>
+                            <li>Mail Archive Search</li>
+                            <li>FAQs</li>
+                        </ul>
+                    </section>
+                </article>
             </div>
         </div>
         <hr>
@@ -152,11 +152,11 @@
                 <li><span class="bar "></span></li>
                 <li class="item "><a href=" ">FAQs</a></li>
             </ul>
-            <div class="copyright "><a href="# ">NARADESIGN.
+            <div class="copyright "><a href="#">NARADESIGN.
             NET</a></div>
         </div>
     </div>
-    <script src="/src/app.js "></script>
+    <script src="src/app.js "></script>
 </body>
 
 </html>
