@@ -110,6 +110,11 @@ a {
     color: #66F;
 }
 
+.layout_lst a:hover{
+    font-weight: bold;
+    letter-spacing : -1;
+}
+
 .gnb_lst::after,
 .footer_lst::after,
 .layout_lst::after {

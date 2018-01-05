@@ -6,6 +6,9 @@ document.addEventListener("DOMContentLoaded", function(event){
 function domReady(){
     var datas = document.querySelectorAll('a');
     datas.forEach(()=>addEventListener('click', function(e){changeLayout(e)}));
+    
+    //use event capturing
+    datas.forEach(()=>addEventListener('mouseover', function(e){changeImg(e)}), true); 
 }
 
 //Initial Parameter Not Support in IE, Opera, Safari...
@@ -13,12 +16,13 @@ function domReady(){
 // document.getElementsByClassName(imgsrc)[0].src = 'images/' + e.target.getAttribute('data-con') + '.gif';
 }*/
 function changeImg(e){
+    if(e.target.getAttribute('data-layout')){
     document.getElementsByClassName('preview_img')[0].src = 'images/' + e.target.getAttribute('data-con') + '.gif';
+    }
 }
 
-
 function changeLayout(e){
-    if(e.target.parentNode.parentNode.className == 'layout_lst'){
+    if(e.target.getAttribute('data-layout')){
     document.getElementById('wrap').className = e.target.getAttribute('data-layout');   
     document.getElementById('container').className = e.target.getAttribute('data-con');
     changeImg(e);
