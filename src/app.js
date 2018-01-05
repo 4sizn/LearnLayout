@@ -7,11 +7,11 @@ function domReady(){
     var datas = document.querySelectorAll('a');
     datas.forEach(()=>addEventListener('click', function(e){changeLayout(e)}));
 }
+
 //Initial Parameter Not Support in IE, Opera, Safari...
 /*function changeImg(e, imgsrc = 'preview_img'){
 // document.getElementsByClassName(imgsrc)[0].src = 'images/' + e.target.getAttribute('data-con') + '.gif';
 }*/
-
 function changeImg(e){
     document.getElementsByClassName('preview_img')[0].src = 'images/' + e.target.getAttribute('data-con') + '.gif';
 }
@@ -27,7 +27,7 @@ function changeLayout(e){
 
 //dev.button - debug html layout construct
 function layoutDebug(button){
-    let colors =['#2C3E50', '#8E44AD', '#2980B9', '#27AE60', '#16A085', '#F39C12', '#D35400', '#EC0392B']; 
+    let colors =['#2C3E50', '#8E44AD', '#2980B9', '#27AE60', '#16A085', '#F39C12', '#D35400', '#EC0392B', 'yellow']; 
    
     if(button.value == "OFF"){
         button.value = "ON";

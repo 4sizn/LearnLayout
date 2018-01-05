@@ -1,5 +1,4 @@
 /*common.css*/
-
 article,
 aside,
 footer,
@@ -21,7 +20,8 @@ hr {
 .x2_hr {
     color: black;
     background-color: black;
-    height: 2px;
+    height: 1px;
+    margin-bottom: 2em;
 }
 
 li {
