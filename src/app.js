@@ -17,10 +17,11 @@ function domReady(){
     window.addEventListener('keypress', function(){layoutDebug(document.getElementsByClassName('layout_lst')[0])});
 }
 
-//Initial Parameter Not Support in IE, Opera, Safari...
+//Initial Parameter Not Support in IE 9, Opera, Safari...
 /*function changeImg(e, imgsrc = 'preview_img'){
 // document.getElementsByClassName(imgsrc)[0].src = 'images/' + e.target.getAttribute('data-con') + '.gif';
 }*/
+
 function changeImg(e){
     if(e.target.getAttribute('data-layout')){
     document.getElementsByClassName('preview_img')[0].src = 'images/' + e.target.getAttribute('data-con') + '.gif';
