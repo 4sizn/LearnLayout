@@ -1,4 +1,4 @@
-<html !DOCTYPE>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
     <title>
@@ -45,45 +45,43 @@
                 <section id="content">
                     <div class="reg_cont">
                         <h1 class="reg_tit">가입하기</h1>
-                        <div class="reg_detail">항상 지금처럼 무료로 즐기실 수 있습니다</div>
+                        <div class="reg_detail">항상 지금처럼 무료로 즐기실 수 있습니다.</div>
                     </div>
                     <form id="regFrm" action="post">
                         <div class="clearfix reg_name">
                             <div class="reg_lname">
                                 <div><label class="reg_placeholder" for="lname">성(姓)</label>
-                                    <span class="alert_types alert_exclam"></span>
                                 </div>
-                                <input id="lname" class="lname" type="text">
+                                <input id="lname" class="lname" type="text" data-invalid="true">
+                                <span class="alert_types alert_exclam"></span>
                             </div>
                             <div class="reg_fname">
                                 <div>
                                     <label class="reg_placeholder" for="fname">이름(성은 제외)</label>
-                                    <span class="alert_types alert_exclam"></span>
-                                    <span>
-         
-                                    </span>
                                 </div>
-                                <input class="fname" id="fname" type="text">
+                                <input class="fname" id="fname" type="text" data-invalid="true">
+                                <span class="alert_types alert_exclam"></span>
                             </div>
                         </div>
                         <div class="reg_ph_email">
                             <div>
-                                <label class="reg_placeholder" for="ph_email">휴대폰 번호 또는 이메일</label>                            <span class="alert_types alert_exclam"></span>
+                                <label class="reg_placeholder" for="ph_email">휴대폰 번호 또는 이메일</label>                            
                             </div>
-                            <input class="ph_email" id="ph_email" type="text">
+                            <input class="ph_email" id="ph_email" type="text" data-invalid="true">
+                            <span class="alert_types alert_exclam"></span>
                         </div>
                         <div class="reg_ph display_none">
                             <div>
                                 <label class="reg_placeholder" for="ph">휴대폰 번호</label>
-                                                            <span class="alert_types alert_exclam"></span>
+
                             </div>
-                            <input class="ph" id="ph" type="text">                            <span class="alert_types alert_exclam"></span>
+                            <input class="ph" id="ph" type="text" data-invalid="true">                            <span class="alert_types alert_exclam"></span>
                         </div>
                         <div class="reg_newpsw">
                             <div>
                                 <label class="reg_placeholder" for="newpsw">새 비밀번호</label>
                             </div>
-                            <input class="newpsw" id="newpsw" type="text">                            <span class="alert_types alert_exclam"></span>
+                            <input class="newpsw" id="newpsw" type="text" data-invalid="true">                            <span class="alert_types alert_exclam"></span>
                         </div>
                         <div class="reg_birth">
                             <div class="birth_tit">
@@ -96,9 +94,9 @@
     
                         <div class="reg_sex">
                            <div class="reg_woman">
-                               <input type="radio" name="sex" value="1" id="woman"><label for="woman">여성</label></div>
+                               <input type="radio" name="sex" value="1" id="woman" data-invalid="true"><label for="woman">여성</label></div>
                                <div class="reg_man">
-                               <input type="radio" name="sex" value="2" id="man"><label for="man">남성</label>
+                               <input type="radio" name="sex" value="2" id="man" ><label for="man">남성</label>
                                </div>
                             <span class="alert_types alert_exclam"></span>
                         </div>
@@ -110,8 +108,7 @@
                             유명인, 밴드, 비즈니스를 위한 <a href="">페이지 만들기</a>
                         </div>
                     </form>
-                </section>
-            <div class="wrap_layer_pointer birth_pointer">
+                       <div class="wrap_layer_pointer birth_pointer" data-valid=false>
             <div class="tooltip_container">
                 <div class="tooltip_content t_c_birth">
                     <p>생일을 입력하면 회원님의 연령에 맞는 Facebook 환경을 이용할 수 있습니다. 프로필의 정보 섹션에서 이 정보의 공개 범위를 변경할 수 있습니다. 자세한 내용은 데이터 정책에서 확인해주세요.</p>
@@ -120,30 +117,32 @@
                     <button>확인</button></div>
             </div>
         </div>
-        <div class="wrap_layer_pointer lname_pointer">
+        <div class="wrap_layer_pointer lname_pointer" data-valid="false">
             <div class="tooltip_container">
                 <div class="tooltip_content t_c_lname">
                     <p>이름이 무엇인가요?</p>
                 </div>
             </div>
         </div>
-        <div class="wrap_layer_pointer fname_pointer">
+        <div class="wrap_layer_pointer fname_pointer" data-valid="false">
             <div class="tooltip_container">
                 <div class="tooltip_content t_c_fname">
                     <p>이름이 무엇인가요?</p>
                 </div>
             </div>
         </div>
-        <div class="wrap_layer_pointer ph_email_pointer">
+        <div class="wrap_layer_pointer ph_email_pointer" data-valid="false">
             <div class="tooltip_container">
                 <div class="tooltip_content t_c_ph_email">
                     <p>로그인할 때와 비밀번호를 재설정해야 할 때 사용하는 정보입니다.</p>
                 </div>
             </div>
         </div>
-        <div class="wrap_layer_pointer ph_email_pointer"></div>
+                </section>
+               
+            </div>
         </div>
-        <footer id="footer">
+          <footer id="footer">
             <div class="footer_inner">
                 <ul class="local_lst">
                     <li><a href="">한국어</a></li>
@@ -212,7 +211,8 @@
                 </div>
             </div>
         </footer>
-        </div>
     </div>    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="./src/app.js"></script>
 </body>
 </html>
