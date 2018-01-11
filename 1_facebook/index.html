@@ -52,14 +52,14 @@
                             <div class="reg_lname">
                                 <div><label class="reg_placeholder" for="lname">성(姓)</label>
                                 </div>
-                                <input id="lname" class="lname" type="text" data-invalid="true">
+                                <input id="lname" class="lname" type="text">
                                 <span class="alert_types alert_exclam"></span>
                             </div>
                             <div class="reg_fname">
                                 <div>
                                     <label class="reg_placeholder" for="fname">이름(성은 제외)</label>
                                 </div>
-                                <input class="fname" id="fname" type="text" data-invalid="true">
+                                <input class="fname" id="fname" type="text">
                                 <span class="alert_types alert_exclam"></span>
                             </div>
                         </div>
@@ -67,7 +67,7 @@
                             <div>
                                 <label class="reg_placeholder" for="ph_email">휴대폰 번호 또는 이메일</label>                            
                             </div>
-                            <input class="ph_email" id="ph_email" type="text" data-invalid="true">
+                            <input class="ph_email" id="ph_email" type="text">
                             <span class="alert_types alert_exclam"></span>
                         </div>
                         <div class="reg_ph display_none">
@@ -75,13 +75,13 @@
                                 <label class="reg_placeholder" for="ph">휴대폰 번호</label>
 
                             </div>
-                            <input class="ph" id="ph" type="text" data-invalid="true">                            <span class="alert_types alert_exclam"></span>
+                            <input class="ph" id="ph" type="text">                            <span class="alert_types alert_exclam"></span>
                         </div>
                         <div class="reg_newpsw">
                             <div>
                                 <label class="reg_placeholder" for="newpsw">새 비밀번호</label>
                             </div>
-                            <input class="newpsw" id="newpsw" type="text" data-invalid="true">                            <span class="alert_types alert_exclam"></span>
+                            <input class="newpsw" id="newpsw" type="text">                            <span class="alert_types alert_exclam"></span>
                         </div>
                         <div class="reg_birth">
                             <div class="birth_tit">
@@ -103,12 +103,12 @@
     
                         <p class="reg_info">계정 만들기 버튼을 클릭하면, Facebook의 <a href="">약관</a>에 동의하며 <a href="">쿠키 사용</a>을 포함한 Facebook <a href="">데이터 정책</a>을 읽었음을 인정하게 됩니다. Facebook으로부터 SMS 알림을 받을 수 있으며 알림은 언제든지 옵트 아웃할 수 있습니다.</p>
     
-                        <div><button class="register_btn" type="submit">계정만들기</button><img src="./images/loading.gif" alt="" width="16" height="11"></div>
+                        <div><button class="register_btn" type="submit">계정만들기</button><img src="./images/loading.gif" class= "display_none" alt="loading images" width="16" height="11"></div>
                         <div class="reg_pages_msg">
                             유명인, 밴드, 비즈니스를 위한 <a href="">페이지 만들기</a>
                         </div>
                     </form>
-                       <div class="wrap_layer_pointer birth_pointer" data-valid=false>
+        <div class="content_layer_pointer birth_pointer">
             <div class="tooltip_container">
                 <div class="tooltip_content t_c_birth">
                     <p>생일을 입력하면 회원님의 연령에 맞는 Facebook 환경을 이용할 수 있습니다. 프로필의 정보 섹션에서 이 정보의 공개 범위를 변경할 수 있습니다. 자세한 내용은 데이터 정책에서 확인해주세요.</p>
@@ -117,24 +117,32 @@
                     <button>확인</button></div>
             </div>
         </div>
-        <div class="wrap_layer_pointer lname_pointer" data-valid="false">
+        <div class="content_layer_pointer lname_pointer" data-target="lname">
             <div class="tooltip_container">
                 <div class="tooltip_content t_c_lname">
                     <p>이름이 무엇인가요?</p>
+                    <span class="sub_types sub_arrowup"></span>
                 </div>
             </div>
         </div>
-        <div class="wrap_layer_pointer fname_pointer" data-valid="false">
+        <div class="content_layer_pointer fname_pointer" data-target="fname">
             <div class="tooltip_container">
                 <div class="tooltip_content t_c_fname">
                     <p>이름이 무엇인가요?</p>
                 </div>
             </div>
         </div>
-        <div class="wrap_layer_pointer ph_email_pointer" data-valid="false">
+        <div class="content_layer_pointer ph_email_pointer" data-target="ph_email">
             <div class="tooltip_container">
                 <div class="tooltip_content t_c_ph_email">
                     <p>로그인할 때와 비밀번호를 재설정해야 할 때 사용하는 정보입니다.</p>
+                </div>
+            </div>
+        </div>
+        <div class="content_layer_pointer newpsw_pointer" data-target="newpsw">
+            <div class="tooltip_container">
+                <div class="tooltip_content t_c_psw">
+                    <p>숫자, 영문, 특수기호(!, & 등)를 조합한 여섯 자리 이상의 비밀번호를 입력하세요.</p>
                 </div>
             </div>
         </div>
