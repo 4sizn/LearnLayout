@@ -1,3 +1,5 @@
+/*common.css*/
+
 body, button, input, label, select, textarea, td{
     font-family: Helvetica, Arial, sans-serif;
     font-size: 12px;
@@ -12,6 +14,18 @@ select{
 body{
     margin: 0;
     padding: 0;
+    line-height: 1.34;
+}
+
+figure{
+    margin: 0;
+    padding:  0;
+}
+
+ul{
+   list-style-type: none;
+    margin: 0;
+    padding :0;
 }
 
 a{
@@ -25,8 +39,175 @@ input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
     color: rgb(0, 0, 0);
 }
 
+.hidden{
+    visibility: hidden;
+}
+
+.display_none{
+    display: none;
+}
+
+.clearfix::after{
+    display: block;
+    clear: both;
+    content: '';
+}
+
+.line{
+    height: 8px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid #dddfe2;
+}
+
+/*layout.css*/
+
+section{
+    float: right;
+    width: 400px;
+}
+
+#aside{
+    float: left;
+    width: 565px;
+}
+
+#content{
+    position: relative;
+    padding-bottom: 30px;
+}
+
+.content_gradient{
+    background: linear-gradient(white, #D3D8E8);
+}
+
+.gnb{
+    min-width: 980px;
+    border-bottom: 1px solid #133783;
+    background-color: #3b5998;
+    background-image : linear-gradient(#4e69a2, #3b5998 50%);
+}
+
+.gnb_inner{
+    position: relative;
+    width: 980px;
+    margin: 0 auto;
+    padding-top: 13px;
+}
+
+.gnb_inner::after{
+    display: block;
+    clear: both;
+    content: "";
+}
+
+.content_wrap{
+    min-width: 980px;
+}
+
+.content_inner{
+    margin: 0 auto;
+    width: 980px;
+}
+
+.content_inner::after{
+    display: block;   
+    clear: both;
+    content: '';
+}
+
+#footer{
+    width: 980px;
+    margin: 0 auto;
+    min-width: 980px;
+    padding-top: 30px;
+}
+
+.footer_inner{
+    width: 980px;
+    margin: 0 auto;
+}
+
+#aside .title{
+    width:450px;
+    margin-top: 40px;
+    color: #0e385f;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 29px;
+    word-spacing: -1px;
+}
+
+.gnb .logo{
+    float: left;
+    margin: 0;
+    padding: 0;
+}
+
+.gnb .logo a{
+    color: #fff;
+}
+
+.gnb .logo_img{
+    display: inline-block;
+    width: 170px;
+    height: 33px;
+    margin-top: 17px;
+    background-image: url(/images/facebook_logo.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: 0 0;
+}
+
+.gnb .login_tb{
+    float:right; 
+}
+
+.gnb .logo_txt{
+    position: absolute;
+    left: -9999px;
+}
+
+#footer table tr td:nth-child(1){
+    padding-left: 0;
+}
+
+#footer table td{
+    padding: 0 10px;
+    line-height: 20px;
+}
+
+#loginFrm{
+    float: right;
+}
+
+#loginFrm::after{
+    display: block;
+    clear: both;
+    content: '';
+}
+
+.login_tb input{
+    width: 142px;
+    padding: 3px 4px 3px 3px;
+    border: 1px solid #1d2a5b;
+    width: 142px;
+}
 .login_tb td{
     padding-left: 14px;
+}
+
+#loginFrm .login_tb label{
+    padding-left: 1px;
+    color: #fff;
+    font-weight: normal;
+}
+
+.login_btn{
+    border-color: #29487d;
+    background-color: #4267b2;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;   
 }
 
 #regFrm input+span{
@@ -60,15 +241,10 @@ input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
     box-sizing: content-box;
 }
 
-ul{
-   list-style-type: none;
-    margin: 0;
-    padding :0;
-}
-
 .reg_name{
     width: 399px;
 }
+
 .reg_lname{
     float: left;
     margin-right: 8px;
@@ -77,16 +253,15 @@ ul{
 }
 .reg_fname{
     float: right;
-      margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 .content_layer_pointer{
     position: absolute;
-    z-index: 4;
     top: 0;
     left: -9999px;
+    z-index: 4;
 }
-
 
 .lname_pointer[data-focus=true]{
     top: 150px;
@@ -113,12 +288,6 @@ ul{
     left: -130px;
 }
 
-.clearfix::after{
-    content: '';
-    clear: both;
-    display: block;
-}
-
 .reg_lname, .reg_fname, .reg_ph_email, .reg_ph, .reg_newpsw{
     position: relative;
     margin-bottom: 10px;
@@ -138,152 +307,51 @@ ul{
 
 .reg_placeholder{
     position: absolute;
-    left: 0;
-    z-index: 2;
     top: 0;
-    color: #999;
+    left: 0;
     width: 100%;
-    padding :8px 10px;
+    z-index: 2;
+    color: #999;
     padding :8px 10px;
     font-size: 18px;
-    
-}
-
-.local_lst li:last-child a{
-    background-color: #f6f7f9;
-    border: 1px solid #ced0d4;
-    border-radius: 2px;
-    height: 18px;
-    display: inline-block;
-    padding: 0 8px;
-    line-height: 18px;
-    box-sizing: content-box;
-    text-align: center;
-    vertical-align: middle;
-}
-figure{
-    margin: 0;
-    padding:  0;
 }
 
 .reg_info{
+    width:316px;
     color: #777;
     font-size: 11px;
-    width:316px;
-}
-
-[for$="man"]{
-    font-size: 18px;
-    line-height: 18px;
-    padding: 0 10px 0 3px;
-    color: #1d2129;
-    vertical-align: middle;
-    
 }
 
 .reg_sex::after{
-    content: '';
     display: block;
     clear: both;
+    content: '';
 }
+
 .reg_woman, .reg_man{
     float: left;
-    border: 1px;
-    border-radius: 4px;
     padding: 5px 0 5px 4px;
     margin-right: 4px;
+    border: 1px;
+    border-radius: 4px;
 }
 
 .reg_sex{
     position: relative;
 }
+
+[for$="man"]{
+    padding: 0 10px 0 3px;
+    font-size: 18px;
+    line-height: 18px;
+    color: #1d2129;
+    vertical-align: middle;
+}
+
 .birth_tit{
     color: #1d2129;
     font-size: 18px;
     margin: 10px 0 5px;
-}
-
-.icon_types{
-    background-image: url(/images/facebook_icon_types.png);
-    background-repeat: no-repeat;
-    display: inline-block;
-}
-
-.sub_types{
-    background-image: url(/images/facebook_sub_types.png);
-    background-repeat: no-repeat;
-    display: inline-block;
-    position: absolute;
-}
-
-.btn_types{
-    background-image: url(/images/facebook_btn_types.png);
-    background-repeat: no-repeat;
-    display: inline-block;
-}
-
-.alert_types{
-    background-image: url(/images/facebook_alert_types.png);
-    background-repeat: no-repeat;
-    display: inline-block;
-}
-
-.btn_more{
-    background-position: -229px -70px;
-    background-size: 500px 102px;
-    width: 12px;
-    height: 12px;
-    vertical-align: middle;
-}
-
-.sub_arrowup{
-    background-size: 21px; 635px;
-    background-position: 0 -117px;
-    height: 11px;
-    margin-left: 12px;
-    width: 22px;
-}
-
-.sub_arrowright{
-    background-size: 21px; 635px;
-    background-position: 0 -83px;
-    height: 22px;
-    margin-top: 12px;
-    width: 11px;
-}
-
-.alert_exclam{
-    background-position: 0 -43px;
-    background-size: 43px 103px;
-    height: 21px;
-    width: 21px;
-    position: absolute;
-    right: 9px;
-    top: 9px;
-}
-
-.icon_adchoice{
-    width: 16px;
-    height: 16px;
-    background-size: 171px 88px;
-    background-position: 0 -71px;
-    vertical-align: middle;
-    
-}
-
-#content{
-    padding-bottom: 30px;
-    position: relative;
-}
-
-#loginFrm{
-    float: right;
-}
-
-#loginFrm::after{
-    content: '';
-    display: block;
-    clear: both;
 }
 
 .reg_cont{
@@ -291,17 +359,10 @@ figure{
 }
 
 .reg_tit{
+    margin: 0 0 3px 0;
     font-size: 36px;
     color: #333;
     font-weight: bold;
-    margin: 0 0 3px 0;
-}
-.display_none{
-    display: none;
-}
-
-.hidden{
-    visibility: hidden;
 }
 
 .reg_detail{
@@ -309,156 +370,72 @@ figure{
     font-size: 19px;
 }
 
+.reg_birth_help{
+    cursor: pointer;
+    font-size: 11px;
+    margin-left: 10px;
+}
+
+
 .reg_sex{
     padding-top: 10px;
 }
 
-#loginFrm .login_tb input{
-    padding-bottom: 4px;
-    width: 142px;
-    border: 1px solid #1d2a5b;
-    padding: 3px;
-}
-
-#loginFrm .login_tb label{
-    color: #fff;
-    font-weight: normal;
-    padding-left: 1px;
-}
-#aside .title{
-    color: #0e385f;
-    font-size: 20px;
-    font-weight: bold;
-    line-height: 29px;
-    margin-top: 40px;
-    width:450px;
-    word-spacing: -1px;
-}
-
-.gnb{
-    background-color: #3b5998;
-    background-image : linear-gradient(#4e69a2, #3b5998 50%);
-    border-bottom: 1px solid #133783;
-    min-width: 980px;
-}
-
-.content_wrap{
-    min-width: 980px;
-}
-
-
-.login_btn{
- background-color: #4267b2;
-    border-color: #29487d;
-    color: #fff;
-    font-size: 12px;
-    font-weight: bold;
-}
-
 .reg_pages_msg{
-    color: #666;
     margin-top: 10px;
     padding-top: 15px;
+    border-top: 1px solid #dddfe2;
+    color: #666;
     font-weight: bold;
     font-size: 13px;
-    border-top: 1px solid #dddfe2;
-}
-
-.gnb_inner::after{
-    content: "";
-    display: block;
-    clear: both;
 }
 
 .register_btn{
-    font-size: 19px;
-    font-weight: bold;
-    background: linear-gradient(#67ae55, #578843);
-    background-color: #69a74e;
-    border: 1px solid;
-    border-color: #3b6e22 #3b6e22 #2c5115;
-    
-    border-radius: 5px;
-    letter-spacing: 1px;
+    width: 194px;
     margin: 10 0;
     padding: 7px 20px;
+    border: 1px solid;
+    border-color: #3b6e22 #3b6e22 #2c5115;
+    border-radius: 5px;
+    background: linear-gradient(#67ae55, #578843);
+    background-color: #69a74e;
+    letter-spacing: 1px;
     text-align: center;
-    width: 194px;
-    color: #fff;
     text-shadow: 0 1px 2px rgba(0, 0, 0, .5);
-    
-}
-.gnb .logo{
-    float: left;
-    margin: 0;
-    padding: 0;
-}
-
-.gnb .logo a{
+    font-size: 19px;
     color: #fff;
-}
-
-.gnb .logo_img{
-    display: inline-block;
-    background-image: url(/images/facebook_logo.png);
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    background-position: 0 0;
-    width: 170px;
-    height: 33px;
-    margin-top: 17px;
+    font-weight: bold;
 }
 
 .lost_account_msg a{
     color: #9cb4d8;
 }
 
-.gnb_inner{
-    width: 980px;
-    margin: 0 auto;
-    padding-top: 13px;
-    position: relative;
-}
 
-.gnb .login_tb{
-    float:right; 
-}
-
-.gnb .logo_txt{
-    position: absolute;
-    left: -9999px;
-}
-
-.login_tb input{
-    width: 142px;
-}
-
-#aside{
-    float: left;
-    width: 565px;
-}
-
-section{
-    float: right;
-    width: 400px;
-}
-
-.content_inner{
-    margin: 0 auto;
-    width: 980px;
-}
-.aside .title{
-    color: #0e385f;
-    font-size: 20px;
-    font-weight: bold;
-    line-height: 29px;
-    margin-top: 40px;
-    width: 450px;
-    word-spacing: -1px;
+.local_lst{
+    padding-top: 10px;
 }
 
 .local_lst li{
     float: left;
+    padding-left: 10px;
+}
+
+.local_lst li:first-child{
+    padding-left: 0;
+}
+
+.local_lst li:last-child a{
+    display: inline-block;
+    height: 18px;
+    padding: 0 8px;
+    border: 1px solid #ced0d4;
+    border-radius: 2px;
+    background-color: #f6f7f9;
+    line-height: 18px;
+    box-sizing: content-box;
+    text-align: center;
+    vertical-align: middle;
 }
 
 .local_lst::after{
@@ -467,74 +444,28 @@ section{
     display: block;
 }
 
-.line{
-    border-bottom: 1px solid #dddfe2;
-    height: 8px;
-    margin-bottom: 8px;
-}
-
-.content_gradient{
-    background: linear-gradient(white, #D3D8E8);
-}
-
-#footer{
-    width: 980px;
-    margin: 0 auto;
-    min-width: 980px;
-    padding-top: 30px;
-}
-
-#footer table td{
-    padding: 0 10px;
-}
-.content_inner::after{
-    clear: both;
-    content: '';
-    display: block;
-    
-}
-.footer_inner{
-    margin: 0 auto;
-    width: 980px;
-}
-
-.local_lst{
-    padding-top: 10px;
-}
-.local_lst li{
-    padding-left: 10px;
-}
-
 .copyright{
     margin: 20px 0;
     font-size: 11px;
     color: #737373;
 }
 
-#modalWrap{
- position: absolute;   
-}
 
-.reg_birth_help{
-    cursor: pointer;
-    font-size: 11px;
-    margin-left: 10px;
-}
 .tooltip_content{
     position: relative;
 }
 
 .tooltip_content p{
     position: absolute;
-    border-radius: 2px;
     width: 268px;
-    color: #fff;
-    border: 0;
-    box-shadow: 0 0 0 1px rgba(139, 3, 0, .75), 0 1px 10px rgba(0, 0, 0, .35);
-    background-color: #be4b49;
-    line-height: 1.34;
     padding: 13px;
     margin: 0;
+    border: 0;
+    border-radius: 2px;
+    color: #fff;
+    line-height: 1.34;
+    box-shadow: 0 0 0 1px rgba(139, 3, 0, .75), 0 1px 10px rgba(0, 0, 0, .35);
+    background-color: #be4b49;
 }
 
 .t_c_lname p{
@@ -551,33 +482,103 @@ section{
     left: 0px;
 }
 
+.t_c_birth{
+    background-color: white;
+}
+
 .newpsw_pointer p{
     top: 5px;
     left: 0px;
 }
 
-
 .fname_pointer p, .lname_pointer p{
     width: 100px;
 }
 
-.t_c_birth{
-    background-color: white;
-}
-
-
 .tooltip_footer{
     position: relative;
-    background-color: #f2f2f2;
-    border: 1px solid #ccc;
     height: 24px;
     padding: 6px 7px 8px 6px;
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
 }
 
 .tooltip_footer button{
-    color: #fff;
-    background-color: #4267b2;
-    border: 1px solid #4267b2;
     position: absolute;
     right: 7px;
+    border: 1px solid #4267b2;
+    color: #fff;
+    background-color: #4267b2;
+}
+
+/*img.css*/
+
+.icon_types{
+    display: inline-block;
+    background-image: url(/images/facebook_icon_types.png);
+    background-repeat: no-repeat;
+}
+
+.sub_types{
+    display: inline-block;
+    background-image: url(/images/facebook_sub_types.png);
+    background-repeat: no-repeat;   
+}
+
+.btn_types{
+    display: inline-block;
+    background-image: url(/images/facebook_btn_types.png);
+    background-repeat: no-repeat;
+}
+
+.alert_types{
+    display: inline-block;
+    background-image: url(/images/facebook_alert_types.png);
+    background-repeat: no-repeat;
+}
+
+.btn_more{
+    position: relative;
+    bottom: 1px;
+    width: 12px;
+    height: 12px;
+    background-position: -229px -70px;
+    background-size: 500px 102px;
+    vertical-align: middle;
+}
+
+.sub_arrowup{
+    position: absolute;
+    width: 22px;
+    height: 11px;
+    background-size: 21px; 635px;
+    background-position: 0 -117px;
+    margin-left: 12px;
+}
+
+.sub_arrowright{
+    position: absolute;
+    width: 11px;
+    height: 22px;
+    background-size: 21px; 635px;
+    background-position: 0 -83px;
+    margin-top: 12px;
+}
+
+.alert_exclam{
+    position: absolute;
+    right: 9px;
+    top: 9px;
+    width: 21px;
+    height: 21px;
+    background-position: 0 -43px;
+    background-size: 43px 103px;
+}
+
+.icon_adchoice{
+    width: 16px;
+    height: 16px;
+    background-size: 171px 88px;
+    background-position: 0 -71px;
+    vertical-align: middle;
 }
