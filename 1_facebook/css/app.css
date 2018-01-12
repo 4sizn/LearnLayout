@@ -152,7 +152,7 @@ section{
     width: 170px;
     height: 33px;
     margin-top: 17px;
-    background-image: url(/images/facebook_logo.png);
+    background-image: url(../images/facebook_logo.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-position: 0 0;
@@ -515,25 +515,25 @@ section{
 
 .icon_types{
     display: inline-block;
-    background-image: url(/images/facebook_icon_types.png);
+    background-image: url(../images/facebook_icon_types.png);
     background-repeat: no-repeat;
 }
 
 .sub_types{
     display: inline-block;
-    background-image: url(/images/facebook_sub_types.png);
+    background-image: url(../images/facebook_sub_types.png);
     background-repeat: no-repeat;   
 }
 
 .btn_types{
     display: inline-block;
-    background-image: url(/images/facebook_btn_types.png);
+    background-image: url(../images/facebook_btn_types.png);
     background-repeat: no-repeat;
 }
 
 .alert_types{
     display: inline-block;
-    background-image: url(/images/facebook_alert_types.png);
+    background-image: url(../images/facebook_alert_types.png);
     background-repeat: no-repeat;
 }
 
