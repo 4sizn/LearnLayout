@@ -33,12 +33,24 @@ input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
     display:none;
 }
 
+#regFrm .reg_sex span{
+    display: none;
+}
+
+#regFrm .reg_sex[data-invalid=true] span{
+    display:inline-block;
+}
+
 #regFrm input[data-invalid=true]+span{
     display:inline-block;
 }
 
 #regFrm input[data-invalid=true]{
     border-color: red;
+}
+
+#regFrm .reg_sex[data-invalid=true] div{
+    border: 1px solid red;
 }
 
 #regFrm input{
@@ -70,7 +82,7 @@ ul{
 
 .content_layer_pointer{
     position: absolute;
-    z-index: 4px;
+    z-index: 4;
     top: 0;
     left: -9999px;
 }
@@ -82,13 +94,18 @@ ul{
 }
 
 .fname_pointer[data-focus=true]{
-    top: 150px;
-    left: 250px;
+    top: 100px;
+    left: 205px;
+}
+
+.ph_email_pointer[data-focus=true]{
+    top: 155px;
+    left: -315px;   
 }
 
 .newpsw_pointer[data-focus=true]{
-    top: 150px;
-    left:530px;
+    top: 210px;
+   left: -315px;  
 }
 
 .birth_pointer[data-focus=true]{
@@ -171,8 +188,9 @@ figure{
 }
 .reg_woman, .reg_man{
     float: left;
-    border-radius: 5px;
-    padding: 5px 4px 0 5px;
+    border: 1px;
+    border-radius: 4px;
+    padding: 5px 0 5px 4px;
     margin-right: 4px;
 }
 
@@ -222,9 +240,16 @@ figure{
     background-size: 21px; 635px;
     background-position: 0 -117px;
     height: 11px;
-    top: 7px;
     margin-left: 12px;
     width: 22px;
+}
+
+.sub_arrowright{
+    background-size: 21px; 635px;
+    background-position: 0 -83px;
+    height: 22px;
+    margin-top: 12px;
+    width: 11px;
 }
 
 .alert_exclam{
@@ -273,6 +298,10 @@ figure{
 }
 .display_none{
     display: none;
+}
+
+.hidden{
+    visibility: hidden;
 }
 
 .reg_detail{
@@ -497,7 +526,7 @@ section{
 
 .tooltip_content p{
     position: absolute;
-    
+    border-radius: 2px;
     width: 268px;
     color: #fff;
     border: 0;
@@ -512,17 +541,24 @@ section{
     top: 18px;
 }
 
-t_c_lname, t_c_fname, t_c_email, .t_c_ph_email{
+.t_c_fname p{
+    top: 9px;
+    left: -143px;
+}
+
+.t_c_ph_email p{
+    top: 9px;
+    left: 0px;
+}
+
+.newpsw_pointer p{
+    top: 5px;
+    left: 0px;
 }
 
 
 .fname_pointer p, .lname_pointer p{
     width: 100px;
-}
-
-.ph_email_pointer[data-focus=true]{
-    top: 155px;
-    left: -300px;   
 }
 
 .t_c_birth{

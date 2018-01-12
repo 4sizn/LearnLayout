@@ -4,6 +4,7 @@
 $(document).ready(function(){
     $('#loginFrm').submit(function(){
         alert("submit");
+        validationForm();
     });
 
     $('#regFrm').submit(function(){
@@ -12,12 +13,15 @@ $(document).ready(function(){
     });
 
     $('input').focusin(function(){
-        if(this.value === ''){
+        if(this.value.length == 0){
             validationTooltip(this.id, true);
         }
     }).focusout(function(){
-        if(this.value === ''){
+        if(this.value.length == 0){
             $(this).attr('data-invalid', true);
+        }
+        else{
+            $(this).removeAttr('data-invalid');
         }
         validationTooltip(this.id, false);
     });
@@ -38,8 +42,13 @@ if(id === 'undefined'){
 }
 
 function validationForm(){
-    alert($('#loginFrm > [data-invalid]'));
+    if($(this).parent == $('#loginFrm')){
+        
+    }
+    else if($(this).parent == $('#regFrm')){
+    }
 }
+
 
 function foo(){
     alert("fopo");
