@@ -2,6 +2,7 @@
 
 //dom on ready
 $(document).ready(function(){
+    
     $('#loginFrm').submit(function(){
         return validationForm();
     });
@@ -9,6 +10,14 @@ $(document).ready(function(){
     $('#regFrm').submit(function(){
          return validationForm(()=>validationRadio());
     });
+
+    $('.btn_birth').click(function(){
+       $('.birth_pointer').removeAttr('data-focus');
+    });
+
+    $('.reg_birth_help').click(function(){
+        $('.birth_pointer').attr('data-focus', true);
+     });
     
     $('input').focusin(function(){
         if(this.value == ''){
@@ -23,6 +32,8 @@ $(document).ready(function(){
         }
         validationTooltip(this.id, false);
     });
+    
+    
 });
 
 function validationTooltip(id, flag){

@@ -285,7 +285,7 @@ section{
 
 .birth_pointer[data-focus=true]{
     top: 300px;
-    left: -130px;
+    left: -320px;
 }
 
 .reg_lname, .reg_fname, .reg_ph_email, .reg_ph, .reg_newpsw{
@@ -456,7 +456,7 @@ section{
 }
 
 .tooltip_content p{
-    position: absolute;
+     position: absolute;
     width: 268px;
     padding: 13px;
     margin: 0;
@@ -482,8 +482,12 @@ section{
     left: 0px;
 }
 
-.t_c_birth{
+.t_c_birth p{
+    position: relative;
+    color: #1d2129;
+    border-radius: 0px;
     background-color: white;
+    padding: 15px;
 }
 
 .newpsw_pointer p{
@@ -556,6 +560,16 @@ section{
     margin-left: 12px;
 }
 
+.btn_arrowright{
+    position: absolute;
+    right: -10px;
+    top: 15px;
+    z-index: 5;
+    width: 9px;
+    height: 16px;
+    background-position: -410px -49px;
+    background-size: 500px 102px;
+}
 .sub_arrowright{
     position: absolute;
     width: 11px;
