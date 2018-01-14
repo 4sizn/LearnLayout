@@ -48,19 +48,19 @@
                         <h1 class="reg_tit">가입하기</h1>
                         <div class="reg_detail">항상 지금처럼 무료로 즐기실 수 있습니다.</div>
                     </div>
-                    <form id="regFrm">
+                    <form id="regFrm" name="regFrm" >
                         <div class="clearfix reg_name">
                             <div class="reg_lname">
-                                <div><label class="reg_placeholder hidden" for="lname">성(姓)</label>
+                                <div><label class="reg_placeholder hidden" for="lname" >성(姓)</label>
                                 </div>
-                                <input id="lname" class="lname" type="text" placeholder="성(姓)">
+                                <input id="lname" name='lname' class="lname" type="text" placeholder="성(姓)">
                                 <span class="alert_types alert_exclam"></span>
                             </div>
                             <div class="reg_fname">
                                 <div>
                                     <label class="reg_placeholder hidden" for="fname">이름(성은 제외)</label>
                                 </div>
-                                <input class="fname" id="fname" type="text" placeholder="이름(성은 제외)">
+                                <input class="fname" name="fname" id="fname" type="text" placeholder="이름(성은 제외)">
                                 <span class="alert_types alert_exclam"></span>
                             </div>
                         </div>
@@ -68,7 +68,7 @@
                             <div>
                                 <label class="reg_placeholder hidden" for="ph_email">휴대폰 번호 또는 이메일</label>
                             </div>
-                            <input class="ph_email" id="ph_email" type="text" placeholder="휴대폰 번호 또는 이메일">
+                            <input class="ph_email" id="ph_email" name="ph_email" type="text" placeholder="휴대폰 번호 또는 이메일">
                             <span class="alert_types alert_exclam"></span>
                         </div>
                         <div class="reg_ph display_none">
@@ -76,13 +76,13 @@
                                 <label class="reg_placeholder hidden" for="ph">휴대폰 번호</label>
 
                             </div>
-                            <input class="ph" id="ph" type="text" placeholder="휴대폰 번호"> <span class="alert_types alert_exclam"></span>
+                            <input class="ph" id="ph" type="text" name="ph" placeholder="휴대폰 번호"> <span class="alert_types alert_exclam"></span>
                         </div>
                         <div class="reg_newpsw">
                             <div>
                                 <label class="reg_placeholder hidden" for="newpsw">새 비밀번호</label>
                             </div>
-                            <input class="newpsw" id="newpsw" type="password" placeholder="새 비밀번호"> <span class="alert_types alert_exclam"></span>
+                            <input class="newpsw" id="newpsw" type="password" name="newpsw" placeholder="새 비밀번호"> <span class="alert_types alert_exclam"></span>
                         </div>
                         <div class="reg_birth">
                             <div class="birth_tit">

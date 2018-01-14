@@ -2,15 +2,29 @@
 
 //dom on ready
 $(document).ready(function(){
+    var lname = document.forms['regFrm']['lname'];
+    var rname = document.forms['regFrm']['fname'];
+    var ph_email = document.forms['regFrm']['ph_email'];
+    var newpsw = document.forms['regFrm']['newpsw'];
+    var man = document.forms['regFrm']['man'];
+    var woman = document.forms['regFrm']['woman'];
     
     $('#loginFrm').submit(function(){
-        return validationForm();
+        //return validationForm();
     });
-
-    $('#regFrm').submit(function(){
-         return validationForm(()=>validationRadio());
+    
+    $('#regFrm').submit(function(e){
+       e.preventDefault();
+        
+        if(validationForm()){
+            setTimeout(function(){
+                console.log("done");
+            $(e).submit();    
+        },100);
+    }
     });
-
+    
+    
     $('.btn_birth').click(function(){
        $('.birth_pointer').removeAttr('data-focus');
     });
@@ -31,9 +45,12 @@ $(document).ready(function(){
             $(this).removeAttr('data-invalid');
         }
         validationTooltip(this.id, false);
+    }).click(function(){
+        if($(":input:radio[name=sex]:checked")){
+           $('.reg_sex').removeAttr('data-invalid');
+        }
+        
     });
-    
-    
 });
 
 function validationTooltip(id, flag){
@@ -44,48 +61,58 @@ if(id === 'undefined'){
     $('.content_layer_pointer').each(function(){
         if($(this).attr('data-target') === id)
         {
-            console.log("validation tooltip" + id);
             $(this).attr('data-focus', flag);
         }
     });
 }
 
 function validationForm(){
-    return validateRadio();
-        //성
-        //이름
-        //휴대폰 번호 또는 이메일
-        //새비밀번호
-        //생일
-        //성
+    let result = true;
+
+    if(lname.value==''){
+        $(lname).attr('data-invalid', true);
+        result = false;
+    }
+    if(fname.value==''){
+        $(fname).attr('data-invalid', true);
+        result = false;
+    }
+    if(ph_email.value==''){
+        $(ph_email).attr('data-invalid', true);
+        result = false;
+    }
+    if(newpsw.value==''){
+        $(newpsw).attr('data-invalid', true);
+        result = false;
+    }
+    if(man.checked + woman.checked<1){
+        $('.reg_sex').attr('data-invalid', true);
+        result = false;
+    }
         //---아니면 Validate-data 변경---
-    return false;
+    return result;
 }
-
-function validateRadio(){
-    var radios = $(this).children('input[type=radio]');
-    console.log(radios);
-
-    return true;
-}
-
-function validateEmail(inputText)  
-{  
-    var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;  
-
-            if(inputText.value.match(mailformat))  
-            {  
-                document.form1.text1.focus();  
-                return true;  
-            }  
-            else  
-            {  
-                alert("You have entered an invalid email address!");  
-                document.form1.text1.focus();  
-                return false;  
-            }  
-}  
-//포커싱 후 벨리데 체크
-//포커싱 후 널값이면 attr-invalid=true 체크
-//널값이 아니면 사용자 속성값 없어짐
-
+//
+//function validateRadio(){
+//    var radios = $(this).children('input[type=radio]');
+//    console.log(radios);
+//
+//    return true;
+//}
+//
+//function validateEmail(inputText)  
+//{  
+//    var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;  
+//
+//            if(inputText.value.match(mailformat))  
+//            {  
+//                document.form1.text1.focus();  
+//                return true;  
+//            }  
+//            else  
+//            {  
+//                alert("You have entered an invalid email address!");  
+//                document.form1.text1.focus();  
+//                return false;  
+//            }  
+//}  
