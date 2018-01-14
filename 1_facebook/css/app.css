@@ -455,8 +455,15 @@ section{
     position: relative;
 }
 
+.t_c_red{
+    box-shadow: 0 0 0 1px rgba(139, 3, 0, .75), 0 1px 10px rgba(0, 0, 0, .35);
+}
+
+.t_c_white{
+}
+
 .tooltip_content p{
-     position: absolute;
+    position: absolute;
     width: 268px;
     padding: 13px;
     margin: 0;
@@ -464,8 +471,13 @@ section{
     border-radius: 2px;
     color: #fff;
     line-height: 1.34;
-    box-shadow: 0 0 0 1px rgba(139, 3, 0, .75), 0 1px 10px rgba(0, 0, 0, .35);
     background-color: #be4b49;
+}
+
+.t_container_help{
+    border: 1px solid rgba(0, 0, 0, .45);
+    border-bottom: 1px solid #666;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, .3);
 }
 
 .t_c_lname p{
@@ -483,6 +495,7 @@ section{
 }
 
 .t_c_birth p{
+    border : 0px solid #8c8c8c;
     position: relative;
     color: #1d2129;
     border-radius: 0px;
@@ -502,7 +515,8 @@ section{
 .tooltip_footer{
     position: relative;
     height: 24px;
-    padding: 6px 7px 8px 6px;
+    width: 283px;
+    padding: 6px 7px 6px 8px;
     background-color: #f2f2f2;
     border: 1px solid #ccc;
 }
@@ -564,8 +578,8 @@ section{
     position: absolute;
     right: -10px;
     top: 15px;
-    z-index: 5;
-    width: 9px;
+    z-index: 1000;
+    width: 10px;
     height: 16px;
     background-position: -410px -49px;
     background-size: 500px 102px;
