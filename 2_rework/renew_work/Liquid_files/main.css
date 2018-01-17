@@ -27,6 +27,7 @@ body {padding:25px 0; background:url("../design/bg.gif") 0 0 repeat-x; font:0.75
 
 h1, h2, h3, h4, h5, h6, p, address, blockquote, table, dl, fieldset {margin:15px 0;}
 
+
 /* ----------------------------------------------------------------------------------------------------------
 2) HTML styles
 ---------------------------------------------------------------------------------------------------------- */
@@ -106,8 +107,9 @@ dl#news a:hover {text-decoration:none;}
 
 #gallery-in {padding:15px; background:url("../design/gallery.gif") 0 0 repeat-x;}
 #gallery .separator {width:910px; height:2px; margin:10px 0; background:url("../design/separator.gif") 0 0 repeat-x; font-size:0; line-height:0; overflow:hidden;}
-#gallery img {margin-right:18px;}
-#gallery a.last img {margin:0;}
+#gallery ul li {float: left; margin-right: 18px;}
+#gallery ul::after{content: ''; clear: both; display: block;}
+#gallery ul:last-child li{margin: 0;}
 
 /* ----------------------------------------------------------------------------------------------------------
 5) Others
@@ -122,3 +124,29 @@ dl#news a:hover {text-decoration:none;}
 
 .more {padding-right:14px; background:url("../design/more.gif") 100% 5px no-repeat;}
 a:hover.more {text-decoration:none;}
+
+
+.img_types {
+    background-image: url(spritesheet.png);
+    background-repeat: no-repeat;
+    display: inline-block;
+}
+
+.img_200x150 {
+    width: 200px;
+    height: 150px;
+    background-position: -5px -5px;
+}
+
+.img_85x63 {
+    width: 85px;
+    height: 63px;
+    background-position: -215px -5px;
+}
+
+.img_95x71 {
+    width: 95px;
+    height: 71px;
+    background-position: -215px -78px;
+}
+

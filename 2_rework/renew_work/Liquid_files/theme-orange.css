@@ -23,7 +23,8 @@
 1) HTML tags
 ---------------------------------------------------------------------------------------------------------- */
 
-body {background-color:#dfdfdf; color:#3f3f3f;}
+a {color:#dd3300;}
+a:hover {color:#555;}
 
 /* ----------------------------------------------------------------------------------------------------------
 2) HTML styles
@@ -33,40 +34,27 @@ body {background-color:#dfdfdf; color:#3f3f3f;}
 3) Layout
 ---------------------------------------------------------------------------------------------------------- */
 
-#main {background:#FFF;}
-    
-    #slogan {color:#fff;}
-    
-    #nav {border-top:1px solid #FFF; border-bottom:1px solid #FFF; background:#EFEFEF;}
-    #nav a {color:#3f3f3f;}
+#header {background-color:#ff6600;}
+#slogan {color:#fff;}
 
-    #footer, #footer a {color:#5F5F5F;}
-    #footer a:hover {color:#3f3f3f;}
-    
-    .ico-rss {color:#3F3F3F;}
-
-    #copy, #copy a {color:#7F7F7F;}
-    #copy a:hover {color:#3F3F3F;}
+#nav ul li.active, #nav ul li.active a {color:#dd3300;}
 
 /* ----------------------------------------------------------------------------------------------------------
 4-1) Page: Homepage
 ---------------------------------------------------------------------------------------------------------- */
-
-#breadcrumbs a {color:#5f5f5f;}
-
-#subnav li a {border-bottom:1px solid #efefef; color:#3f3f3f;}
-
-dl#news dt {background-color:#FFF;}
-dl#news dd a {color:#3f3f3f;}
-
-#gallery-in {border-bottom:1px solid #DDDDDD; background-color:#EFEFEF;}
+#subnav li.active a {background-color:#ffefe5;}
 
 /* ----------------------------------------------------------------------------------------------------------
 5) Others
 ---------------------------------------------------------------------------------------------------------- */
 
-.title-01 {background-color:#5f5f5f; color:#fff;}
-.title-02 span {background:#FFF;}
-.title-03 a {color:#fff;}
+.title-03, .title-03.gallery {background-color:#FF6600; color:#fff;}
+.title-04 {color:#DD3300;}
 
-.comment, .more {color:#3F3F3F;}
+.img_logo {
+    display: inline-block;
+    width: 183px;
+    height: 63px;
+    background:url(logo_orange.gif);
+    background-repeat: no-repeat;
+}
