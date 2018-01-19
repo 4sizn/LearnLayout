@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="header"><h1>MY ORDER</h1></div>
+        <section id="order"><h2>ORDER INFORMATION <span>상품선택</span></h2></section>
+        <section id="payment">
+            <h3 class="pay_tit">봄신상니트(남성)</h3>
+            <div class="pay_cont"><span>배송예정일: 2012년 04월 09일 이후 <br> 생산기간 : 10일</span></div>
+            <div class="pay_option">
+                <select name="color" id="color">
+                    <option value>색상 선택</option>
+                    <option value="navy">곤색니트</option>
+                    <option value="wine">와인니트</option>
+                    <option value="hunt">헌트니트</option>
+                </select>
+                <select name="size" id="size">
+                    <option value="">사이즈 선택</option>
+                    <option value="95">95</option>
+                    <option value="100">100</option>
+                    <option value="105">105</option>
+                </select>
+                <select id="amount">
+                    <option value="">수량 선택</option>
+                    <option value="1">1개</option>
+                    <option value="2">2개</option>
+                    <option value="3">3개</option>
+                    <option value="4">4개</option>
+                    <option value="5">5개</option>
+                    <option value="6">6개</option>
+                </select>
+            </div>
+            <div>
+                <span class="price">0</span>
+                <button class="add_btn">장바구니 담기</button>
+            </div>
+        </section>
+        <section id="cart">
+            <h2>CART 장바구니</h2>
+            <div>옵션을 선택하신 후 추가를 클릭하세요</div>
+        </section>
+        <section id="submit">
+            <article id="cardInfo">
+                    <p>
+                            1. 신한, BC, 하나SK, KB, 삼성, 현대<br>2. 롯데, 외환, NH, 씨티카드, 이니포인트카드<br>5만원 이상 결제시, 2~3개월 할부 수수료 면제 
+                          </p>
+                          <p>
+                                * 현대카드 M포인트 1% 적립(단, M계열카드에 한함)<br>(무이자할부 결제시 M포인트 적립 제외)<br>* 직계약가맹점, 상점부담가맹점, 특별제휴가맹점, 오프라인가맹점 등 일부 가맹점은 제외.<br>은행계열카드,체크카드,법인카드 제외
+                              </p>
+                              <button id="more">
+                                    more
+                                  </button>
+            </article>
+            <article id="cartTotal">
+                <ul class="total_lst">
+                    <li><span>Subtotal</span><span id="subTotal" class="price">0</span></li>
+                    <li><span>Subtotal</span><span id="shipping" class="price">0</span></li>
+                    <li><span>Subtotal</span><span id="total" class="price">0</span></li>
+                </ul>
+            </article>
+            <button>결재하기</button>
+        </section>
+
+    </div>
+</body>
+</html>
