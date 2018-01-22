@@ -1,83 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="/css/reset.css">
-    <link rel="stylesheet" href="/css/main.css">
-    <link rel="stylesheet" href="/css/style.css">
-    <title>Document</title>
-</head>
-<body>
-    <div id="wrapper">
-        <div id="header"><h1>MY ORDER</h1></div>
-        <section id="order">
-            <h2>ORDER INFORMATION <span>상품선택</span></h2>
-        <article id="orderInfo" class="clearfix">
-            <div class="notice clearfix">
-                   <img src="./images/item_01.jpeg" alt="봄신상니트(남성)" class="itemImg" width="75" height="100">
-                    <h3>봄신상니트(남성)</h3>
-                    <p>배송예정일: 2012년 04월 09일 이후 <br> 생산기간 : 10일 <br><strong>코드번호 : 00001</strong><p>
-            </div>
-            <div class="category">
-                <select name="color" id="color">
-                    <option value>색상 선택</option>
-                    <option value="navy">곤색니트</option>
-                    <option value="wine">와인니트</option>
-                    <option value="hunt">헌트니트</option>
-                </select>
-                <select name="size" id="size">
-                    <option value="">사이즈 선택</option>
-                    <option value="95">95</option>
-                    <option value="100">100</option>
-                    <option value="105">105</option>
-                </select>
-                <select id="amount">
-                    <option value="">수량 선택</option>
-                    <option value="1">1개</option>
-                    <option value="2">2개</option>
-                    <option value="3">3개</option>
-                    <option value="4">4개</option>
-                    <option value="5">5개</option>
-                    <option value="6">6개</option>
-                </select>
-            </div>
-            <div class="cart_btn">
-                <span class="price">8900</span><button class="add_btn">장바구니 담기</button>
-            </div>
-        </article>
-        <h2>CART 장바구니</h2>
-        <article id="cart">
-            <ul class="cart_lst"></ul>
-            <p class="cart_default">옵션을 선택하신 후 추가를 클릭하세요</p>
-        </article>
-        </section>
-        <section id="payment" class="clearfix">
-            <article id="cardInfo" class="img_types icon_card">
-                <h2>신용카드 2012년 3월 무이자할부 안내</h2>
-                    <p>
-                            1. 신한, BC, 하나SK, KB, 삼성, 현대<br>2. 롯데, 외환, NH, 씨티카드, 이니포인트카드<br>5만원 이상 결제시, 2~3개월 할부 수수료 면제 
-                          </p>
-                          <p>
-                                * 현대카드 M포인트 1% 적립(단, M계열카드에 한함)<br>(무이자할부 결제시 M포인트 적립 제외)<br>* 직계약가맹점, 상점부담가맹점, 특별제휴가맹점, 오프라인가맹점 등 일부 가맹점은 제외.<br>은행계열카드,체크카드,법인카드 제외
-                              </p>
-                              <button id="more">
-                                    more
-                                  </button>
-            </article>
-            <article id="cartTotal">
-                 <h2>CART TOTAL</h2>
-                <ul class="total_lst">
-                    <li><span>Subtotal</span><span id="subTotal" class="price">0</span></li>
-                    <li><span>Shipping</span><span id="shipping" class="price">0</span></li>
-                    <li><span>Total</span><span id="total" class="price">0</span></li>
+<html lang="ko">
+    <head>
+       <meta charset="UTF-8">
+        <title>REMOTE VIEW</title>
+        <link rel="stylesheet" href="./css/style.css">
+    </head>
+    <body>
+        <div id="container">
+        <header>
+          <h1 id="logo"><a href="#" title="RemoteView 홈으로 이동"><span class="img_rv">RemoteView</span></a></h1>  
+          <div class="familySite"><a href="#" title="Family site로 이동"><span class="img_rc">RemoteCall</span></a></div>
+        </header>
+        <div id="mainTitle">
+        <h2>스마트워크의 필수품,<br>원격제어 리모트뷰!</h2>
+        <p>인터넷이 연결되는 곳이라면 내 컴퓨터에 원격 접속하여, 긴급한 업무를 처리할 수 있습니다.</p>
+        <button class="demo_trial">리모트뷰를 부담없이 경험해 보세요 <br>14일 무료 데모 신청<span class="">></span></button>
+        <div id="productIntro"></div>
+        <div id="movClip"></div>
+        </div>
+        <div id="mainContent">
+            <section id="section-01">
+               <h2>RemoteView는 이런 점이 좋습니다</h2>
+                <article><h3>빠른 속도와 안정성</h3><p>인터넷이 연결된 어떤 곳에서도 빠르고 안전하게 원격제어가 가능합니다.</p></article>
+                <article><h3>편리한 파일 전송</h3><p>파일 송수신을 위한 FTP형식의 Drag	
+&amp;Drap을 지원합니다.</p></article>
+                <article></article>
+                <article></article>
+                <a href="#">리모트뷰 특징 더보기</a>
+            </section>
+            <section id="section-02">
+               <h2>더 강력한 기업용 RemoteView</h2>
+                <article>실시간 모니터링이 가능한 라이브뷰</article>
+                <article>다중 사용자 지원 및 관리</article>
+                <article>가상 OS가 설치된 PC도 독립적으로 관리</article>
+                <a href="#">기업용 리모트뷰 더보기</a>
+            </section>
+            <aside>
+                <h2>최적화된 모바일 솔루션</h2>
+                <p>Android, iOS, Windows Mobile OS기반의 <br> 모바일 디바이스를 완벽히 지원하는 RemoteView<br>지금 바로 사용해보세요.</p>
+                <ul class="qr_lst">
+                    <li>아이폰용</li>
+                    <li>아이패드용</li>
+                    <li>안드로이드용</li>
                 </ul>
-            </article>
-        </section>
-        <div id="submitBtn">
-                <button class="submit_btn">결재하기</button>
-            </div>
-</div>
-<script src="/src/jquery-3.2.1.min.js"></script>
-<script src="/src/app.js"></script>
-</body>
+                <p>QR코드를 찍어 리모트뷰 모바일 앱을 다운받으세요.</p>
+            </aside>
+        </div>
+        <footer>
+          <div class="company_info">
+               <ul class="company_info_lst">
+               <li>070-7011-3900</li>
+               <li>support_kr@rsupport.com</li>
+               <li>정보가 가득한 리모트뷰 공식카페</li>
+           </ul>
+              <address>     
+                          우) 138-827 서울특별시 송파구 위례성대로 10 (에스타워 11,12,15층) | 상호 : 알서포트(주) | 대표 : 서형수 <br> Tel : 070-7011-3900 | FAX : 02-479-4429 | 사업자등록번호 : 114-86-82265 | 통신판매업 신고번호 : 제 2014-서울송파-0047호 
+                </address>
+                <copyright> COPYRIGHT © 2018 RSUPPORT CO., LTD ALL RIGHTS RESERVED.</copyright>
+          </div>
+        </footer>
+        </div>
+        
+    </body>
 </html>
