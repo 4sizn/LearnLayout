@@ -1,65 +1,150 @@
 <!DOCTYPE html>
 <html lang="ko">
     <head>
-       <meta charset="UTF-8">
-        <title>REMOTE VIEW</title>
-        <link rel="stylesheet" href="./css/style.css">
-    </head>
-    <body>
-        <div id="container">
-        <header>
-          <h1 id="logo"><a href="#" title="RemoteView 홈으로 이동"><span class="img_rv">RemoteView</span></a></h1>  
-          <div class="familySite"><a href="#" title="Family site로 이동"><span class="img_rc">RemoteCall</span></a></div>
+    <meta charset="UTF-8">
+    <title>REMOTE VIEW</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div id="wrap">
+        <header class="clearfix">
+            <h1 id="logo"><a href="#" title="RemoteView 홈으로 이동"><span class="img_rv cont_non"></span><span class="none">RemoteView</span></a></h1>
+            <div class="familySite"><a href="#" title="Family site로 이동"><span class="img_rc"></span><span class="types_icon icon_arrow"></span><span class="none">RemoteCall</span></a></div>
         </header>
-        <div id="mainTitle">
-        <h2>스마트워크의 필수품,<br>원격제어 리모트뷰!</h2>
-        <p>인터넷이 연결되는 곳이라면 내 컴퓨터에 원격 접속하여, 긴급한 업무를 처리할 수 있습니다.</p>
-        <button class="demo_trial">리모트뷰를 부담없이 경험해 보세요 <br>14일 무료 데모 신청<span class="">></span></button>
-        <div id="productIntro"></div>
-        <div id="movClip"></div>
+        <div id="mainTitle" class="clearfix">
+            <div id="productDetail">
+                <h2>스마트워크의 필수품, <br>원격제어 리모트뷰!</h2>
+                <p>인터넷이 연결되는 곳이라면 내 컴퓨터에 원격 접속하여, <br>긴급한 업무를 처리할 수 있습니다.</p>
+                <a href="#"><span>리모트뷰를 부담없이 경험해 보세요</span><br><strong>14일 무료 데모 신청</strong></a>
+                <button class="demo_trial">리모트뷰를 부담없이 경험해 보세요 <br>14일 무료 데모 신청<span class="icon_right_arrow"></span></button>
+            </div>
+            <figure>
+                <div id="movClip" class="mvclip">
+                </div>
+                <figcaption class="more"><a href="">제품 동영상 더보기</a><span class="types_icon icon_arrow"></span></figcaption>
+            </figure>
         </div>
-        <div id="mainContent">
-            <section id="section-01">
-               <h2>RemoteView는 이런 점이 좋습니다</h2>
-                <article><h3>빠른 속도와 안정성</h3><p>인터넷이 연결된 어떤 곳에서도 빠르고 안전하게 원격제어가 가능합니다.</p></article>
-                <article><h3>편리한 파일 전송</h3><p>파일 송수신을 위한 FTP형식의 Drag	
-&amp;Drap을 지원합니다.</p></article>
-                <article></article>
-                <article></article>
-                <a href="#">리모트뷰 특징 더보기</a>
-            </section>
-            <section id="section-02">
-               <h2>더 강력한 기업용 RemoteView</h2>
-                <article>실시간 모니터링이 가능한 라이브뷰</article>
-                <article>다중 사용자 지원 및 관리</article>
-                <article>가상 OS가 설치된 PC도 독립적으로 관리</article>
-                <a href="#">기업용 리모트뷰 더보기</a>
-            </section>
-            <aside>
-                <h2>최적화된 모바일 솔루션</h2>
-                <p>Android, iOS, Windows Mobile OS기반의 <br> 모바일 디바이스를 완벽히 지원하는 RemoteView<br>지금 바로 사용해보세요.</p>
-                <ul class="qr_lst">
-                    <li>아이폰용</li>
-                    <li>아이패드용</li>
-                    <li>안드로이드용</li>
-                </ul>
-                <p>QR코드를 찍어 리모트뷰 모바일 앱을 다운받으세요.</p>
-            </aside>
+        <div id="mainContent" class="clearfix">
+            <div class="inner_cont">
+                <div class="section_wrap">
+                    <section id="section01">
+                        <h2>RemoteView는 이런 점이 좋습니다</h2>
+                        <ul class="clearfix">
+                            <li>
+                                <figure>
+                                    <img src="./images/option_icon.png" alt="빠른 속도와 안정성">
+                                </figure>
+                                <div class="notice">
+                                <h3>빠른 속도와 안정성</h3>
+                                <p>인터넷이 연결된 <br>어떤 곳에서도 <br>빠르고 안전하게 <br>원격제어가 가능합니다.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <figure>
+                                    <img src="./images/folder_icon.png" alt="편리한 파일전송">
+                                </figure>
+                                <div class="notice">
+                                <h3>편리한 파일 전송</h3>
+                                <p>파일 송수신을 위한 <br>FTP형식의 Drag &amp;Drap을 <br>지원합니다.</p>
+                                </div>
+                            </li>
+                        </ul>
+                        <a href="#" class="more">리모트뷰 특징 더보기<span class="types_icon icon_arrow"></span></a>
+                    </section>
+                    <section id="section02">
+                        <h2>더 강력한 기업용 RemoteView</h2>
+                        <ul class="clearfix">
+                            <li>
+                                <figure>
+                                    <img src="./images/search_icon.png" alt="실시간 모니터링이 가능한 라이브뷰">
+                                </figure>
+                                <p>실시간 모니터링이 가능한 라이브뷰</p>
+
+                            </li>
+                            <li>
+                                <figure>
+                                    <img src="./images/group_icon.png" alt="다중 사용자 지원 및 관리">
+                                </figure>
+                                <p>다중 사용자 지원 및 관리</p>
+
+                            </li>
+                            <li>
+                                <figure>
+                                    <img src="./images/box_icon.png" alt="가상 OS가 설치된 PC도 독립적으로 관리">
+                                </figure>
+                                <p>가상 OS가 설치된 PC도 독립적으로 관리</p>
+
+                            </li>
+                        </ul>
+                        <a href="#" class="more">기업용 리모트뷰 더보기<span class="types_icon icon_arrow"></span></a>
+                    </section>
+                </div>
+                <aside>
+                    <h2>최적화된 모바일 솔루션</h2>
+                    <p class="detail">Android, iOS, Windows Mobile OS기반의 <br> 모바일 디바이스를 완벽히 지원하는 <strong>RemoteView</strong><br>지금 바로 사용해보세요.</p>
+                    <ul class="qr_lst clearfix">
+                        <li>아이폰용<br><span class="qr_code"></span></li>
+                        <li>아이패드용<br><span class="qr_code"></span></li>
+                        <li>안드로이드용<br><span class="qr_code"></span></li>
+                    </ul>
+                    <p>QR코드를 찍어 <strong>리모트뷰 모바일 앱</strong>을 다운받으세요.</p>
+                </aside>
+            </div>
         </div>
         <footer>
-          <div class="company_info">
-               <ul class="company_info_lst">
-               <li>070-7011-3900</li>
-               <li>support_kr@rsupport.com</li>
-               <li>정보가 가득한 리모트뷰 공식카페</li>
-           </ul>
-              <address>     
+            <div class="company_info">
+                <ul class="company_info_lst clearfix">
+                    <li><span class="icon_call"></span>070-7011-3900</li>
+                    <li><span class="icon_email"></span>support_kr@rsupport.com</li>
+                    <li><span class="icon_cafe"></span>정보가 가득한 리모트뷰 공식카페</li>
+                </ul>
+                <address>     
                           우) 138-827 서울특별시 송파구 위례성대로 10 (에스타워 11,12,15층) | 상호 : 알서포트(주) | 대표 : 서형수 <br> Tel : 070-7011-3900 | FAX : 02-479-4429 | 사업자등록번호 : 114-86-82265 | 통신판매업 신고번호 : 제 2014-서울송파-0047호 
                 </address>
                 <copyright> COPYRIGHT © 2018 RSUPPORT CO., LTD ALL RIGHTS RESERVED.</copyright>
-          </div>
+            </div>
         </footer>
-        </div>
-        
-    </body>
+    </div>
+    <script>
+        function onYouTubeIframeAPIReady() {
+            yplayer = new YT.Player("movClip", {
+                width: "400",
+                height: "225",
+                videoId: "BvV-FotXB_Q",
+                playerVars: {
+                    controls: 0,
+                    showinfo: 0,
+                    modestbranding: 1,
+                    wmode: "transparent"
+                },
+                events: {
+                    onReady: onPlayerReady,
+                    onStateChange: onPlayerStateChange
+                }
+            })
+        }
+
+        function onPlayerReady(e) {
+            e.target.mute(), e.target.seekTo(0), e.target.playVideo()
+        }
+
+        function onPlayerStateChange(e) {
+            e.data === YT.PlayerState.ENDED && e.target.seekTo(0)
+        }
+
+        function mainVisualResize() {
+            var e = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth,
+                t = document.getElementById("main_mvclip");
+            1920 > e || (t.style.width = e + "px", t.style.height = Math.floor(e / 16 * 9) + "px", t.style.marginLeft = -Math.floor(e / 2) + "px")
+        }
+        var ytag = document.createElement("script"),
+            yplayer;
+        ytag.src = "https://www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName("script")[0];
+        firstScriptTag.parentNode.insertBefore(ytag, firstScriptTag), window.onresize = mainVisualResize;
+    </script>
+</body>
+    
 </html>

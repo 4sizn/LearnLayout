@@ -22,10 +22,200 @@
 1) HTML tags
 ---------------------------------------------------------------------------------------------------------- */
 
+body{
+    width: 100%;
+    height: 100%;
+}
+
+#productDetail{
+    float: left;
+    width: 400px;
+}
+
+.more{
+    font-size: 0.8em;
+}
+#mainTitle figure{
+    float: right;
+}
+
+figure{
+    position: relative;
+}
+
+figcaption{
+    position: absolute;
+    right: 0;
+}
+
+#section01 img{
+    float: left;
+}
+
+#mainTitle h2{
+    background: -webkit-linear-gradient(#eee, #333);
+    -webkit-background-clip:text;
+    -webket-text-fill-color:transparent;
+}
+
+.qr_code{
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+    background : url(../images/qrcode.png);
+    background-repeat: no-repeat;
+}
+
+header{
+    width: 900px;
+    margin: 0 auto;
+}
+
+header #logo{
+    float: left;
+}
+
+header .familySite{
+    float: right;
+    margin-top: 15px;
+}
+
+#mainContent{
+    margin-top: -40px;
+    background-image: linear-gradient(#CAD1D4, white 20%); 
+}
+
+.inner_cont{
+    width: 900px;
+    margin: 0 auto;
+}
+
+section h2{
+    border-bottom: 1px dotted #999;
+}
+
+.section_wrap{
+    float: left;
+    width: 540px;
+}
+
+aside{
+    color: #B5B5B5;
+    border: 5px solid #B5B5B5;
+    border-radius: 15px;
+    font-size: 0.9em;
+    line-height: 20px;
+    text-align: center;
+    width: 320px;
+    float: right;
+    margin-top: 60px;
+    margin-bottom: 80px;
+}
+
+aside p{
+    margin: 0 15px;
+}
+
+aside .qr_lst{
+    margin-top: 20px;
+    line-height: 30px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+aside h2{
+    padding-top : 10px;
+}
+aside .detail{
+    text-align: left;
+    padding-bottom: 20px;
+}
+aside p:last-child{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.qr_lst li{
+    display: inline-block;
+    padding: 0 15px;
+}
+
+.mvclip{
+    padding: 10px;
+    background-image: linear-gradient(white, grey 50%);
+}
+
+.mv_caption{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+section{
+    position: relative;
+}
+
+section .more{
+    position: absolute;
+    right: 5px;
+    bottom: 0;
+}
+
+section p{
+    font-size: 0.9em;
+}
+
+#section01 h2, #section02 h2{
+    font-size: 1.2em;
+    padding-bottom: 5px;
+}
+
+#section01 img{
+    float: left;
+}
+
+.section_wrap{
+    margin-bottom: 40px;
+}
+
+#section01 .notice{
+    float: left;
+    width: 150px;
+    padding-left: 10px;
+}
+
+section ul{
+    padding-bottom: 35px;
+}
+#section01 li{
+    float: left;
+    width: 250px;
+}
+
+#section02 li{
+    float: left;
+    width: 140px;
+    height: 120px;
+    padding: 0 15px;
+    text-align: center;
+}
+
+#section02 figure{
+    padding-bottom: 10px;
+}
 
 /* ----------------------------------------------------------------------------------------------------------
 2) HTML styles
 ---------------------------------------------------------------------------------------------------------- */
+
+footer{
+    margin: 0 auto;
+    font-size: 0.9em;
+    line-height: 20px;
+    background-color: rgb(153, 153, 153);
+    color: white;
+    padding-bottom: 200px;
+}
 
 
 /* ----------------------------------------------------------------------------------------------------------
@@ -38,8 +228,150 @@
 ---------------------------------------------------------------------------------------------------------- */
 
 
+footer{
+    text-align: center;
+}
+
+.company_info{
+    width: 900px;
+    margin: 0 auto;
+}
+
+.company_info_lst{
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+.company_info_lst span{
+    padding-right: 5px;
+}
+
+.company_info_lst li{
+    margin: 0 30px;
+    display: inline-block;
+}
+
+.company_info_lst li:last-child{
+    margin-right: 0;
+}
+
+.company_info_lst li span{
+    vertical-align: middle;
+}
+
+#mainTitle{
+    width: 900px;
+    margin: 0 auto;
+}
+
+.icon_call{
+    background: url(../images/call_icon.png);
+    background-repeat: no-repeat;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+}
+
+.icon_email{
+    background: url(../images/email_icon.png);
+    background-repeat: no-repeat;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+}
+
+.icon_cafe{
+    background: url(../images/cafe_icon.png);
+    background-repeat: no-repeat;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+}
+
 /* ----------------------------------------------------------------------------------------------------------
 5) Others
 ---------------------------------------------------------------------------------------------------------- */
 
 
+
+.types_icon{
+    background: url(../images/ico_map.gif);
+    background-repeat: no-repeat;
+}
+
+.icon_arrow{
+    display: inline-block;
+    background-position: -8px -200px;
+    width:  5px;
+    height: 9px;
+    margin-left: 5px;
+}
+
+body{
+    background: url(../images/bg_title1.png);
+    background-repeat: repeat-x;
+    display: inline-block;
+}
+
+strong{
+    font-weight: bold;
+    color: black;
+}
+
+.none{
+    display: none;
+}
+
+.img_rv{
+    display: inline-block;
+    width:  174px;
+    height: 27px;
+    background: url(../images/rv_logo.png);
+    background-repeat: no-repeat;
+}
+
+.img_rc{
+    display: inline-block;
+    width:  120px;
+    height: 17px;
+    vertical-align: middle;
+    background: url(../images/rc_logo.png);
+    background-repeat: no-repeat;
+}
+
+.familySite{
+    padding-top: 10px;
+}
+.familySite a{
+    padding: 3px 8px;
+    border: 2px solid white;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px; 
+}
+
+.clearfix::after{
+    display: block;
+    content: '';
+    clear: both;
+}
+
+#productDetail h2{
+	background: -webkit-linear-gradient(top, yellow, #000);
+	background: linear-gradient(top, #878787, #000);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+#productDetail p{
+    line-height: 20px;
+    color: yellow;
+    margin-bottom: 20px;
+}
+
+#productDetail button{
+    width: 270px;
+    height: 65px;
+}
