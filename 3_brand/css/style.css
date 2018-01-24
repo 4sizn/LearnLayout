@@ -22,9 +22,19 @@
 1) HTML tags
 ---------------------------------------------------------------------------------------------------------- */
 
+h1{
+    margin: 20px 0;
+    margin-left: -10px;
+}
+
 body{
     width: 100%;
     height: 100%;
+}
+
+.notice h3{
+    margin-top : 0;
+    margin-bottom: 5px;
 }
 
 #productDetail{
@@ -93,6 +103,7 @@ header .familySite{
 section h2{
     border-bottom: 1px dotted #999;
 }
+
 
 .section_wrap{
     float: left;
@@ -163,6 +174,14 @@ section .more{
 
 section p{
     font-size: 0.9em;
+    line-height: 18px;
+}
+#section01{
+    position: relative;
+}
+
+#section01 .slider{
+text-align: right;
 }
 
 #section01 h2, #section02 h2{
@@ -196,7 +215,7 @@ section ul{
     float: left;
     width: 140px;
     height: 120px;
-    padding: 0 15px;
+    padding: 15px 15px 0 15px;
     text-align: center;
 }
 
@@ -294,10 +313,28 @@ footer{
 ---------------------------------------------------------------------------------------------------------- */
 
 
-
 .types_icon{
     background: url(../images/ico_map.gif);
     background-repeat: no-repeat;
+}
+
+.types_btn{
+    background: url(../images/btn_map.gif);
+    background-repeat: no-repeat;
+}
+
+.btn_left{
+    display: inline-block;
+    width: 17px;
+    height: 17px;
+    background-position: 0 -50px;
+}
+
+.btn_right{
+    display: inline-block;
+    width: 17px;
+    height: 17px;
+    background-position: 0 -25px;
 }
 
 .icon_arrow{
@@ -365,13 +402,49 @@ strong{
 	-webkit-text-fill-color: transparent;
 }
 
-#productDetail p{
+#productDetail .button p:nth-child(1){
+    font-size: 0.7em;
+}
+
+#productDetail .button p:last-child{
+    font-size: 1.3em;
+   }
+
+#productDetail .button{
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+    width: 270px;
+    height: 65px;
+    padding-left: 10px;
+    /* padding-top: 15px; */
+    background-color : #DCE893;
+    border: 1px solid #698848;
+    border-radius: 5px;
+    color: #167BBF;
+    font-weight: bold;
+}
+
+#productDetail .button::after{
+    content: '';
+    background: url("../images/right_arrow.png");
+    background-repeat: no-repeat;
+    width: 22px;
+    height: 26px;
+    padding: 8px;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+}
+
+#productDetail>p{
     line-height: 20px;
     color: yellow;
     margin-bottom: 20px;
 }
 
-#productDetail button{
-    width: 270px;
-    height: 65px;
+#productDetail a p{
+    display: inline-block;
+    color: blue;
+    padding: 0 20px 5px 10px;
 }
