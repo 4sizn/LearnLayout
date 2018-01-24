@@ -22,14 +22,23 @@
 1) HTML tags
 ---------------------------------------------------------------------------------------------------------- */
 
+body{
+    width: 100%;
+    height: 100%;
+}
+
+a{
+    text-decoration-line: none;
+}
+
 h1{
     margin: 20px 0;
     margin-left: -10px;
 }
 
-body{
-    width: 100%;
-    height: 100%;
+strong{
+    font-weight: bold;
+    color: black;
 }
 
 .notice h3{
@@ -37,43 +46,9 @@ body{
     margin-bottom: 5px;
 }
 
-#productDetail{
-    float: left;
-    width: 400px;
-}
-
-.more{
-    font-size: 0.8em;
-}
-#mainTitle figure{
-    float: right;
-}
-
-figure{
-    position: relative;
-}
-
-figcaption{
-    position: absolute;
-    right: 0;
-}
 
 #section01 img{
     float: left;
-}
-
-#mainTitle h2{
-    background: -webkit-linear-gradient(#eee, #333);
-    -webkit-background-clip:text;
-    -webket-text-fill-color:transparent;
-}
-
-.qr_code{
-    display: inline-block;
-    width: 70px;
-    height: 70px;
-    background : url(../images/qrcode.png);
-    background-repeat: no-repeat;
 }
 
 header{
@@ -95,21 +70,11 @@ header .familySite{
     background-image: linear-gradient(#CAD1D4, white 20%); 
 }
 
-.inner_cont{
-    width: 900px;
-    margin: 0 auto;
-}
+
 
 section h2{
     border-bottom: 1px dotted #999;
 }
-
-
-.section_wrap{
-    float: left;
-    width: 540px;
-}
-
 aside{
     color: #B5B5B5;
     border: 5px solid #B5B5B5;
@@ -162,22 +127,9 @@ aside p:last-child{
     bottom: 0;
 }
 
-section{
-    position: relative;
-}
-
-section .more{
-    position: absolute;
-    right: 5px;
-    bottom: 0;
-}
-
 section p{
     font-size: 0.9em;
     line-height: 18px;
-}
-#section01{
-    position: relative;
 }
 
 #section01 .slider{
@@ -206,6 +158,7 @@ text-align: right;
 section ul{
     padding-bottom: 35px;
 }
+
 #section01 li{
     float: left;
     width: 250px;
@@ -227,6 +180,12 @@ section ul{
 2) HTML styles
 ---------------------------------------------------------------------------------------------------------- */
 
+body{
+    background: url(../images/bg_title1.png);
+    background-repeat: repeat-x;
+    display: inline-block;
+}
+
 footer{
     margin: 0 auto;
     font-size: 0.9em;
@@ -236,20 +195,75 @@ footer{
     padding-bottom: 200px;
 }
 
+#mainTitle h2{
+    background: -webkit-linear-gradient(#eee, #333);
+    -webkit-background-clip:text;
+    -webket-text-fill-color:transparent;
+}
+
+.familySite{
+    padding-top: 10px;
+}
+
+.familySite a{
+    padding: 3px 8px;
+    border: 2px solid white;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px; 
+}
+
+
+#productDetail{
+    float: left;
+    width: 400px;
+}
+
+#mainTitle figure{
+    float: right;
+}
 
 /* ----------------------------------------------------------------------------------------------------------
 3) Layout
 ---------------------------------------------------------------------------------------------------------- */
 
 
-/* ----------------------------------------------------------------------------------------------------------
-4-1) Page: Homepage
----------------------------------------------------------------------------------------------------------- */
-
+figure{
+    position: relative;
+}
 
 footer{
     text-align: center;
 }
+
+section{
+    position: relative;
+}
+
+section .more{
+    position: absolute;
+    right: 5px;
+    bottom: 0;
+
+}
+
+section .more, .company_email{
+    text-decoration-line: underline;
+}
+
+figcaption{
+    position: absolute;
+    right: 0;
+}
+
+#section01{
+    position: relative;
+}
+
+/* ----------------------------------------------------------------------------------------------------------
+4-1) Page: Homepage
+---------------------------------------------------------------------------------------------------------- */
 
 .company_info{
     width: 900px;
@@ -279,34 +293,48 @@ footer{
     vertical-align: middle;
 }
 
+.inner_cont{
+    width: 900px;
+    margin: 0 auto;
+}
+.section_wrap{
+    float: left;
+    width: 540px;
+}
+
 #mainTitle{
     width: 900px;
     margin: 0 auto;
 }
 
-.icon_call{
-    background: url(../images/call_icon.png);
-    background-repeat: no-repeat;
-    display: inline-block;
-    width: 24px;
-    height: 24px;
+#productDetail h2{
+	background: -webkit-linear-gradient(top, yellow, #000);
+	background: linear-gradient(top, #878787, #000);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
 }
 
-.icon_email{
-    background: url(../images/email_icon.png);
-    background-repeat: no-repeat;
-    display: inline-block;
-    width: 24px;
-    height: 24px;
+#productDetail .button p:nth-child(1){
+    font-size: 0.7em;
 }
 
-.icon_cafe{
-    background: url(../images/cafe_icon.png);
-    background-repeat: no-repeat;
-    display: inline-block;
-    width: 24px;
-    height: 24px;
+#productDetail .button p:last-child{
+    font-size: 1.3em;
+   }
+
+
+#productDetail>p{
+    line-height: 20px;
+    color: yellow;
+    margin-bottom: 20px;
 }
+
+#productDetail a p{
+    display: inline-block;
+    color: blue;
+    padding: 0 20px 5px 10px;
+}
+
 
 /* ----------------------------------------------------------------------------------------------------------
 5) Others
@@ -345,17 +373,6 @@ footer{
     margin-left: 5px;
 }
 
-body{
-    background: url(../images/bg_title1.png);
-    background-repeat: repeat-x;
-    display: inline-block;
-}
-
-strong{
-    font-weight: bold;
-    color: black;
-}
-
 .none{
     display: none;
 }
@@ -377,38 +394,36 @@ strong{
     background-repeat: no-repeat;
 }
 
-.familySite{
-    padding-top: 10px;
-}
-.familySite a{
-    padding: 3px 8px;
-    border: 2px solid white;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px; 
-}
-
 .clearfix::after{
     display: block;
     content: '';
     clear: both;
 }
 
-#productDetail h2{
-	background: -webkit-linear-gradient(top, yellow, #000);
-	background: linear-gradient(top, #878787, #000);
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
+.icon_call{
+    background: url(../images/call_icon.png);
+    background-repeat: no-repeat;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
 }
 
-#productDetail .button p:nth-child(1){
-    font-size: 0.7em;
+.icon_email{
+    background: url(../images/email_icon.png);
+    background-repeat: no-repeat;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
 }
 
-#productDetail .button p:last-child{
-    font-size: 1.3em;
-   }
+.icon_cafe{
+    background: url(../images/cafe_icon.png);
+    background-repeat: no-repeat;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+}
+
 
 #productDetail .button{
     display: inline-block;
@@ -437,14 +452,15 @@ strong{
     right: 0;
 }
 
-#productDetail>p{
-    line-height: 20px;
-    color: yellow;
-    margin-bottom: 20px;
+.qr_code{
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+    background : url(../images/qrcode.png);
+    background-repeat: no-repeat;
 }
 
-#productDetail a p{
-    display: inline-block;
-    color: blue;
-    padding: 0 20px 5px 10px;
+.more{
+    font-size: 0.8em;
 }
+

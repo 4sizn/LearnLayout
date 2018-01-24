@@ -5,8 +5,7 @@
     <title>REMOTE VIEW</title>
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/style.css">
-</head>
-
+    </head>
 <body>
     <div id="wrap">
         <header class="clearfix">
@@ -17,13 +16,13 @@
             <div id="productDetail">
                 <h2>스마트워크의 필수품, <br>원격제어 리모트뷰!</h2>
                 <p>인터넷이 연결되는 곳이라면 내 컴퓨터에 원격 접속하여, <br>긴급한 업무를 처리할 수 있습니다.</p>
-                <a href="#" class="button"><p>리모트뷰를 부담없이 경험해 보세요</p><p>14일 무료 데모 신청</p></a>
+                <a href="#" class="button" title="시험버전 다운로드"><p>리모트뷰를 부담없이 경험해 보세요</p><p>14일 무료 데모 신청</p></a>
                 <!-- <button class="demo_trial">리모트뷰를 부담없이 경험해 보세요 <br>14일 무료 데모 신청<span class="icon_right_arrow"></span></button> -->
             </div>
             <figure>
                 <div id="movClip" class="mvclip">
                 </div>
-                <figcaption class="more"><a href="">제품 동영상 더보기</a><span class="types_icon icon_arrow"></span></figcaption>
+                <figcaption class="more"><a href="#" title="제품 동영상 더보기">제품 동영상 더보기</a><span class="types_icon icon_arrow"></span></figcaption>
             </figure>
         </div>
         <div id="mainContent" class="clearfix">
@@ -52,7 +51,7 @@
                                 </div>
                             </li>
                         </ul>
-                        <a href="#" class="more">리모트뷰 특징 더보기<span class="types_icon icon_arrow"></span></a>
+                        <a href="#" class="more" title="리모트뷰 특징 더보기">리모트뷰 특징 더보기<span class="types_icon icon_arrow"></span></a>
                     </section>
                     <section id="section02">
                         <h2>더 강력한 기업용 RemoteView</h2>
@@ -79,7 +78,7 @@
 
                             </li>
                         </ul>
-                        <a href="#" class="more">기업용 리모트뷰 더보기<span class="types_icon icon_arrow"></span></a>
+                        <a href="#" class="more" title="기업용 리모트뷰 더보기">기업용 리모트뷰 더보기<span class="types_icon icon_arrow"></span></a>
                     </section>
                 </div>
                 <aside>
@@ -98,8 +97,8 @@
             <div class="company_info">
                 <ul class="company_info_lst clearfix">
                     <li><span class="icon_call"></span>070-7011-3900</li>
-                    <li><span class="icon_email"></span>support_kr@rsupport.com</li>
-                    <li><span class="icon_cafe"></span>정보가 가득한 리모트뷰 공식카페</li>
+                    <li><span class="icon_email"></span><a class="company_email" href="mailto:support_kr@rsupport.com">support_kr@rsupport.com</a></li>
+                    <li><span class="icon_cafe"></span><a href="#">정보가 가득한 리모트뷰 공식카페</a></li>
                 </ul>
                 <address>     
                           우) 138-827 서울특별시 송파구 위례성대로 10 (에스타워 11,12,15층) | 상호 : 알서포트(주) | 대표 : 서형수 <br> Tel : 070-7011-3900 | FAX : 02-479-4429 | 사업자등록번호 : 114-86-82265 | 통신판매업 신고번호 : 제 2014-서울송파-0047호 
@@ -128,11 +127,11 @@
         }
 
         function onPlayerReady(e) {
-            e.target.mute(), e.target.seekTo(0), e.target.playVideo()
+            e.target.mute(), e.target.seekTo(0), e.target.playVideo();
         }
 
         function onPlayerStateChange(e) {
-            e.data === YT.PlayerState.ENDED && e.target.seekTo(0)
+            e.data === YT.PlayerState.ENDED && e.target.seekTo(0);
         }
 
         function mainVisualResize() {
@@ -140,6 +139,7 @@
                 t = document.getElementById("main_mvclip");
             1920 > e || (t.style.width = e + "px", t.style.height = Math.floor(e / 16 * 9) + "px", t.style.marginLeft = -Math.floor(e / 2) + "px")
         }
+        
         var ytag = document.createElement("script"),
             yplayer;
         ytag.src = "https://www.youtube.com/iframe_api";
