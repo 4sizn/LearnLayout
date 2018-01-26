@@ -325,6 +325,11 @@ figcaption{
 	-webkit-text-fill-color: transparent;
 }
 
+#productDetail div{
+    float: left;
+    margin: 10px;
+}
+
 #productDetail .button p:nth-child(1){
     font-size: 0.7em;
 }
@@ -343,10 +348,8 @@ figcaption{
 #productDetail a p{
     display: inline-block;
     color: blue;
-    padding: 0 20px 5px 10px;
-    margin-right: 20px;
+    padding: 0 10px 5px 10px;
 }
-
 
 /* ----------------------------------------------------------------------------------------------------------
 5) Others
@@ -360,6 +363,16 @@ figcaption{
 
 .types_btn{
     background: url(../images/btn_map.gif);
+    background-repeat: no-repeat;
+}
+
+.types_img{
+    background: url(../images/img_map.png);
+    background-repeat: no-repeat;
+}
+
+.types_mark{
+    background: url(../imgaes/mark_map.png);
     background-repeat: no-repeat;
 }
 
@@ -391,19 +404,18 @@ figcaption{
 
 .img_rv{
     display: inline-block;
-    width:  174px;
+    width: 176px;
     height: 27px;
-    background: url(../images/rv_logo.png);
-    background-repeat: no-repeat;
+    background-position: -5px -160px;
 }
+
 
 .img_rc{
     display: inline-block;
-    width:  120px;
+    width: 120px;
     height: 17px;
+    background-position: -5px -133px;
     vertical-align: middle;
-    background: url(../images/rc_logo.png);
-    background-repeat: no-repeat;
 }
 
 .clearfix::after{
@@ -413,29 +425,26 @@ figcaption{
 }
 
 .icon_call{
-    background: url(../images/call_icon.png);
-    background-repeat: no-repeat;
     display: inline-block;
     width: 24px;
     height: 24px;
+    background-position: -5px -39px;
 }
 
 .icon_email{
-    background: url(../images/email_icon.png);
-    background-repeat: no-repeat;
     display: inline-block;
     width: 24px;
     height: 24px;
+    background-position: -5px -73px;
 }
 
 .icon_cafe{
-    background: url(../images/cafe_icon.png);
-    background-repeat: no-repeat;
     display: inline-block;
     width: 24px;
     height: 24px;
-}
+    background-position: -5px -5px;
 
+}
 
 #productDetail .button{
     display: inline-block;
@@ -452,16 +461,15 @@ figcaption{
     font-weight: bold;
 }
 
-#productDetail .button::after{
+#productDetail .icon_area::after{
     content: '';
     background: url("../images/right_arrow.png");
     background-repeat: no-repeat;
     width: 22px;
     height: 26px;
-    padding: 8px;
+    margin: 10px;
+    /* padding: 8px; */
     display: inline-block;
-    position: absolute;
-    right: 0;
 }
 
 .qr_code{
