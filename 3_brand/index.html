@@ -30,8 +30,8 @@
                 <div class="section_wrap">
                     <section id="section01">
                         <h2>RemoteView는 이런 점이 좋습니다</h2>
-                        <div class="slider"><a href="#"><span class="types_btn btn_left"></span></a><a href="#"><span class="types_btn btn_right"></span></a></div>
-                        <ul class="clearfix">
+                        <div class="slider"><button class="prev types_btn btn_left"></button><button class="next types_btn btn_right"></button></div>
+                        <ul class="clearfix" data-page=1>
                             <li>
                                 <figure>
                                     <img src="./images/option_icon.png" alt="빠른 속도와 안정성">
@@ -68,7 +68,6 @@
                                     <img src="./images/group_icon.png" alt="다중 사용자 지원 및 관리">
                                 </figure>
                                 <p>다중 사용자<br>지원 및 관리</p>
-
                             </li>
                             <li>
                                 <figure>
@@ -146,6 +145,8 @@
         var firstScriptTag = document.getElementsByTagName("script")[0];
         firstScriptTag.parentNode.insertBefore(ytag, firstScriptTag), window.onresize = mainVisualResize;
     </script>
-</body>
     
+    <script src="src/jquery-3.2.1.min.js"></script>
+    <script src="src/app.js"></script>
+</body>
 </html>

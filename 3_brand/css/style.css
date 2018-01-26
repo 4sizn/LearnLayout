@@ -27,8 +27,15 @@ body{
     height: 100%;
 }
 
+.left{
+    width: 17px;
+    height: 17px;
+}
+
 a{
     text-decoration-line: none;
+    text-decoration: none;
+    color:inherit;
 }
 
 h1{
@@ -42,13 +49,17 @@ strong{
 }
 
 .notice h3{
-    margin-top : 0;
-    margin-bottom: 5px;
+    padding: 5px 0;
 }
 
 
 #section01 img{
     float: left;
+}
+
+button{
+    background-color: #eee;
+    border: 0;
 }
 
 header{
@@ -69,8 +80,6 @@ header .familySite{
     margin-top: -40px;
     background-image: linear-gradient(#CAD1D4, white 20%); 
 }
-
-
 
 section h2{
     border-bottom: 1px dotted #999;
@@ -159,9 +168,15 @@ section ul{
     padding-bottom: 35px;
 }
 
+#section01 ul{
+    height: 100px;
+    overflow: hidden;
+}
+
 #section01 li{
     float: left;
     width: 250px;
+    height: 140px;
 }
 
 #section02 li{
@@ -257,10 +272,6 @@ figcaption{
     right: 0;
 }
 
-#section01{
-    position: relative;
-}
-
 /* ----------------------------------------------------------------------------------------------------------
 4-1) Page: Homepage
 ---------------------------------------------------------------------------------------------------------- */
@@ -333,6 +344,7 @@ figcaption{
     display: inline-block;
     color: blue;
     padding: 0 20px 5px 10px;
+    margin-right: 20px;
 }
 
 

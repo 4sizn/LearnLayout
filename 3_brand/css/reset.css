@@ -24,7 +24,7 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 
-h1, h2, h3, h4, h5{
+h1, h2, h3, h4, h5, button{
 	margin: 0;
 	padding: 0;
 }
