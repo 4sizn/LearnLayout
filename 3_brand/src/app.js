@@ -28,11 +28,13 @@ $(function(){
     var result = chunkArray(content, 2);    //divide content array
 
     $('.prev').on('click', function(e){
-        prev();
+        page = page > 1 ? page - 1 : PAGE_LIMIT
+        renderSlider(result[page - 1]);
     });
 
     $('.next').on('click', function(e){
-        next();
+        page = PAGE_LIMIT === page ? 1 : page + 1 
+        renderSlider(result[page - 1]);
     });
 
 function chunkArray(myArray, chunk_size){
@@ -46,23 +48,9 @@ function chunkArray(myArray, chunk_size){
     return data;
 }
 
-function showSlider(datas){
-    for(var i =0;i<datas.length;i++){
-        ListTemplate(datas[i]);
-    }
-}
-
-function prev(){
-    Math.abs(page++);
-    $('#section01 ul').html(''); //delete static data 
-    showSlider(result[page%PAGE_LIMIT]);
-     
-}
-
-function next(){
-    Math.abs(page++);
-    $('#section01 ul').html(''); //delete static data 
-    showSlider(result[page%PAGE_LIMIT]);
+function renderSlider(datas){
+    var html = datas.map(ListTemplate).join('')
+    $('#section01 ul').html(html)
 }
 
  function ListTemplate(data){
@@ -74,7 +62,7 @@ function next(){
                 //.notice
                 //h3
                 //p
-    var content = $(['<li>',
+    return ['<li>',
                         '<figure>',
                             '<img src="'+data.img_url+'" alt="'+data.title+'">',
                         '</figure>',
@@ -82,9 +70,7 @@ function next(){
                         '<h3>' + data.title + '</h3>',
                         '<p>'+data.content+'</p>',
                         '</div>',
-        '</li>'].join('\n'));
-
-        content.appendTo('#section01 ul');
+        '</li>'].join('');
     }
 });
 
