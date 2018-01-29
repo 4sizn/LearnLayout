@@ -1,7 +1,7 @@
-/// <reference path="../typings/globals/jquery/index.d.ts" />
+/// <reference path="../typings/globals/jquery/index.d.ts" /> //Use Jquery Intelisence in vscode
 
 $(function(){
-    var page = 1;
+    var page = $('#section01 ul').data('page') || 1;  //page inital
     var PAGE_LIMIT = 2;
     var content =[
         {
@@ -25,46 +25,33 @@ $(function(){
             content : "원격PC와 주고 받는 모든 데이터는 SSL을 통해 암호화되어 통신합니다."
         }];
 
-    page = $('#section01 ul').attr('data-page'); //page inital
-
-    var result = chunkArray(content, 2);    //divide content array
+    var result = chunkArray(content, PAGE_LIMIT);    //divide content array
 
     $('.prev').on('click', function(e){
-        prev();
+        page--;
+        renderSlider(result[Math.abs(page-1) % PAGE_LIMIT]);
     });
 
     $('.next').on('click', function(e){
-        next();
+        page++;
+        renderSlider(result[Math.abs(page-1) % PAGE_LIMIT]);
     });
 
-function chunkArray(myArray, chunk_size){
-    var data = [];
-
-    while(myArray.length){
-        data.push(myArray.splice(0, chunk_size));
+    function chunkArray(myArray, chunk_size){
+        var data = [];
+        var i = 0;
+    
+        while(i < myArray.length){
+            data.push(myArray.slice(i, i = i + chunk_size));
+        }
+    
+        return data;
     }
 
-    return data;
-}
-
-function showSlider(datas){
-    for(var i =0;i<datas.length;i++){
-        ListTemplate(datas[i]);
+    function renderSlider(datas){
+        var html = datas.map(ListTemplate).join('')
+        $('#section01 ul').html(html)
     }
-}
-
-function prev(){
-    Math.abs(page++);
-    $('#section01 ul').html(''); //delete static data 
-    showSlider(result[page%PAGE_LIMIT]);
-     
-}
-
-function next(){
-    Math.abs(page++);
-    $('#section01 ul').html(''); //delete static data 
-    showSlider(result[page%PAGE_LIMIT]);
-}
 
  function ListTemplate(data){
      //#section01
@@ -75,7 +62,7 @@ function next(){
                 //.notice
                 //h3
                 //p
-    var content = $(['<li>',
+    return ['<li>',
                         '<figure>',
                             '<img src="'+data.img_url+'" alt="'+data.title+'">',
                         '</figure>',
@@ -83,9 +70,7 @@ function next(){
                         '<h3>' + data.title + '</h3>',
                         '<p>'+data.content+'</p>',
                         '</div>',
-        '</li>'].join('\n'));
-
-        content.appendTo('#section01 ul');
+        '</li>'].join('');
     }
 });
 
