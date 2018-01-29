@@ -1,7 +1,7 @@
 /// <reference path="../typings/globals/jquery/index.d.ts" />
 
 $(function(){
-    var page = 1;
+    var page =  $('#section01 ul').data('page') || 1;
     var PAGE_LIMIT = 2;
     var content =[
         {
@@ -24,8 +24,6 @@ $(function(){
             title : "완벽한 보안",
             content : "원격PC와 주고 받는 모든 데이터는 SSL을 통해 암호화되어 통신합니다."
         }];
-
-    page = $('#section01 ul').attr('data-page'); //page inital
 
     var result = chunkArray(content, 2);    //divide content array
 
