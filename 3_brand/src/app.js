@@ -37,9 +37,10 @@ $(function(){
 
 function chunkArray(myArray, chunk_size){
     var data = [];
+    var i = 0;
 
-    while(myArray.length){
-        data.push(myArray.splice(0, chunk_size));
+    while(i < myArray.length){
+        data.push(myArray.slice(i, i = i + chunk_size));
     }
 
     return data;
