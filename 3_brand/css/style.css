@@ -24,8 +24,6 @@
 
 body{
     width: 100%;
-    height: 100%;
-    background-color: rgb(153, 153, 153);
 }
 
 .left{
@@ -198,7 +196,7 @@ section ul{
 ---------------------------------------------------------------------------------------------------------- */
 
 body{
-    background: url(../images/bg_title1.png);
+    background:rgb(153, 153, 153) url(../images/bg_title1.png) repeat-X;
     background-repeat: repeat-x;
     display: inline-block;
 }
