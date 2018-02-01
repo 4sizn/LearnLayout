@@ -2,10 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title>Document</title>
     <link rel="stylesheet" href="/css/reset.css">
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="stylesheet" href="/css/style.css">
-    <title>Document</title>
 </head>
 <body>
     <div id="wrapper">
@@ -13,42 +12,61 @@
         <section id="order">
             <h2>ORDER INFORMATION <span>상품선택</span></h2>
         <article id="orderInfo" class="clearfix">
-            <div class="notice clearfix">
-                   <img src="./images/item_01.jpeg" alt="봄신상니트(남성)" class="itemImg" width="75" height="100">
-                    <h3>봄신상니트(남성)</h3>
-                    <p>배송예정일: 2012년 04월 09일 이후 <br> 생산기간 : 10일 <br><strong>코드번호 : 00001</strong><p>
-            </div>
-            <div class="category">
-                <select name="color" id="color">
-                    <option value>색상 선택</option>
-                    <option value="navy">곤색니트</option>
-                    <option value="wine">와인니트</option>
-                    <option value="hunt">헌트니트</option>
-                </select>
-                <select name="size" id="size">
-                    <option value="">사이즈 선택</option>
-                    <option value="95">95</option>
-                    <option value="100">100</option>
-                    <option value="105">105</option>
-                </select>
-                <select id="amount">
-                    <option value="">수량 선택</option>
-                    <option value="1">1개</option>
-                    <option value="2">2개</option>
-                    <option value="3">3개</option>
-                    <option value="4">4개</option>
-                    <option value="5">5개</option>
-                    <option value="6">6개</option>
-                </select>
-            </div>
-            <div class="cart_btn">
-                <span class="price">8900</span><button class="add_btn">장바구니 담기</button>
-            </div>
+                <ul class="order_lst">
+                    <li>
+                            <div class="notice clearfix">
+                                    <img src="./images/item_00001.jpg" alt="봄신상니트(남성)" width="75" height="100">
+                                     <h3>봄신상니트(남성)</h3>
+                                     <p>배송예정일: 2012년 04월 09일 이후 <br> 생산기간 : 10일 <br><strong>코드번호 : 00001</strong><p>
+                             </div>
+                             <div class="category">
+                                 <select name="color" id="color">
+                                     <option value>색상 선택</option>
+                                     <option value="navy">곤색니트</option>
+                                     <option value="wine">와인니트</option>
+                                     <option value="hunt">헌트니트</option>
+                                 </select>
+                                 <select name="size" id="size">
+                                     <option value="">사이즈 선택</option>
+                                     <option value="95">95</option>
+                                     <option value="100">100</option>
+                                     <option value="105">105</option>
+                                 </select>
+                                 <select name="amount" id="amount">
+                                     <option value="">수량 선택</option>
+                                     <option value="1">1개</option>
+                                     <option value="2">2개</option>
+                                     <option value="3">3개</option>
+                                     <option value="4">4개</option>
+                                     <option value="5">5개</option>
+                                     <option value="6">6개</option>
+                                 </select>
+                             </div>
+                             <div class="add_cart">
+                                 <span class="price">8900</span><button class="add_btn" id="add">장바구니 담기</button>
+                             </div>
+                    </li>
+                </ul>
+                <p class="cart_default" hidden>상품이 존재하지 않습니다.</p>
         </article>
         <h2>CART 장바구니</h2>
         <article id="cart">
-            <ul class="cart_lst"></ul>
-            <p class="cart_default">옵션을 선택하신 후 추가를 클릭하세요</p>
+            <ul class="cart_lst">
+                <li>
+                   <span class="name">봄신상니트(남성)</span> 
+                   <span class="color">헌트니트</span>
+                   <span class="size">100</span>
+                   <span class="amount">3개</span>
+                   <span class="total">26,700</span>
+                   <button class="delete">
+                       <figure>
+                        <img src="./images/btn_x.png" alt="삭제">
+                       <figcaption>삭제</figcaption>
+                    </figure>
+                   </button>
+                </li>
+            </ul>
+            <p class="cart_default" hidden>옵션을 선택하신 후 추가를 클릭하세요</p>
         </article>
         </section>
         <section id="payment" class="clearfix">
@@ -73,11 +91,10 @@
                 </ul>
             </article>
         </section>
-        <div id="submitBtn">
-                <button class="submit_btn">결재하기</button>
+        <div id="submitArea">
+                <button class="submit_btn" id = "pay">결재하기</button>
             </div>
 </div>
-<script src="/src/jquery-3.2.1.min.js"></script>
-<script src="/src/app.js"></script>
+<script src="./src/app.js"></script>
 </body>
 </html>
