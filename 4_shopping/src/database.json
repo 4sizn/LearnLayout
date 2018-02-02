@@ -1,0 +1,56 @@
+{
+    "users": [
+        {
+        "id" : "4sizn",
+        "privilege" : "admin",
+        "nation" : "korea"
+        },
+        {"id" : "customer1",
+        "privilege" : "bronze",
+        "nation" : "korea",
+        "wishlist" : ["000001"]
+        },
+        {"id" : "customer1",
+        "privilege" : "silver",
+        "nation" : "japan",
+        "wishlist" : ["000002"]
+        }
+    ],
+
+    "items": [
+        {
+            "id" : "00001",
+            "name" : "봄신상니트",
+            "type" : "니트",
+            "gender" : "남성",
+            "cooltime" : "10",
+            "price" : "8900",
+            "color" : ["곤색", "와인", "헌트"],
+            "size" : ["95", "100", "105"],
+            "option" : [
+                    ["6", "6", "6"],
+                    ["6", "6", "6"],
+                    ["6", "6", "6"]
+            ]
+            ,
+            "img" : "/images/item.000001.jpg"
+        },
+        {
+            "id" : "00002",
+            "name" : "봄신상카라티",
+            "type" : "카라티",
+            "gender" : "남성",
+            "cooltime" : "11",
+            "price" : "10000",
+            "color" : ["빨강", "초록", "노랑"],
+            "size" : ["95", "100", "105"],
+            "option" : [
+                    ["6", "5", "0"],
+                    ["6", "5", "0"],
+                    ["6", "5", "3"]
+            ]
+            ,
+            "img" : "/images/item.000002.jpg"
+        }
+    ]
+}

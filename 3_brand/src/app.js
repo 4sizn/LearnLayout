@@ -1,7 +1,7 @@
-/// <reference path="../typings/globals/jquery/index.d.ts" />
+/// <reference path="../typings/globals/jquery/index.d.ts" /> //Use Jquery Intelisence in vscode
 
 $(function(){
-    var page =  $('#section01 ul').data('page') || 1;
+    var page = $('#section01 ul').data('page') || 1;  //page inital
     var PAGE_LIMIT = 2;
     var content =[
         {
@@ -25,33 +25,33 @@ $(function(){
             content : "원격PC와 주고 받는 모든 데이터는 SSL을 통해 암호화되어 통신합니다."
         }];
 
-    var result = chunkArray(content, 2);    //divide content array
+    var result = chunkArray(content, PAGE_LIMIT);    //divide content array
 
     $('.prev').on('click', function(e){
-        page = page > 1 ? page - 1 : PAGE_LIMIT
-        renderSlider(result[page - 1]);
+        page--;
+        renderSlider(result[Math.abs(page-1) % PAGE_LIMIT]);
     });
 
     $('.next').on('click', function(e){
-        page = PAGE_LIMIT === page ? 1 : page + 1 
-        renderSlider(result[page - 1]);
+        page++;
+        renderSlider(result[Math.abs(page-1) % PAGE_LIMIT]);
     });
 
-function chunkArray(myArray, chunk_size){
-    var data = [];
-    var i = 0;
-
-    while(i < myArray.length){
-        data.push(myArray.slice(i, i = i + chunk_size));
+    function chunkArray(myArray, chunk_size){
+        var data = [];
+        var i = 0;
+    
+        while(i < myArray.length){
+            data.push(myArray.slice(i, i = i + chunk_size));
+        }
+    
+        return data;
     }
 
-    return data;
-}
-
-function renderSlider(datas){
-    var html = datas.map(ListTemplate).join('')
-    $('#section01 ul').html(html)
-}
+    function renderSlider(datas){
+        var html = datas.map(ListTemplate).join('')
+        $('#section01 ul').html(html)
+    }
 
  function ListTemplate(data){
      //#section01
