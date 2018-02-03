@@ -21,16 +21,20 @@
 /* ----------------------------------------------------------------------------------------------------------
 1) HTML tags
 ---------------------------------------------------------------------------------------------------------- */
-
-
-/* ----------------------------------------------------------------------------------------------------------
-2) HTML styles
----------------------------------------------------------------------------------------------------------- */
 body{
     font-family: Arial;
     font-size: small;
     line-height: 1.4em;
 }
+
+#order article{
+    border: 1px solid rgba(164, 166, 167, 0.5);
+}
+
+
+/* ----------------------------------------------------------------------------------------------------------
+2) HTML styles
+---------------------------------------------------------------------------------------------------------- */
 
 figcaption{
     display: inline-block;
@@ -38,6 +42,11 @@ figcaption{
 
 .notice img{
     margin-right: 20px;
+}
+
+.order_lst li{
+    position: relative;
+    overflow: hidden;
 }
 
 .category select{
@@ -55,22 +64,7 @@ figcaption{
     margin-top: 5px;
 }
 
-#order{
-    margin-bottom: 20px;
-}
 
-.order_lst li{
-    position: relative;
-    overflow: hidden;
-}
-
-#order article{
-    border: 1px solid rgba(164, 166, 167, 0.5);
-}
-
-#payment{
-    margin-bottom: 40px;
-}
 
 #cardInfo h2{
     margin-top: 10px;
@@ -116,6 +110,14 @@ figcaption{
 /* ----------------------------------------------------------------------------------------------------------
 4-1) Page: Homepage
 ---------------------------------------------------------------------------------------------------------- */
+
+#order{
+    margin-bottom: 20px;
+}
+
+#payment{
+    margin-bottom: 40px;
+}
 
 .notice{
     float: left;
@@ -184,53 +186,30 @@ h1{
     width: 400px;
 }
 
+#cartTotal h2{
+    margin: 10px 0 20px 0;
+    font-size: 2em;
+}
+
 .cart_lst li{
     position: relative;
 }
 
-.cart_lst li span{
+.cart_lst span{
     display: inline-block;
-    padding: 10px;
+    margin: 10px 0;
+    margin-left: 20px;
 }
 
-.cart_lst li span:nth-child(1){
-    margin-right: 50px;
+.cart_lst span{
+    width: 100px;
+
 }
 
-.cart_lst li span:nth-child(2){
-    width: 50px;
-    margin-right: 50px;
-}
-
-.cart_lst li span:nth-child(3){
-    width: 50px;
-    margin-right: 50px;
-}
-
-.cart_lst li span:nth-child(4){
-    width: 50px;
-   margin-right: 50px;
-}
-
-.cart_lst li span:nth-child(6){
-    width: 50px;
-   margin-right: 50px;
-}
-
-.cart_lst li span:nth-child(6){
+.cart_lst button{
     position: absolute;
-    right: 100px;
- }
-
-.cart_lst li button{
-    position: absolute;
-    right: 50px;
-    padding: 10px;
-}
-
-#cartTotal h2{
-    margin: 10px 0 20px 0;
-    font-size: 2em;
+    top: 5px;
+    right: 70px;
 }
 
 #more{

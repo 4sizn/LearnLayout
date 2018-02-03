@@ -15,6 +15,7 @@
 // 결제는 장바구니에 상품이 있을 때만 가능합니다. (alert 처리)
 // 상품 갯수는 총 5개 까지만 장바구니에 등록 가능합니다.
 //model
+
 var jsonData ={
     "users": [
         {
@@ -24,7 +25,7 @@ var jsonData ={
         },
         {"id" : "customer1",
         "privilege" : "bronze",
-        "nation" : "korea",
+        "nation" : "japan",
         "wishlist" : ["000001"]
         },
         {"id" : "customer1",
@@ -74,22 +75,26 @@ var jsonData ={
     ]
 }
 
-var Calculator = function(data = 0){
-    this.total = data;
+var Calculator = function(){
 }
 
-Calculator.total = function (discount, items){
-        console.log(items.length);
-        for(var i =0;i<items.length;i++){
-            this.total += items[i].price;
-        }
+Calculator.total = function (items, discount){
 
-        if(discount){
-            let num = this.total;
-            num = parseInt(num/discount, 10);
-            this.total = num;
-        }
-        return this.total;
+    if(items.length == 0) return;
+
+    var result = 0;
+    
+    for(var i = 0;i<items.length;i++){
+        result += parseInt(items[i].price);
+    }
+
+    if(discount){
+        let num = result;
+        num = parseInt(num/discount, 10);
+        result = num;
+    }
+
+    return result;
 }
 
 Calculator.dayCounter = function(date, pass){
@@ -97,83 +102,14 @@ Calculator.dayCounter = function(date, pass){
     if(typeof date === 'object' && date instanceof Date){
         var tomorrow = date;
         tomorrow.setDate(tomorrow.getDate() + parseInt(pass));
+
         return tomorrow;
     }else{
         date += parseInt(pass);
+        
         return date;
     }
 }
-
-var Database = function(json){
-    this.data = json;
-}
-
-
-Database.prototype.load = function(){
-    //arguments search in JSON DATBASE
-    //arguments means json level depth
-    //TODO:
-    if(arguments.length ===0) return;
-    return this.data[arguments[0]];
-}
-
-Database.prototype.getKeys = getKeys;
-Database.prototype.getValues = getValues;
-Database.prototype.getObjects = getObjects;
-
-//return an array of values that match on a certain key
-function getValues(obj, key) {
-    var objects = [];
-    for (var i in obj) {
-        if (!obj.hasOwnProperty(i)) continue;
-        if (typeof obj[i] == 'object') {
-            objects = objects.concat(getValues(obj[i], key));
-        } else if (i == key) {
-            objects.push(obj[i]);
-        }
-    }
-    return objects;
-}
-
-//return an array of objects according to key, value, or key and value matching
-function getObjects(obj, key, val) {
-    var objects = [];
-    for (var i in obj) {
-        if (!obj.hasOwnProperty(i)) continue;
-        if (typeof obj[i] == 'object') {
-            objects = objects.concat(getObjects(obj[i], key, val));    
-        } else 
-        //if key matches and value matches or if key matches and value is not passed (eliminating the case where key matches but passed value does not)
-        if (i == key && obj[i] == val || i == key && val == '') { //
-            objects.push(obj);
-        } else if (obj[i] == val && key == ''){
-            //only add if the object is not already in the array
-            if (objects.lastIndexOf(obj) == -1){
-                objects.push(obj);
-            }
-        }
-    }
-    return objects;
-}
-
-//return an array of keys that match on a certain value
-function getKeys(obj, val) {
-    // console.log(obj);
-    var objects = [];
-    for (var i in obj) {
-        if (!obj.hasOwnProperty(i)) continue;
-        if (typeof obj[i] == 'object') {
-            objects = objects.concat(getKeys(obj[i], val));
-        } else if (obj[i] == val) {
-            objects.push(i);
-        }
-    }
-    return objects;
-}
-
-//control
-//Selected item must be initialize in Order constructor...
-//User Selected wish item in main page...
 
 function Order(wishlist){
     this.date = new Date();
@@ -209,23 +145,23 @@ Order.prototype.drop = function(select){
 }
 
 function ListOrderTemplate(data){
-    let colorTemp;
-    let sizeTemp;
-    let amountTemp;
-    let shipTemp;
-    let contentTemp;
+    let colorTemp ='';
+    let sizeTemp ='';
+    let amountTemp ='';
+    let shipTemp ='';
+    let contentTemp ='';
 
     //color Template
     for(var i=0;i<data['color'].length;i++){
-        colorTemp +=  '<option value=' +data['color'][i]+'>'+data['color'][i]+data.type + '</option>'
+        colorTemp +=  '<option value="' +data['color'][i]+'">'+data['color'][i]+data.type + '</option>'
     }
     //size Template
     for(var i =0;i<data['size'].length;i++){
-        sizeTemp +=  '<option value=' +data['size'][i]+'>'+ data['size'][i] + '</option>'
+        sizeTemp +=  '<option value="' +data['size'][i]+'">'+ data['size'][i] + '</option>'
     }
     //amount Template
     for(var i=1;i<=data.amount;i++){
-        amountTemp += '<option value=' +i+'>'+ i + '개</option>'
+        amountTemp += '<option value="' +i+'">'+ i + '개</option>'
     }
     //LINK Order func
     let tomorrow=Calculator.dayCounter(new Date(),data.cooltime);
@@ -233,9 +169,20 @@ function ListOrderTemplate(data){
     if(typeof tomorrow === 'object' && tomorrow instanceof Date){
         shipTemp = tomorrow.getFullYear() +'년 '+ tomorrow.getMonth()+'월 ' + tomorrow.getDay()+'일 ';    
     }
-  
+
     //content Template
-     contentTemp =  [
+    //#order
+        //ul
+            //li
+                //.notice
+                    //img 
+                    //h3
+                    //p
+            //.category
+                //select*3
+                    //option*4
+                //.add_cart
+    contentTemp =  [
     '<div class="notice clearfix">',
         '<figure>',
         '<img src="'+data.img+'" alt="'+data.name+'" width="75" height="100">',
@@ -263,42 +210,25 @@ function ListOrderTemplate(data){
     ].join('');
 
     var li = document.createElement('li');
-        li.addEventListener('click', function(e){
-            if(e.target && e.target.id == 'add'){     
-                console.log(data.idx);
-                //var inst = Order(datainstance);
-             }
-        });
-        
-        li.addEventListener('change', function(e){
-            if(e.target && e.target.name == 'color'){
-                console.log("color" +e.target);
-            }
-            if(e.target && e.target.name == 'size'){
-                console.log('size');
-            }
-        });
-
         li.setAttribute('data-idx', data['idx']);
         li.innerHTML = contentTemp;
 
         return li;
-    //#order
-        //ul
-            //li
-                //.notice
-                    //img 
-                    //h3
-                    //p
-            //.category
-                //select*3
-                    //option*4
-                //.add_cart
 }
 
 function ListCartTemplate(data){
-
+    //#cart
+        //ul
+            //li
+                //img
+                //span*5
+                //button
+                    //figure
+                        //img
+                        //figcaption
     var contentTemp = [
+    '<div>',
+    '<span class="idx">'+data.idx+'</span>',
     '<span class="name">'+data.name+'</span>',
     '<span class="color">'+data.color+'</span>',
     '<span class="size">'+data.size+'</span>',
@@ -311,199 +241,128 @@ function ListCartTemplate(data){
             '<figcaption>삭제</figcaption>',
         '</figure>',
     '</button>',
+    '</div>',
 ].join('');
 
-
-//     li.addEventListener('click', function(e){
-//         if(e.target && e.target.id == 'add'){     
-//             console.log(data.idx);
-//             //var inst = Order(datainstance);
-//          }
-//     });
-    
 var li = document.createElement('li');
-//         li.addEventListener('click', function(e){
-//             if(e.target && e.target.id == 'delete'){     
-//                 li.remove();
-//                 // console.log(this.parentElement)
-//                 // debugger
-//             if(e.target.parentElement.querySelectorAll('').length<1){
-//                 // debugger
-//                 e.target.parentElement.hasAttribute('hidden') && e.target.parentElement.removeAttribute('hidden');
-//             }
-//         //var inst = Order(datainstance);
-//      }
-// });
-    // var li = document.createElement('li');
-    // li.addEventListener('click', function(e){
-    //     if(e.target && e.target.id == 'delete'){     
-    //         console.log(this.getAttribute('data-idx'));
-    //      }
-    // });
-    
-    // li.setAttribute('data-idx', data['idx']);
-    // li.innerHTML = contentTemp;
-    li.setAttribute('data-idx', data['idx']);
-    li.innerHTML = contentTemp;
+li.setAttribute('data-idx', data['idx']);
+li.innerHTML = contentTemp;
 
-
-    // return li;
-
-    //#cart
-        //ul
-            //li
-                //img
-                //span*5
-                //button
-                    //figure
-                        //img
-                        //figcaption
-    return li;
+return li;
 }
+
+var admin = JSON.parse(JSON.stringify(jsonData['users'][0]));
+var user = JSON.parse(JSON.stringify(jsonData['users'][1]));
 
 //renderfunction in view
 ;(function(win, doc, wish, cart){
 
     function init(){
-        var database = new Database(jsonData);
-        document.querySelectorAll('.order_lst li').forEach(elems => elems.innerHTML = '');
-        document.querySelectorAll('.cart_lst li').forEach(elems => elems.innerHTML = '');
-
+        document.querySelectorAll('.order_lst li').forEach(elems => elems.remove()); //init data
+        document.querySelectorAll('.cart_lst li').forEach(elems => elems.remove()); 
         wish.add(JSON.parse(JSON.stringify(jsonData['items'][0])), true);
         wish.add(JSON.parse(JSON.stringify(jsonData['items'][1])), true);
         wish.add(JSON.parse(JSON.stringify(jsonData['items'][1])), true);
-
- 
-
-        // cart.add({
-        //     name : "봄신상니트(남성)",
-        //     color : "red",
-        //     size : 85,
-        //     amount : 6,
-        //     price : 56
-        // })
-        // cart.add({
-        //     name : "봄신상니트(남성)",
-        //     color : "red",
-        //     size : 85,
-        //     amount : 6,
-        //     price : 1000000000
-        // })
-        
         render(wish, cart);
-
-        // '<span class="amount">'+data.amount+'</span>',
-        // '<span class=" total">'+data.total+'</span>',
-        // console.log(jsonData['items'][0]);
-        //TODO: Load DataObject
-
-        //가 데이터 적재
     }
 
     function render(datas1, datas2){
-        document.querySelectorAll('.order_lst li').forEach(elems => elems.innerHTML = '');
-        document.querySelectorAll('.cart_lst li').forEach(elems => elems.innerHTML = '');
+        document.querySelectorAll('.order_lst li').forEach(elems => elems.remove());
+        document.querySelectorAll('.cart_lst li').forEach(elems => elems.remove());
 
         var elems = datas1.bucket.map(ListOrderTemplate);
         doc.querySelector('.order_lst').append(...elems);
 
         var elems = datas2.bucket.map(ListCartTemplate);
         doc.querySelector('.cart_lst').append(...elems);
+
+        let subtotal =  Calculator.total(cart.bucket) || 0;
+        let shipping =  (admin.nation != user.nation) ? parseInt(3000) : parseInt(0);
+        let total =  subtotal + shipping;
+
+        doc.querySelector('.total_lst #subTotal').innerHTML = subtotal;
+        doc.querySelector('.total_lst #shipping').innerHTML = shipping;
+        doc.querySelector('.total_lst #total').innerHTML = total;
+    
+        if(doc.querySelectorAll('.order_lst li').length == 0){
+            doc.querySelector('#order p').setAttribute('hidden', false);
+        }else{
+            doc.querySelector('#order p').setAttribute('hidden', true);
+        }
+
+        if(doc.querySelectorAll('.cart_lst li').length == 0){
+            doc.querySelector('#cart p').setAttribute('hidden', false);
+        }else{
+            doc.querySelector('#cart p').setAttribute('hidden', true);
+        }
+
     }
 
     doc.addEventListener('click', function(e){
         if(e.target && e.target.id == 'add'){
-            console.log(wish['bucket'][e.target.getAttribute('data-idx')]);
-            console.log(e.target.getAttribute('data-idx'));
-            debugger;
-            cart.add(wish['bucket'][e.target.getAttribute('data-idx')], false);
-            // cart.add({
-            //     name : "봄신상니트(남성)",
-            //     color : "red",
-            //     size : 85,
-            //     amount : 6,
-            //     price : 1000000000
-            // })
-            render(wish, cart);
-        }
-        // var instance = new Order(){
-            
-        // }
-        // datas2.add(instance);
-    });
-
-    //해당 obejct에 view date ojbect를 가져온다.
-    doc.addEventListener('change', function(e){
-        console.log(e.target , e.target.id);
-        if(e.target && e.target.name == 'color'){
-            console.log('color');
-        }
-        if(e.target && e.target.name == 'size'){
-            console.log('size');
+            var li = upTo(e.target, 'li');
+            var idx = e.target.getAttribute('data-idx');
+            var name = wish.bucket[e.target.getAttribute('data-idx')]['name'];
+            var price = wish.bucket[e.target.getAttribute('data-idx')]['price'];
+            var color = li.querySelector('#color').value;
+            var size = li.querySelector('#size').value;
+            var amount = li.querySelector('#amount').value;
+        
+            var inst ={
+                idx : idx,
+                name : name,
+                color : color,
+                size : size,
+                amount : amount,
+                price : price
+            };
+            //validation chk
+            if(!Object.values(inst).find(function(data){return data == 'default';})){
+                cart.add(inst, false);    
+                render(wish, cart);
+            }else{
+                alert("옵션 값을 입력해주세요!");
+            }
         }
     });
 
 
         doc.addEventListener('click', function(e){
             if(e.target && e.target.id == 'delete'){
-                let ul = e.target.parentNode.parentNode;
-                e.target.parentNode.remove();
+                var idx = upTo(e.target, 'li').getAttribute('data-idx');
+                var removeIndex = cart.bucket.map(function(item){
+                    return item.idx;
+                }).indexOf(idx);
+                cart.bucket.splice(removeIndex, 1);
+                upTo(e.target, 'li').remove();
+                render(wish, cart);
             }     
-                // console.log(this.parentElement)
-            // if(e.target.parentNode.parentNode.querySelector('li').length<1){
-                // debugger
-                // e.target.parentElement.hasAttribute('hidden') && e.target.parentElement.removeAttribute('hidden');
-            // }
-        //var inst = Order(datainstance);
-});
+},true);
     //start...
-   
     doc.querySelector('button[id="more"]').onclick=function(){
-        console.log("more");
-    }
+    };
 
     doc.querySelector('button[id="pay"]').onclick=function(){
         alert("결재가 완료되었습니다");
-        console.log("결재하기");
-    }
+    };
 
-
-    // var v1 = doc.querySelector('#subTotal');
-
-    // v1.innerHTML = Calculator.total(false, cart.cart);
-    
-// function loadJSON(callback) {
-//     var xobj = new XMLHttpRequest();
-//     xobj.overrideMimeType("application/json");
-//     xobj.open('GET', '../src/database.json', true);
-//     xobj.onreadystatechange = function() {
-//         if (xobj.readyState == 4 && xobj.status == "200") {
-//             callback(xobj.responseText);
-//         }
-//     }
-//     xobj.send(null);
-// }
-// process();
-
-// loadJSON(function(response){
-    //     data = JSON.parse(response);
-    //     console.log(data);});
-    //}
     init();
+
 })(this, document, new Order() ,new Order(["00001"]));
-//module load
-//1.load customer / cusotmer load wish list & cart list
 
+function upTo(el, tagName) {
+    tagName = tagName.toLowerCase();
 
-// var Items = require('../classes/item');
-// var Customer = require('../classes/user');
-// var Cart =  Customer.cart;
-// var itemlist=ItemLoad([1, 2, 3, 4]);
+    while (el && el.parentNode) {
+        el = el.parentNode;
+        if (el.tagName && el.tagName.toLowerCase() == tagName) {
+        return el;
+        }
+    }
+return null;
+}
 
-// load Customer item wish list{}
-
-// cart.add(itemlist[i], color, size, amout);
-// Customer.Cart의 토탈
-// Customer.order(Cart);
-
-
+//내일 할것
+// li 없을때 알람
+//인풋 버그
+// 의류코드, 사이즈, 색이 카트에 있는 값중 동일할 경우를 체크 
