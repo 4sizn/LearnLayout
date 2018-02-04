@@ -16,259 +16,278 @@
 // 상품 갯수는 총 5개 까지만 장바구니에 등록 가능합니다.
 //model
 
-var jsonData ={
+var jsonData = {
     "users": [
         {
-        "id" : "4sizn",
-        "privilege" : "admin",
-        "nation" : "korea"
+            "id": "4sizn",
+            "privilege": "admin",
+            "nation": "korea"
         },
-        {"id" : "customer1",
-        "privilege" : "bronze",
-        "nation" : "japan",
-        "wishlist" : ["000001"]
+        {
+            "id": "customer1",
+            "privilege": "bronze",
+            "nation": "japan",
+            "wishlist": ["000001"]
         },
-        {"id" : "customer1",
-        "privilege" : "silver",
-        "nation" : "japan",
-        "wishlist" : ["000002"]
+        {
+            "id": "customer1",
+            "privilege": "silver",
+            "nation": "japan",
+            "wishlist": ["000002"]
         }
     ],
 
     "items": [
         {
-            "id" : "00001",
-            "name" : "봄신상니트",
-            "type" : "니트",
-            "gender" : "남성",
-            "cooltime" : "10",
-            "price" : "8900",
-            "color" : ["곤색", "와인", "헌트"],
-            "size" : ["95", "100", "105"],
-            "amount" : "5",
-            "option" : [
-                    ["6", "6", "6"],
-                    ["6", "6", "6"],
-                    ["6", "6", "6"]
-            ]
-            ,
-            "img" : "./images/item_00001.jpg"
+            "id": "00001",
+            "name": "봄신상니트",
+            "type": "니트",
+            "gender": "남성",
+            "cooltime": 10,
+            "price": 8900,
+            "color": ["곤색", "와인", "헌트"],
+            "size": ["95", "100", "105"],
+            "amount": 5,
+            "img": "./images/item_00001.jpg"
         },
         {
-            "id" : "00002",
-            "name" : "봄신상카라티",
-            "type" : "카라티",
-            "gender" : "남성",
-            "cooltime" : "11",
-            "price" : "10000",
-            "color" : ["빨강", "초록", "노랑"],
-            "size" : ["95", "100", "105"],
-            "amount" : "5",
-            "option" : [
-                    ["6", "5", "0"],
-                    ["6", "5", "0"],
-                    ["6", "5", "3"]
-            ]
-            ,
-            "img" : "./images/item_00002.jpg"
+            "id": "00002",
+            "name": "봄신상카라티",
+            "type": "카라티",
+            "gender": "남성",
+            "cooltime": 11,
+            "price": 10000,
+            "color": ["빨강", "초록", "노랑"],
+            "size": ["95", "100", "105"],
+            "amount": 5,
+            "img": "./images/item_00002.jpg"
         }
     ]
 }
 
-var Calculator = function(){
+var Calculator = function () {
 }
 
-Calculator.total = function (items, discount){
+Calculator.total = function (items, discount) {
 
-    if(items.length == 0) return;
+    if (items.length == 0) return;
 
     var result = 0;
-    
-    for(var i = 0;i<items.length;i++){
+
+    for (var i = 0; i < items.length; i++) {
         result += parseInt(items[i].price);
     }
 
-    if(discount){
+    if (discount) {
         let num = result;
-        num = parseInt(num/discount, 10);
+        num = parseInt(num / discount, 10);
         result = num;
     }
 
     return result;
 }
 
-Calculator.dayCounter = function(date, pass){
+Calculator.dayCounter = function (date, pass) {
     //arguemnt compare
-    if(typeof date === 'object' && date instanceof Date){
+    if (typeof date === 'object' && date instanceof Date) {
         var tomorrow = date;
         tomorrow.setDate(tomorrow.getDate() + parseInt(pass));
 
         return tomorrow;
-    }else{
+    } else {
         date += parseInt(pass);
-        
+
         return date;
     }
 }
 
-function Order(wishlist){
+function Order(wishlist) {
     this.date = new Date();
     this.wishlist = wishlist;
     this.idx = 0;
     this.bucket = [];
     this.bucketTotal = {
-        subTotal :0,
-        shipping : 0,
-        total : 0
+        subTotal: 0,
+        shipping: 0,
+        total: 0
     }
 }
 
-Order.prototype.add = function(item, isOrder){
-
-    if(isOrder)
-    {
+Order.prototype.add = function (item, isOrder) {
+    if (isOrder) {
         item.idx = this.idx;
         this.idx++;
+    }
+    else {
+        var storedItem = this.getBucketItem(item);
+        if (storedItem != null) {
+            storedItem.amount += item.amount;
+            return;
+        }
     }
 
     this.bucket.push(item);
 }
 
-Order.prototype.delete = function(item){
+Order.prototype.delete = function (item) {
     //this.wishlist.delete(items);
     this.bucket.delete(item);
 }
 
-Order.prototype.drop = function(select){
+Order.prototype.drop = function (select) {
     //this.wishlist = [];
     this.bucket = [];
 }
 
-function ListOrderTemplate(data){
-    let colorTemp ='';
-    let sizeTemp ='';
-    let amountTemp ='';
-    let shipTemp ='';
-    let contentTemp ='';
+Order.prototype.getBucketItem = function (item) {
+    var query = {
+        id: item.id,
+        color: item.color,
+        size: item.size
+    };
+
+    var foundItem = null;
+    for (var idx in this.bucket) {
+        var e = this.bucket[idx];
+
+        var t = {
+            id: e.id,
+            color: e.color,
+            size: e.size
+        };
+
+        if (JSON.stringify(t) == JSON.stringify(query)) {
+            foundItem = e;
+            break;
+        }        
+    }
+
+    return foundItem;
+}
+
+function ListOrderTemplate(data) {
+    let colorTemp = '';
+    let sizeTemp = '';
+    let amountTemp = '';
+    let shipTemp = '';
+    let contentTemp = '';
 
     //color Template
-    for(var i=0;i<data['color'].length;i++){
-        colorTemp +=  '<option value="' +data['color'][i]+'">'+data['color'][i]+data.type + '</option>'
+    for (var i = 0; i < data['color'].length; i++) {
+        colorTemp += '<option value="' + data['color'][i] + '">' + data['color'][i] + data.type + '</option>'
     }
     //size Template
-    for(var i =0;i<data['size'].length;i++){
-        sizeTemp +=  '<option value="' +data['size'][i]+'">'+ data['size'][i] + '</option>'
+    for (var i = 0; i < data['size'].length; i++) {
+        sizeTemp += '<option value="' + data['size'][i] + '">' + data['size'][i] + '</option>'
     }
     //amount Template
-    for(var i=1;i<=data.amount;i++){
-        amountTemp += '<option value="' +i+'">'+ i + '개</option>'
+    for (var i = 1; i <= data.amount; i++) {
+        amountTemp += '<option value="' + i + '">' + i + '개</option>'
     }
     //LINK Order func
-    let tomorrow=Calculator.dayCounter(new Date(),data.cooltime);
+    let tomorrow = Calculator.dayCounter(new Date(), data.cooltime);
 
-    if(typeof tomorrow === 'object' && tomorrow instanceof Date){
-        shipTemp = tomorrow.getFullYear() +'년 '+ tomorrow.getMonth()+'월 ' + tomorrow.getDay()+'일 ';    
+    if (typeof tomorrow === 'object' && tomorrow instanceof Date) {
+        shipTemp = tomorrow.getFullYear() + '년 ' + tomorrow.getMonth() + '월 ' + tomorrow.getDay() + '일 ';
     }
 
     //content Template
     //#order
-        //ul
-            //li
-                //.notice
-                    //img 
-                    //h3
-                    //p
-            //.category
-                //select*3
-                    //option*4
-                //.add_cart
-    contentTemp =  [
-    '<div class="notice clearfix">',
+    //ul
+    //li
+    //.notice
+    //img 
+    //h3
+    //p
+    //.category
+    //select*3
+    //option*4
+    //.add_cart
+    contentTemp = [
+        '<div class="notice clearfix">',
         '<figure>',
-        '<img src="'+data.img+'" alt="'+data.name+'" width="75" height="100">',
-        '<figcaption>'+data.name+'('+data.gender+')</figcaption>',
+        '<img src="' + data.img + '" alt="' + data.name + '" width="75" height="100">',
+        '<figcaption>' + data.name + '(' + data.gender + ')</figcaption>',
         '</figure>',
-        '<p>배송예정일: '+shipTemp+'이후 <br> 생산기간 : '+data.cooltime + '일 <br><strong>코드번호 : ' + data.id + '</strong><p>',
-    '</div>',
-    '<div class="category">',
+        '<p>배송예정일: ' + shipTemp + '이후 <br> 생산기간 : ' + data.cooltime + '일 <br><strong>코드번호 : ' + data.id + '</strong><p>',
+        '</div>',
+        '<div class="category">',
         '<select name="color" id="color">',
-            '<option value="default" selected="selected">색상 선택</option>',
-            colorTemp,
+        '<option value="default" selected="selected">색상 선택</option>',
+        colorTemp,
         '</select>',
         '<select name="size" id="size">',
-            '<option value="default" selected>사이즈 선택</option>',
-            sizeTemp,
+        '<option value="default" selected>사이즈 선택</option>',
+        sizeTemp,
         '</select>',
         '<select name="amount" id="amount">',
-            '<option value="default" selected>수량 선택</option>',
-            amountTemp,
+        '<option value="default" selected>수량 선택</option>',
+        amountTemp,
         '</select>',
-    '</div>',
-    '<div class="add_cart">',
-        '<span class="price">'+data.price+'</span><button class="add_btn" id="add" data-idx='+data.idx+'>장바구니 담기</button>',
-    '</div>'
+        '</div>',
+        '<div class="add_cart">',
+        '<span class="price">' + data.price + '</span><button class="add_btn" id="add" data-idx=' + data.idx + '>장바구니 담기</button>',
+        '</div>'
     ].join('');
 
     var li = document.createElement('li');
-        li.setAttribute('data-idx', data['idx']);
-        li.innerHTML = contentTemp;
+    li.setAttribute('data-idx', data['idx']);
 
-        return li;
+    li.innerHTML = contentTemp;
+
+    return li;
 }
 
-function ListCartTemplate(data){
+function ListCartTemplate(data) {
     //#cart
-        //ul
-            //li
-                //img
-                //span*5
-                //button
-                    //figure
-                        //img
-                        //figcaption
+    //ul
+    //li
+    //img
+    //span*5
+    //button
+    //figure
+    //img
+    //figcaption
     var contentTemp = [
-    '<div>',
-    '<span class="idx">'+data.idx+'</span>',
-    '<span class="name">'+data.name+'</span>',
-    '<span class="color">'+data.color+'</span>',
-    '<span class="size">'+data.size+'</span>',
-    '<span class="size">'+data.price+'</span>',
-    '<span class="amount">'+data.amount+'</span>',
-    '<span class="total">'+data.price * data.amount+'</span>',
-    '<button id ="delete" class="delete">',
-        '<figure>',
-            '<img src="./images/btn_x.png" alt="삭제">',
-            '<figcaption>삭제</figcaption>',
-        '</figure>',
-    '</button>',
-    '</div>',
-].join('');
+        '<div>',
+        // '<span class="idx">'+data.idx+'</span>',
+        '<span class="name">' + data.name + '</span>',
+        '<span class="color">' + data.color + '</span>',
+        '<span class="size">' + data.size + '</span>',
+        '<span class="size">' + data.price + '</span>',
+        '<span class="amount">' + data.amount + '</span>',
+        '<span class="total">' + data.price * data.amount + '</span>',
 
-var li = document.createElement('li');
-li.setAttribute('data-idx', data['idx']);
-li.innerHTML = contentTemp;
+        '<button id ="delete" class="delete" alt="삭제">',
+        '</button>',
+        '</div>',
+    ].join('');
 
-return li;
+    var li = document.createElement('li');
+    li.setAttribute('data-idx', data['idx']);
+    li.innerHTML = contentTemp;
+
+    return li;
 }
 
 var admin = JSON.parse(JSON.stringify(jsonData['users'][0]));
 var user = JSON.parse(JSON.stringify(jsonData['users'][1]));
 
 //renderfunction in view
-;(function(win, doc, wish, cart){
+; (function (win, doc, wish, cart) {
 
-    function init(){
-        document.querySelectorAll('.order_lst li').forEach(elems => elems.remove()); //init data
-        document.querySelectorAll('.cart_lst li').forEach(elems => elems.remove()); 
+    function init() {
+        doc.querySelectorAll('.order_lst li').forEach(elems => elems.remove()); //init data
+        doc.querySelectorAll('.cart_lst li').forEach(elems => elems.remove());
         wish.add(JSON.parse(JSON.stringify(jsonData['items'][0])), true);
         wish.add(JSON.parse(JSON.stringify(jsonData['items'][1])), true);
         wish.add(JSON.parse(JSON.stringify(jsonData['items'][1])), true);
         render(wish, cart);
     }
 
-    function render(datas1, datas2){
-        document.querySelectorAll('.order_lst li').forEach(elems => elems.remove());
-        document.querySelectorAll('.cart_lst li').forEach(elems => elems.remove());
+    function render(datas1, datas2) {
+        doc.querySelectorAll('.order_lst li').forEach(elems => elems.remove());
+        doc.querySelectorAll('.cart_lst li').forEach(elems => elems.remove());
 
         var elems = datas1.bucket.map(ListOrderTemplate);
         doc.querySelector('.order_lst').append(...elems);
@@ -276,79 +295,104 @@ var user = JSON.parse(JSON.stringify(jsonData['users'][1]));
         var elems = datas2.bucket.map(ListCartTemplate);
         doc.querySelector('.cart_lst').append(...elems);
 
-        let subtotal =  Calculator.total(cart.bucket) || 0;
-        let shipping =  (admin.nation != user.nation) ? parseInt(3000) : parseInt(0);
-        let total =  subtotal + shipping;
+        var subtotal = Calculator.total(cart.bucket) || 0;
+        var shipping = (admin.nation != user.nation) ? parseInt(3000) : parseInt(0);
+        var total = subtotal + shipping;
 
         doc.querySelector('.total_lst #subTotal').innerHTML = subtotal;
         doc.querySelector('.total_lst #shipping').innerHTML = shipping;
         doc.querySelector('.total_lst #total').innerHTML = total;
-    
-        if(doc.querySelectorAll('.order_lst li').length == 0){
-            doc.querySelector('#order p').setAttribute('hidden', false);
-        }else{
-            doc.querySelector('#order p').setAttribute('hidden', true);
+
+        if (doc.querySelectorAll('.order_lst li').length == 0) {
+            doc.querySelector('.order_default').setAttribute('hidden', false);
+        } else {
+            doc.querySelector('.order_default').setAttribute('hidden', true);
         }
 
-        if(doc.querySelectorAll('.cart_lst li').length == 0){
-            doc.querySelector('#cart p').setAttribute('hidden', false);
-        }else{
-            doc.querySelector('#cart p').setAttribute('hidden', true);
+        if (doc.querySelectorAll('.cart_lst li').length == 0) {
+            doc.querySelector('.cart_default').setAttribute('hidden', false);
+        } else {
+            doc.querySelector('.cart_default').setAttribute('hidden', true);
         }
 
     }
 
-    doc.addEventListener('click', function(e){
-        if(e.target && e.target.id == 'add'){
+    doc.addEventListener('click', function (e) {
+        if (e.target && e.target.id == 'add') {
             var li = upTo(e.target, 'li');
             var idx = e.target.getAttribute('data-idx');
+            var id = wish.bucket[e.target.getAttribute('data-idx')]['id'];
             var name = wish.bucket[e.target.getAttribute('data-idx')]['name'];
             var price = wish.bucket[e.target.getAttribute('data-idx')]['price'];
             var color = li.querySelector('#color').value;
             var size = li.querySelector('#size').value;
-            var amount = li.querySelector('#amount').value;
-        
-            var inst ={
-                idx : idx,
-                name : name,
-                color : color,
-                size : size,
-                amount : amount,
-                price : price
+            var amount = parseInt(li.querySelector('#amount').value);
+
+            var inst = {
+                idx: idx,
+                id: id,
+                name: name,
+                color: color,
+                size: size,
+                amount: amount,
+                price: price
             };
+
             //validation chk
-            if(!Object.values(inst).find(function(data){return data == 'default';})){
-                cart.add(inst, false);    
+            if (cart.bucket.length >= 5) {
+                alert("장바구니 주문은 최대 5개 입니다.");
+                return;
+            }
+            if (!Object.values(inst).find(function (data) { return data == 'default'; })) {
+                cart.add(inst, false);
                 render(wish, cart);
-            }else{
+            } else {
                 alert("옵션 값을 입력해주세요!");
             }
         }
     });
 
+    doc.addEventListener('click', function (e) {
+        if (e.target && e.target.id == 'delete') {
+            var idx = upTo(e.target, 'li').getAttribute('data-idx');
+            var removeIndex = cart.bucket.map(function (item) {
+                return item.idx;
+            }).indexOf(idx);
+            cart.bucket.splice(removeIndex, 1);
+            upTo(e.target, 'li').remove();
+            render(wish, cart);
+        }
+    }, true);
+    doc.addEventListener('change', function (e) {
+        if (e.target && e.target.name == 'amount') {
+            var li = upTo(e.target, 'li');
+            var lidx = li.getAttribute('data-idx');
 
-        doc.addEventListener('click', function(e){
-            if(e.target && e.target.id == 'delete'){
-                var idx = upTo(e.target, 'li').getAttribute('data-idx');
-                var removeIndex = cart.bucket.map(function(item){
-                    return item.idx;
-                }).indexOf(idx);
-                cart.bucket.splice(removeIndex, 1);
-                upTo(e.target, 'li').remove();
-                render(wish, cart);
-            }     
-},true);
-    //start...
-    doc.querySelector('button[id="more"]').onclick=function(){
+            var amount = li.querySelector('#amount').value;
+            if (amount == 'default') amount = 1;
+
+            var price = wish.bucket[lidx]['price'];
+            li.querySelector('.price').innerHTML = amount * price;
+
+            //  render(wish, cart);
+        }
+    });
+
+    doc.querySelector('button[id="more"]').onclick = function () {
     };
 
-    doc.querySelector('button[id="pay"]').onclick=function(){
-        alert("결재가 완료되었습니다");
+    doc.querySelector('button[id="pay"]').onclick = function () {
+        if (cart.bucket.length <= 1) {
+            alert("장바구니를 비었습니다.");
+            return;
+        } else {
+            alert("결재가 완료되었습니다");
+        }
     };
 
     init();
 
-})(this, document, new Order() ,new Order(["00001"]));
+})(this, document, new Order(), new Order(["00001"]));
 
 function upTo(el, tagName) {
     tagName = tagName.toLowerCase();
@@ -356,13 +400,14 @@ function upTo(el, tagName) {
     while (el && el.parentNode) {
         el = el.parentNode;
         if (el.tagName && el.tagName.toLowerCase() == tagName) {
-        return el;
+            return el;
         }
     }
-return null;
+    return null;
 }
 
 //내일 할것
-// li 없을때 알람
-//인풋 버그
 // 의류코드, 사이즈, 색이 카트에 있는 값중 동일할 경우를 체크 
+//클릭을 하면
+//인스트값에서 장바구니 값 서치 //의류코드 // 사이즈// 색이 일치한 곳 찾기
+// 찾아서 cart.bucket의 데이터값만 증가처리

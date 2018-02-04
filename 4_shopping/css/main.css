@@ -29,6 +29,7 @@ body{
 
 #order article{
     border: 1px solid rgba(164, 166, 167, 0.5);
+    width: 100%;
 }
 
 
@@ -63,8 +64,6 @@ figcaption{
     padding: 5px;
     margin-top: 5px;
 }
-
-
 
 #cardInfo h2{
     margin-top: 10px;
@@ -202,7 +201,7 @@ h1{
 }
 
 .cart_lst span{
-    width: 100px;
+    width: 80px;
 
 }
 
@@ -210,6 +209,12 @@ h1{
     position: absolute;
     top: 5px;
     right: 70px;
+}
+
+.cart_list a{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
 }
 
 #more{
@@ -246,9 +251,23 @@ h1{
 5) Others
 ---------------------------------------------------------------------------------------------------------- */
 
+#delete{
+    background-image: url('../images/btn_x.png');
+    height: 24px;
+    width: 24px;
+    border: 0;
+}
+
 .clearfix:after{
     display: block;
     clear: both;
     content: '';
 }
 
+p[hidden="true"]{
+display: none;
+}
+
+p[hidden="false"]{
+    display: block;
+}
