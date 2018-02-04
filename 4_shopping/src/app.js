@@ -75,7 +75,7 @@ Calculator.total = function (items, discount) {
     var result = 0;
 
     for (var i = 0; i < items.length; i++) {
-        result += parseInt(items[i].price);
+        result += parseInt(items[i].price * items[i].amount);
     }
 
     if (discount) {
@@ -106,15 +106,10 @@ function Order(wishlist) {
     this.wishlist = wishlist;
     this.idx = 0;
     this.bucket = [];
-    this.bucketTotal = {
-        subTotal: 0,
-        shipping: 0,
-        total: 0
-    }
 }
 
-Order.prototype.add = function (item, isOrder) {
-    if (isOrder) {
+Order.prototype.add = function (item, isAdmin) {
+    if (isAdmin) {
         item.idx = this.idx;
         this.idx++;
     }
@@ -257,7 +252,6 @@ function ListCartTemplate(data) {
         '<span class="size">' + data.price + '</span>',
         '<span class="amount">' + data.amount + '</span>',
         '<span class="total">' + data.price * data.amount + '</span>',
-
         '<button id ="delete" class="delete" alt="삭제">',
         '</button>',
         '</div>',
