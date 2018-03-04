@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Daum</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+
+<body>
+    <div id="container">
+        <div id="header" class="gnb">
+            <h1 class="logo">
+                <a href="#">Daum지도</a>
+            </h1>
+            <form action="/search" method="get" id=sform name="sform">
+                <input type="text" name="search" id="search" tabindex="0">
+                <button hidden-cont="true" type="submit" class="sp_types_btn btn_search" tabindex="1">검색</button>
+            </form>
+            <ul class="clearfix">
+                <li>
+                    <a href="#" active>지도검색</a>
+                </li>
+                <li>
+                    <a href="#">길찾기</a>
+                </li>
+                <li>
+                    <a href="#">지하철</a>
+                </li>
+                <li>
+                    <a href="#">버스</a>
+                </li>
+            </ul>
+        </div>
+        <div id="content">
+            <div id="inner_section">
+                <div id="section_01" class="section clearfix">
+                    <h2>
+                        <a href="#">차이나팩토리 강남점</a>
+                    </h2>
+                    <ul class="food_category_lst clearfix">
+                        <li>음식점</li>
+                        <li>일식,중식</li>
+                        <li>퓨전중식</li>
+                    </ul>
+                    <div class="notice">
+                        <figure>
+                            <img src="./images/logo_map.gif" alt="차이나팩토리 강남점" width="160" height="125">
+                        </figure>
+                        <p>
+                            <strong>주소</strong>
+                            <span>서울 서초구 서초동 1338-21번지 2층</span>
+                        </p>
+                        <p>
+                            <strong>전화번호</strong>
+                            <span>02-576-6178</span>
+                        </p>
+                        <p>
+                            <strong>홈페이지</strong>
+                            <a href="www.chinafactory.co.kr">www.chinafactory.co.kr</a>
+                        </p>
+                        <p>
+                            <strong>장소평가</strong>
+                            <span class="star_lst">
+                                <span class="star_big star_big_full"></span>
+                                <span class="star_big star_big_full"></span>
+                                <span class="star_big star_big_half"></span>
+                                <span class="star_big"></span>
+                                <span class="star_big"></span>
+                            </span>
+                            <span>5.0</span>
+                            <span>(총
+                                <span style="color:#4E59E7; font-weight:bold">26</span>명 참여)</span>
+                        </p>
+                        <p>
+                            <a href="#" title="퍼가기" class="sp_types_btn btn_download">퍼가기</a>&nbsp
+                            <a href="#" title="리뷰쓰기" class="sp_types_btn btn_review_1">리뷰쓰기</a>&nbsp
+                            <a href="#" title="한줄평가" class="sp_types_btn btn_comment">한줄평가</a>&nbsp
+                            <a href="#" title="관련장소" class="sp_types_btn btn_place">관련장소</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="section" id="section_02">
+                    <div class="lnb tab">
+                        <a href="#" title="메인정보" class="sp_types_tab tab_main">메인정보</a>
+                        <a href="#" title="한줄평가" class="sp_types_tab tab_comment">한줄평가</a>
+                        <a href="#" title="리뷰" class="sp_types_tab tab_review">리뷰</a>
+                        <a href="#" title="포토&amp동영상" class="sp_types_tab tab_photo">포토&동영상</a>
+                    </div>
+                    <h2>대중교통 정보</h2>
+                    <ul class="traffic_lst">
+                        <li>
+                            <ul class="clearfix">
+                                <li>
+                                    <a href="#" class="sp_types_btn btn_subway">지하철</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="sp_types_traffic traffic_3">3호선 양재역</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="sp_types_traffic traffic_2">2호선 강남역</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul class="clearfix">
+                                <li>
+                                    <a href="#" class="sp_types_btn btn_bus">버스</a>
+                                </li>
+                                <li>
+                                    <a href="#">우성아파트 정류장</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="sp_types_traffic traffic_b">402, 408</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="sp_types_traffic traffic_r">4425</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="sp_types_traffic traffic_g">4018</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul class="clearfix">
+                                <li>
+                                    <a href="#" class="sp_types_btn btn_bus">버스</a>
+                                </li>
+                                <li>
+                                    <a href="#">우성아파트 정류장</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="sp_types_traffic traffic_ma">402, 408</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="sp_types_traffic traffic_ja">4425</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="sp_types_traffic traffic_jic">4018,2845</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul class="clearfix">
+                                <li>
+                                    <a href="#" class="sp_types_btn btn_bus">버스</a>
+                                </li>
+                                <li>
+                                    <a href="#">우성아파트 정류장</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="sp_types_traffic traffic_il">402, 408</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="sp_types_traffic traffic_gong">4425</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="section" id="section_03">
+                    <h2>메뉴 & 상품소개</h2>
+                    <ul class="clearfix">
+                        <li class="notice">
+                            <figure>
+                                <img src="./images/logo_daum.gif" width="82" height="70" alt="소고기 안심 탕수육">
+                            </figure>
+                            <p class="tit">
+                                <strong> 소고기 안심 탕수육</strong>
+                            </p>
+                            <p class="price">22,800원</p>
+                            <p class="detail">부드러운 소고기 안심에 바삭한 튀김옷을 입한 프리미엄 탕수육</p>
+                        </li>
+                        <li class="notice">
+                            <figure>
+                                <img src="./images/logo_daum.gif" width="82" height="70" alt="소고기 안심 탕수육">
+                            </figure>
+                            <p class="tit">
+                                <strong> 소고기 안심 탕수육</strong>
+                            </p>
+                            <p class="price">22,800원</p>
+                            <p class="detail">부드러운 소고기 안심에 바삭한 튀김옷을 입한 프리미엄 탕수육</p>
+                        </li>
+                        <li class="notice">
+                            <figure>
+                                <img src="./images/logo_daum.gif" width="82" height="70" alt="소고기 안심 탕수육">
+                            </figure>
+                            <p class="tit">
+                                <strong> 소고기 안심 탕수육</strong>
+                            </p>
+                            <p class="price">22,800원</p>
+                            <p class="detail">부드러운 소고기 안심에 바삭한 튀김옷을 입한 프리미엄 탕수육</p>
+                        </li>
+                        <li class="notice">
+                            <figure>
+                                <img src="./images/logo_daum.gif" width="82" height="70" alt="소고기 안심 탕수육">
+                            </figure>
+                            <p class="tit">
+                                <strong> 소고기 안심 탕수육</strong>
+                            </p>
+                            <p class="price">22,800원</p>
+                            <p class="detail">부드러운 소고기 안심에 바삭한 튀김옷을 입한 프리미엄 탕수육</p>
+                        </li>
+                        <li>
+                            <p class="tit">
+                                <strong> 소고기 안심 탕수육</strong>
+                            </p>
+                            <p class="price">22,800원</p>
+                            <p class="detail">부드러운 소고기 안심에 바삭한 튀김옷을 입한 프리미엄 탕수육</p>
+                        </li>
+                        <li>
+                            <p class="tit">
+                                <strong> 소고기 안심 탕수육</strong>
+                            </p>
+                            <p class="price">22,800원</p>
+                            <p class="detail">부드러운 소고기 안심에 바삭한 튀김옷을 입한 프리미엄 탕수육</p>
+                        </li>
+                        <li>
+                            <p class="tit">
+                                <strong> 소고기 안심 탕수육</strong>
+                            </p>
+                            <p class="price">22,800원</p>
+                            <p class="detail">부드러운 소고기 안심에 바삭한 튀김옷을 입한 프리미엄 탕수육</p>
+                        </li>
+                        <li>
+                            <p class="tit">
+                                <strong> 소고기 안심 탕수육</strong>
+                            </p>
+                            <p class="price">22,800원</p>
+                            <p class="detail">부드러운 소고기 안심에 바삭한 튀김옷을 입한 프리미엄 탕수육</p>
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="section" id="section_04">
+                    <h2>리뷰</h2>
+                    <ul>
+                        <li class="notice">
+                            <div class="notice_header">
+                                <span class="sp_types_tit tit_netizen">네티즌 리뷰</span>
+                                <a href="" title="리뷰쓰기" class="sp_types_btn btn_review_2"></a>
+                                <span class="total">총
+                                    <strong class="number">64</strong>편</span>
+                                <a href="" title="전체보기" class=" btn_show">전체보기
+                                </a>
+                            </div>
+                            <div class="notice_cont">
+                                <figure>
+                                    <img src="./images/tab_menu.gif" width="84" height="76" alt="한 동화 CJ7">
+                                </figure>
+                                <p class="tit">
+                                    <strong>아이들을 위한 동화, CJ7, 장강7호(출연 주성치, 서교, 장우기, 임자총 감독 주성치)</strong>
+                                </p>
+                                <p>아이들을 위한 동화, CJ7, 장강7호(출연 주성치, 서교, 장우기, 임자총 감독 주성치)주성치가 돌아왔다. 주성치의 골수팬이라면 정말 기다리고 기다렸을것이다.
+                                    그런데 이번 영화. 장강7호는 주성치 ..</p>
+                                <p>
+                                    <span class="name">Mohara</span>
+                                    <span class="star_lst">
+                                        <span class="star_small star_small_full"></span>
+                                        <span class="star_small star_small_full"></span>
+                                        <span class="star_small star_small_full"></span>
+                                        <span class="star_small star_small_full"></span>
+                                        <span class="star_small star_small_full"></span>
+                                    </span>
+                                    <span class="grade">9.3</span>
+                                    <span class="day">2008-08-21</span>
+                                </p>
+                            </div>
+                        </li>
+                        <li class="notice">
+                            <div class="notice_header">
+                                <span class="sp_types_tit tit_netizen">네티즌 리뷰</span>
+                                <a href="" title="리뷰쓰기" class="sp_types_btn btn_review_2"></a>
+                                <span class="total">총
+                                    <strong class="number">64</strong>편</span>
+                                <a href="" title="전체보기" class=" btn_show">전체보기
+                                </a>
+                            </div>
+                            <div class="notice_cont">
+                                <figure>
+                                    <img src="./images/tab_menu.gif" width="84" height="76" alt="한 동화 CJ7">
+                                </figure>
+                                <p class="tit">
+                                    <strong>아이들을 위한 동화, CJ7, 장강7호(출연 주성치, 서교, 장우기, 임자총 감독 주성치)</strong>
+                                </p>
+                                <p>아이들을 위한 동화, CJ7, 장강7호(출연 주성치, 서교, 장우기, 임자총 감독 주성치)주성치가 돌아왔다. 주성치의 골수팬이라면 정말 기다리고 기다렸을것이다.
+                                    그런데 이번 영화. 장강7호는 주성치 ..</p>
+                                <p>
+                                    <span class="name">Mohara</span>
+                                    <span class="grade">9.3</span>
+                                    <span class="day">2008-08-21</span>
+                                </p>
+                            </div>
+                        </li>
+                        <li class="notice">
+                            <div class="notice_header">
+                                <span class="sp_types_tit tit_netizen">네티즌 리뷰</span>
+                                <a href="" title="리뷰쓰기" class="sp_types_btn btn_review_2"></a>
+                                <span class="total">총
+                                    <strong class="number">64</strong>편</span>
+                                <a href="" title="전체보기" class=" btn_show">전체보기
+                                </a>
+                            </div>
+                            <div class="notice_cont">
+                                <figure>
+                                    <img src="./images/tab_menu.gif" width="84" height="76" alt="한 동화 CJ7">
+                                </figure>
+                                <p class="tit">
+                                    <strong>아이들을 위한 동화, CJ7, 장강7호(출연 주성치, 서교, 장우기, 임자총 감독 주성치)</strong>
+                                </p>
+                                <p>아이들을 위한 동화, CJ7, 장강7호(출연 주성치, 서교, 장우기, 임자총 감독 주성치)주성치가 돌아왔다. 주성치의 골수팬이라면 정말 기다리고 기다렸을것이다.
+                                    그런데 이번 영화. 장강7호는 주성치 ..</p>
+                                <p>
+                                    <span class="name">Mohara</span>
+                                    <span class="grade">9.3</span>
+                                    <span class="day">2008-08-21</span>
+                                </p>
+                            </div>
+                        </li>
+                        <li class="notice">
+                            <div class="notice_header">
+                                <span class="sp_types_tit tit_netizen">네티즌 리뷰</span>
+                                <a href="" title="리뷰쓰기" class="sp_types_btn btn_review_2"></a>
+                                <span class="total">총
+                                    <strong class="number">64</strong>편</span>
+                                <a href="" title="전체보기" class=" btn_show">전체보기
+                                </a>
+                            </div>
+                            <div class="notice_cont">
+                                <figure>
+                                    <img src="./images/tab_menu.gif" width="84" height="76" alt="한 동화 CJ7">
+                                </figure>
+                                <p class="tit">
+                                    <strong>아이들을 위한 동화, CJ7, 장강7호(출연 주성치, 서교, 장우기, 임자총 감독 주성치)</strong>
+                                </p>
+                                <p>아이들을 위한 동화, CJ7, 장강7호(출연 주성치, 서교, 장우기, 임자총 감독 주성치)주성치가 돌아왔다. 주성치의 골수팬이라면 정말 기다리고 기다렸을것이다.
+                                    그런데 이번 영화. 장강7호는 주성치 ..</p>
+                                <p>
+                                    <span class="name">Mohara</span>
+                                    <span class="grade">9.3</span>
+                                    <span class="day">2008-08-21</span>
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                    <a href="#" class="link">리뷰 더보기</a>
+                </div>
+                <div class="section" id="section_05">
+                    <h2>포토 &amp 동영상</h2>
+                    <ul class="clearfix">
+                        <li>
+                            <figure>
+                                <img src="./images/btn_map.gif" width="131" height="98" alt="내부전경">
+                                <figcaption>
+                                    내부전경
+                                </figcaption>
+                                <p>08.01.25</p>
+                                <span class="ico_img"></span>
+                            </figure>
+                        </li>
+                        <li>
+                            <figure>
+                                <img src="./images/btn_map.gif" width="131" height="98" alt="내부전경">
+                                <figcaption>
+                                    내부전경
+                                </figcaption>
+                                <p>08.01.25</p>
+                                <span class="ico_img"></span>
+                            </figure>
+                        </li>
+                        <li>
+                            <figure>
+                                <img src="./images/btn_map.gif" width="131" height="98" alt="내부전경">
+                                <figcaption>
+                                    내부전경
+                                </figcaption>
+                                <p>08.01.25</p>
+                                <span class="ico_img"></span>
+                            </figure>
+                        </li>
+                        <li>
+                            <figure>
+                                <img src="./images/btn_map.gif" width="131" height="98" alt="내부전경">
+                                <figcaption>
+                                    내부전경
+                                </figcaption>
+                                <p>08.01.25</p>
+                                <span class="ico_img"></span>
+                            </figure>
+                        </li>
+                    </ul>
+                    <a class="link">포토 &amp; 동영상 더보기</a>
+                </div>
+                <div class="section clearfix" id="section_06">
+                    <h2>한줄평가</h2>
+                    <p class="cont">총
+                        <span class="number">67</span>개의 한줄평가가 있습니다.</p>
+                    <form class="comment_box" action="/action_page.html" , id=usrForm>
+                        <div>
+                            <ul class="clearfix">
+                                <li>
+                                    <span class="sp_types_tit tit_deli">맛</span>
+                                    <div class="rate rate_00"></div>
+                                    <span class="grade grade_00">0.0</span>
+                                </li>
+
+                                <li>
+                                    <span class="sp_types_tit tit_mood">분위기</span>
+                                    <div class="rate rate_01"></div>
+                                    <span class="grade">0.0</span>
+                                </li>
+                                <li>
+                                    <span class="sp_types_tit tit_price">가격</span>
+                                    <div class="rate rate_02"></div>
+                                    <span class="grade">0.0</span>
+                                </li>
+                                <li>
+
+                                    <span class="sp_types_tit tit_service">서비스</span>
+                                    <div class="rate rate_03"></div>
+                                    <span class="grade">0.0</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="textbox">
+                            <textarea name="" id="textarea" name="comment" title="textarea" cols="30" rows="10" form="userInput" placeholder="로그인 후에 등록됩니다."></textarea>
+                            <button id="btn_add" type="submit">등록</button>
+                        </div>
+                        <p class="text_help">현재
+                            <span id="str">0</span>/200 bytes (최대 한글 100자, 영문 200자)</p>
+
+                        <table>
+                            <tr>
+                                <td>
+                                    <span class="star_lst">
+                                        <span class="star_big star_big_full"></span>
+                                        <span class="star_big star_big_full"></span>
+                                        <span class="star_big star_big_full"></span>
+                                        <span class="star_big star_big_full"></span>
+                                        <span class="star_big star_big_half"></span>
+                                    </span>
+                                    <span>9.0</span>
+                                </td>
+                                <td>
+                                    <span>영화의 스타일이나 느낌은 좋았지만 조금은 지루하지 않았나...
+                                        <br>주뱅 네티즌별점 3.0 평점믿고받는데 그건 그냥 한석규와 차승원의 연기에 대한평점인듯 끝에완전실망 이게끝이야?싶은그런기분 나만그런거?</span>
+                                </td>
+                                <td>
+                                    <span>kkk</span>
+                                </td>
+                                <td>
+                                    <span>2008-07-22</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="star_lst">
+                                        <span class="star_big star_big_full"></span>
+                                        <span class="star_big star_big_full"></span>
+                                        <span class="star_big star_big_full"></span>
+                                        <span class="star_big star_big_full"></span>
+                                        <span class="star_big star_big_half"></span>
+                                    </span>
+                                    <span>9.0</span>
+                                </td>
+                                <td>
+                                    <span>영화의 스타일이나 느낌은 좋았지만 조금은 지루하지 않았나...
+                                        <br>주뱅 네티즌별점 3.0 평점믿고받는데 그건 그냥 한석규와 차승원의 연기에 대한평점인듯 끝에완전실망 이게끝이야?싶은그런기분 나만그런거?</span>
+                                </td>
+                                <td>
+                                    <span>kkk</span>
+                                </td>
+                                <td>
+                                    <span>2008-07-22</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="star_lst">
+                                        <span class="star_big star_big_full"></span>
+                                        <span class="star_big star_big_full"></span>
+                                        <span class="star_big star_big_full"></span>
+                                        <span class="star_big star_big_full"></span>
+                                        <span class="star_big star_big_half"></span>
+                                    </span>
+                                    <span>9.0</span>
+                                </td>
+                                <td>
+                                    <span>영화의 스타일이나 느낌은 좋았지만 조금은 지루하지 않았나...
+                                        <br>주뱅 네티즌별점 3.0 평점믿고받는데 그건 그냥 한석규와 차승원의 연기에 대한평점인듯 끝에완전실망 이게끝이야?싶은그런기분 나만그런거?</span>
+                                </td>
+                                <td>
+                                    <span>kkk</span>
+                                </td>
+                                <td>
+                                    <span>2008-07-22</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="star_lst">
+                                        <span class="star_big star_big_full"></span>
+                                        <span class="star_big star_big_full"></span>
+                                        <span class="star_big star_big_full"></span>
+                                        <span class="star_big star_big_full"></span>
+                                        <span class="star_big star_big_half"></span>
+                                    </span>
+                                    <span>9.0</span>
+                                </td>
+                                <td>
+                                    <span>영화의 스타일이나 느낌은 좋았지만 조금은 지루하지 않았나...
+                                        <br>주뱅 네티즌별점 3.0 평점믿고받는데 그건 그냥 한석규와 차승원의 연기에 대한평점인듯 끝에완전실망 이게끝이야?싶은그런기분 나만그런거?</span>
+                                </td>
+                                <td>
+                                    <span>kkk</span>
+                                </td>
+                                <td>
+                                    <span>2008-07-22</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="star_lst">
+                                        <span class="star_big star_big_full"></span>
+                                        <span class="star_big star_big_full"></span>
+                                        <span class="star_big star_big_full"></span>
+                                        <span class="star_big star_big_full"></span>
+                                        <span class="star_big star_big_half"></span>
+                                    </span>
+                                    <span>9.0</span>
+                                </td>
+                                <td>
+                                    <span>영화의 스타일이나 느낌은 좋았지만 조금은 지루하지 않았나...
+                                        <br>주뱅 네티즌별점 3.0 평점믿고받는데 그건 그냥 한석규와 차승원의 연기에 대한평점인듯 끝에완전실망 이게끝이야?싶은그런기분 나만그런거?</span>
+                                </td>
+                                <td>
+                                    <span>kkk</span>
+                                </td>
+                                <td>
+                                    <span>2008-07-22</span>
+                                </td>
+                            </tr>
+                        </table>
+                </div>
+                <div class="page_select">
+                    <div class="page_select_inner">
+                        <a href="#" class="sp_types_btn btn_left"></a>
+                        <ul class="page_lst clearfix">
+                            <li>
+                                <a href="#" title="1">1</a>
+                            </li>
+                            <li>
+                                <a href="#" title="2">2</a>
+                            </li>
+                            <li>
+                                <a href="#" title="3" active>3</a>
+                            </li>
+                            <li>
+                                <a href="#" title="4">4</a>
+                            </li>
+                            <li>
+                                <a href="#" title="5">5</a>
+                            </li>
+                            <li>
+                                <a href="#" title="6">6</a>
+                            </li>
+                            <li>
+                                <a href="#" title="7">7</a>
+                            </li>
+                            <li>
+                                <a href="#" title="8">8</a>
+                            </li>
+                            <li>
+                                <a href="#" title="9">9</a>
+                            </li>
+                            <li>
+                                <a href="#" title="10">10</a>
+                            </li>
+                        </ul>
+                        <a href="#" class="sp_types_btn btn_right"></a>
+                    </div>
+                    <a href="#" title="한줄평가 더보기" class="link">한줄평가 더보기</a>
+                </div>
+            </div>
+
+        </div>
+        <div id="aside">
+            <figure>
+                <img src="./images/bnr_250.jpg" alt="미이라">
+            </figure>
+            <div id="aside_01">
+                <div class="aside-header">
+                    <h2>주변에 가볼만한 곳</h2>
+                    <a href="더보기" title="더보기" class="btn_more sp_types_btn"></a>
+                </div>
+                <ul class="clearfix">
+                    <li class="notice">
+                        <figure>
+                            <img src="./images/ico_traffic.gif" width="60" height="45" alt="중화요리">
+                        </figure>
+                        <p>중화요리</p>
+                        <p>
+                            <strong>석도 국제 훼리</strong>
+                        </p>
+                        <p class="grade">9.3</p>
+                    </li>
+                    <li class="notice">
+                        <figure>
+                            <img src="./images/ico_traffic.gif" width="60" height="45" alt="중화요리">
+                        </figure>
+                        <p>중화요리</p>
+                        <p>
+                            <strong>석도 국제 훼리</strong>
+                        </p>
+                        <p class="grade">9.3</p>
+                    </li>
+                    <li class="notice">
+                        <fiure>
+                            <img src="./images/ico_traffic.gif" width="60" height="45" alt="중화요리">
+                        </fiure>
+                        <p>중화요리</p>
+                        <p>
+                            <strong>석도 국제 훼리</strong>
+                        </p>
+                        <p class="grade">9.3</p>
+                    </li>
+                    <li class="notice">
+                        <figure>
+                            <img src="./images/ico_traffic.gif" width="60" height="45" alt="중화요리">
+                        </figure>
+                        <p>중화요리</p>
+                        <p>
+                            <strong>석도 국제 훼리</strong>
+                        </p>
+                        <p>9.3</p>
+                    </li>
+                    <li class="notice">
+                        <figure>
+                            <img src="./images/ico_traffic.gif" width="60" height="45" alt="중화요리">
+                        </figure>
+                        <p>중화요리</p>
+                        <p>
+                            <strong>석도 국제 훼리</strong>
+                        </p>
+                        <p class="grade">9.3</p>
+                    </li>
+                    <li class="notice">
+                        <figure>
+                            <img src="./images/ico_traffic.gif" width="60" height="45" alt="중화요리">
+                        </figure>
+                        <p>중화요리</p>
+                        <p>
+                            <strong>석도 국제 훼리</strong>
+                        </p>
+                        <p class="grade">9.3</p>
+                    </li>
+                </ul>
+            </div>
+            <div id="aside_02">
+                <div class="aside-header">
+                    <a href="" title="맛집 인기순위" class="sp_types_tab tab_best_1">맛집 인기순위</a>
+
+                    <a href="" title="맛집 인기순위" class="sp_types_tab tab_best_2">인기 지역순위</a>
+                </div>
+                <ul>
+                    <li>
+                        <div>
+                            <span class="sp_types_num num_1"></span>
+                            <span>[한식]오가네 장수촌</span>
+                        </div>
+                        <div>
+                            <span class="sp_types_icon icon_mid"></span>
+                            <span>0</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <span class="sp_types_num num_2"></span>
+                            <span>[한식]오가네 장수촌</span>
+                        </div>
+                        <div>
+                            <span class="sp_types_icon icon_up"></span>
+                            <span>0</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <span class="sp_types_num num_3"></span>
+                            <span>[한식]오가네 장수촌</span>
+                        </div>
+                        <div>
+                            <span class="sp_types_icon icon_down"></span>
+                            <span>0</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <span class="sp_types_num num_4"></span>
+                            <span>[한식]오가네 장수촌</span>
+                        </div>
+                        <div>
+                            <span class="sp_types_icon icon_down"></span>
+                            <span>0</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <span class="sp_types_num num_5"></span>
+                            <span>[한식]오가네 장수촌</span>
+                        </div>
+                        <div>
+                            <span class="sp_types_icon icon_down"></span>
+                            <span>0</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <span class="sp_types_num num_6"></span>
+                            <span>[한식]오가네 장수촌</span>
+                        </div>
+                        <div>
+                            <span class="sp_types_icon icon_down"></span>
+                            <span>0</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <span class="sp_types_num num_7"></span>
+                            <span>[한식]오가네 장수촌</span>
+                        </div>
+                        <div>
+                            <span class="sp_types_icon icon_down"></span>
+                            <span>0</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <span class="sp_types_num num_8"></span>
+                            <span>[한식]오가네 장수촌</span>
+                        </div>
+                        <div>
+                            <span class="sp_types_icon icon_down"></span>
+                            <span>0</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <span class="sp_types_num num_9"></span>
+                            <span>[한식]오가네 장수촌</span>
+                        </div>
+                        <div>
+                            <span class="sp_types_icon icon_down"></span>
+                            <span>0</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <span class="sp_types_num num_10"></span>
+                            <span>[한식]오가네 장수촌</span>
+                        </div>
+                        <div>
+                            <span class="sp_types_icon icon_down"></span>
+                            <span>0</span>
+                        </div>
+                    </li>
+                </ul>
+                <div class="aside-footer">
+                    <div class="aside-inner-footer">
+                        <a href="#" title="left" class="sp_types_btn btn_left">left</a>&nbsp
+                        <a href="#" title="right" class="sp_types_btn btn_right">right</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div id="footer">
+            <ul class="clearfix">
+                <li>
+                    <a>서비스 약관/정책</a>
+                </li>
+                <li>
+                    <a>권리침해신고</a>
+                </li>
+                <li>
+                    <a>이용약관</a>
+                </li>
+                <li>
+                    <a>지도 고객센터</a>
+                </li>
+                <li>
+                    <a>지도 문의하기</a>
+                </li>
+            </ul>
+            <address>
+                Copyright(c) Daum Communications. All right reserved.
+            </address>
+        </div>
+    </div>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="//cdn.rawgit.com/placemarker/jQuery-MD5/master/jquery.md5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script>
+    <script src="./js/app.js"></script>
+</body>
+
+</html>
