@@ -1,0 +1,25 @@
+{
+  "name": "4_shopping-example",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "browser-sync start -s src/ -f src/*"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.23.6",
+    "eslint": "^4.16.0",
+    "eslint-config-standard": "^11.0.0-beta.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1"
+  },
+  "eslintConfig":{
+    "extends": "standard",
+    "env":{
+      "browser": true
+    }
+  },
+  "eslintIgnore":["*.html"]
+}
